@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Landing Page</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">MonProjet</div>
+      <ul>
+        <li><a href="#features">Fonctionnalités</a></li>
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Bienvenue sur ma landing page</h1>
+      <p>Une base propre, prête à être personnalisée.</p>
+      <a href="#contact" class="btn">Commencer</a>
+    </section>
+
+    <section id="features" class="features">
+      <h2>Fonctionnalités</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Simple</h3>
+          <p>Structure claire et légère, sans dépendances inutiles.</p>
+        </div>
+        <div class="card">
+          <h3>Responsive</h3>
+          <p>S'adapte à tous les écrans, mobile et desktop.</p>
+        </div>
+        <div class="card">
+          <h3>Personnalisable</h3>
+          <p>Facile à modifier selon vos besoins.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <h2>À propos</h2>
+      <p>Cette landing page est une base saine construite avec du HTML et CSS natifs. Pas de framework, pas de build tool — juste l'essentiel.</p>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <form>
+        <input type="text" placeholder="Votre nom" required />
+        <input type="email" placeholder="Votre email" required />
+        <textarea placeholder="Votre message" rows="5" required></textarea>
+        <button type="submit" class="btn">Envoyer</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 MonProjet. Tous droits réservés.</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
