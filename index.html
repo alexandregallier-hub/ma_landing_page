@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GS BTP — Gestion Chantiers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <span class="logo-icon">GS</span>
+                <span class="logo-text">BTP</span>
+            </div>
+            <small class="logo-subtitle">Gestion Chantiers</small>
+        </div>
+
+        <ul class="nav-menu">
+            <li class="nav-item active" data-page="dashboard">
+                <span class="nav-icon">📊</span> Dashboard
+            </li>
+            <li class="nav-item" data-page="photos">
+                <span class="nav-icon">📸</span> Photos chantier
+            </li>
+            <li class="nav-item" data-page="pointage">
+                <span class="nav-icon">⏱️</span> Pointage heures
+            </li>
+            <li class="nav-item" data-page="materiel">
+                <span class="nav-icon">🚜</span> Suivi matériel
+            </li>
+            <li class="nav-item" data-page="documents">
+                <span class="nav-icon">📄</span> Documents
+            </li>
+            <li class="nav-item" data-page="rentabilite">
+                <span class="nav-icon">💰</span> Rentabilité
+            </li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <div class="user-avatar">NG</div>
+                <div>
+                    <div class="user-name">Nathanaëlle G.</div>
+                    <div class="user-role">Assistante de direction</div>
+                </div>
+            </div>
+            <div class="powered-by">Propulsé par <strong>Leanopia</strong></div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="content">
+
+        <!-- ===== DASHBOARD ===== -->
+        <section id="page-dashboard" class="page active">
+            <div class="page-header">
+                <h1>Dashboard</h1>
+                <div class="header-date" id="current-date"></div>
+            </div>
+
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-value">7</div>
+                    <div class="kpi-label">Chantiers en cours</div>
+                    <div class="kpi-trend up">+2 ce mois</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">342h</div>
+                    <div class="kpi-label">Heures pointées (semaine)</div>
+                    <div class="kpi-trend neutral">= semaine précédente</div>
+                </div>
+                <div class="kpi-card alert">
+                    <div class="kpi-value">3</div>
+                    <div class="kpi-label">Alertes matériel</div>
+                    <div class="kpi-trend down">CT à renouveler</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">24,3%</div>
+                    <div class="kpi-label">Marge moyenne</div>
+                    <div class="kpi-trend up">+1,8% vs objectif</div>
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="card">
+                    <h3>Chantiers en cours</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Chantier</th>
+                                <th>Client</th>
+                                <th>Avancement</th>
+                                <th>Statut</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Antenne relais — Jaunay-Marigny</strong></td>
+                                <td>Free Mobile</td>
+                                <td><div class="progress-bar"><div class="progress-fill" style="width:75%"></div></div></td>
+                                <td><span class="badge green">En cours</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>VRD Lotissement Les Music'halles</strong></td>
+                                <td>Eiffage Immobilier</td>
+                                <td><div class="progress-bar"><div class="progress-fill" style="width:45%"></div></div></td>
+                                <td><span class="badge green">En cours</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Terrassement Parking Leclerc</strong></td>
+                                <td>Leclerc Chasseneuil</td>
+                                <td><div class="progress-bar"><div class="progress-fill" style="width:90%"></div></div></td>
+                                <td><span class="badge blue">Finitions</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Fondations Villa Dupont</strong></td>
+                                <td>M. Dupont (particulier)</td>
+                                <td><div class="progress-bar"><div class="progress-fill" style="width:30%"></div></div></td>
+                                <td><span class="badge green">En cours</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Réseaux secs — ZAC République</strong></td>
+                                <td>Eiffage Énergie</td>
+                                <td><div class="progress-bar"><div class="progress-fill" style="width:15%"></div></div></td>
+                                <td><span class="badge orange">Démarrage</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Enrobés Rue de la Gare</strong></td>
+                                <td>Mairie Migné-Auxances</td>
+                                <td><div class="progress-bar"><div class="progress-fill" style="width:60%"></div></div></td>
+                                <td><span class="badge green">En cours</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Massif béton pylône T42</strong></td>
+                                <td>Free Mobile</td>
+                                <td><div class="progress-bar"><div class="progress-fill" style="width:10%"></div></div></td>
+                                <td><span class="badge orange">Démarrage</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="card">
+                    <h3>Alertes récentes</h3>
+                    <ul class="alert-list">
+                        <li class="alert-item critical">
+                            <span class="alert-icon">🔴</span>
+                            <div>
+                                <strong>CT expiré — Pelle Volvo EC220E</strong>
+                                <small>Expiré depuis le 15/03/2026 — immobilisation obligatoire</small>
+                            </div>
+                        </li>
+                        <li class="alert-item warning">
+                            <span class="alert-icon">🟠</span>
+                            <div>
+                                <strong>Photos manquantes — Ferraillage pylône T42</strong>
+                                <small>Exigence contractuelle Free — preuves avant coulage</small>
+                            </div>
+                        </li>
+                        <li class="alert-item warning">
+                            <span class="alert-icon">🟠</span>
+                            <div>
+                                <strong>CT dans 15 jours — Camion benne Renault</strong>
+                                <small>Échéance : 12/04/2026</small>
+                            </div>
+                        </li>
+                        <li class="alert-item info">
+                            <span class="alert-icon">🔵</span>
+                            <div>
+                                <strong>Pointage incomplet — Semaine 13</strong>
+                                <small>2 intérimaires non saisis (chantier Leclerc)</small>
+                            </div>
+                        </li>
+                        <li class="alert-item info">
+                            <span class="alert-icon">🔵</span>
+                            <div>
+                                <strong>Document accueil sécurité à générer</strong>
+                                <small>Nouveau chantier : Massif béton pylône T42</small>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PHOTOS CHANTIER ===== -->
+        <section id="page-photos" class="page">
+            <div class="page-header">
+                <h1>Photos chantier</h1>
+                <div class="header-actions">
+                    <select id="photo-chantier-filter" class="select-input">
+                        <option value="all">Tous les chantiers</option>
+                        <option value="antenne-jaunay">Antenne relais — Jaunay-Marigny</option>
+                        <option value="vrd-musichalles">VRD Lotissement Les Music'halles</option>
+                        <option value="terrassement-leclerc">Terrassement Parking Leclerc</option>
+                        <option value="fondations-dupont">Fondations Villa Dupont</option>
+                        <option value="reseaux-zac">Réseaux secs — ZAC République</option>
+                        <option value="enrobes-gare">Enrobés Rue de la Gare</option>
+                        <option value="massif-t42">Massif béton pylône T42</option>
+                    </select>
+                    <button class="btn btn-primary" onclick="simulatePhotoUpload()">+ Ajouter des photos</button>
+                </div>
+            </div>
+
+            <div class="photos-info-banner">
+                <span class="info-icon">ℹ️</span>
+                Toutes les photos sont <strong>horodatées automatiquement</strong> et <strong>géolocalisées</strong> pour garantir la traçabilité contractuelle. Classement automatique par chantier.
+            </div>
+
+            <div class="photo-timeline" id="photo-timeline">
+                <!-- Filled by JS -->
+            </div>
+        </section>
+
+        <!-- ===== POINTAGE HEURES ===== -->
+        <section id="page-pointage" class="page">
+            <div class="page-header">
+                <h1>Pointage heures</h1>
+                <div class="header-actions">
+                    <select id="pointage-semaine" class="select-input">
+                        <option>Semaine 13 (24–28 mars 2026)</option>
+                        <option>Semaine 12 (17–21 mars 2026)</option>
+                        <option>Semaine 11 (10–14 mars 2026)</option>
+                    </select>
+                    <button class="btn btn-secondary" onclick="exportPointage()">📥 Export intérim</button>
+                </div>
+            </div>
+
+            <div class="pointage-summary">
+                <div class="summary-item">
+                    <span class="summary-value">342h</span>
+                    <span class="summary-label">Total semaine</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-value">285h</span>
+                    <span class="summary-label">Heures jour</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-value">32h</span>
+                    <span class="summary-label">Heures nuit</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-value">25h</span>
+                    <span class="summary-label">Heures WE</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-value">18</span>
+                    <span class="summary-label">Paniers repas</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-value">1 240 €</span>
+                    <span class="summary-label">Indemnités déplacement</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Détail par salarié / intérimaire</h3>
+                <table class="table" id="pointage-table">
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Type</th>
+                            <th>Chantier</th>
+                            <th>Lun</th>
+                            <th>Mar</th>
+                            <th>Mer</th>
+                            <th>Jeu</th>
+                            <th>Ven</th>
+                            <th>Sam</th>
+                            <th>Total</th>
+                            <th>Nuit</th>
+                            <th>Paniers</th>
+                        </tr>
+                    </thead>
+                    <tbody id="pointage-body">
+                        <!-- Filled by JS -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card export-card">
+                <h3>Export automatique par agence intérim</h3>
+                <div class="export-grid">
+                    <div class="export-item">
+                        <div class="export-agency">Adecco Poitiers</div>
+                        <div class="export-detail">3 intérimaires — 108h</div>
+                        <button class="btn btn-small" onclick="exportAgency('adecco')">Générer fiche</button>
+                    </div>
+                    <div class="export-item">
+                        <div class="export-agency">Manpower Chasseneuil</div>
+                        <div class="export-detail">2 intérimaires — 76h</div>
+                        <button class="btn btn-small" onclick="exportAgency('manpower')">Générer fiche</button>
+                    </div>
+                    <div class="export-item">
+                        <div class="export-agency">Actual Poitiers</div>
+                        <div class="export-detail">1 intérimaire — 38h</div>
+                        <button class="btn btn-small" onclick="exportAgency('actual')">Générer fiche</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gain-banner">
+                <strong>⏱️ Gain estimé :</strong> ~3h/semaine pour Nathanaëlle — plus de triple saisie, un seul pointage terrain qui alimente tout automatiquement.
+            </div>
+        </section>
+
+        <!-- ===== SUIVI MATERIEL ===== -->
+        <section id="page-materiel" class="page">
+            <div class="page-header">
+                <h1>Suivi matériel</h1>
+                <div class="header-actions">
+                    <button class="btn btn-primary" onclick="alert('Fonctionnalité démo : ajout matériel')">+ Ajouter un engin</button>
+                </div>
+            </div>
+
+            <div class="materiel-alerts" id="materiel-alerts">
+                <!-- Filled by JS -->
+            </div>
+
+            <div class="card">
+                <h3>Parc matériel</h3>
+                <table class="table" id="materiel-table">
+                    <thead>
+                        <tr>
+                            <th>Engin</th>
+                            <th>Immat. / N° série</th>
+                            <th>Affectation</th>
+                            <th>Statut</th>
+                            <th>Prochain CT</th>
+                            <th>Dernière maintenance</th>
+                        </tr>
+                    </thead>
+                    <tbody id="materiel-body">
+                        <!-- Filled by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ===== DOCUMENTS ===== -->
+        <section id="page-documents" class="page">
+            <div class="page-header">
+                <h1>Documents chantier</h1>
+            </div>
+
+            <div class="doc-generator card">
+                <h3>Générer un dossier chantier</h3>
+                <p class="doc-description">Sélectionnez un chantier pour générer automatiquement tous les documents nécessaires à partir des données existantes.</p>
+
+                <div class="doc-form">
+                    <div class="form-group">
+                        <label>Chantier</label>
+                        <select class="select-input" id="doc-chantier-select">
+                            <option value="">— Sélectionner —</option>
+                            <option value="massif-t42">Massif béton pylône T42 (nouveau)</option>
+                            <option value="antenne-jaunay">Antenne relais — Jaunay-Marigny</option>
+                            <option value="vrd-musichalles">VRD Lotissement Les Music'halles</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Documents à générer</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label"><input type="checkbox" checked> Fiche de préparation chantier</label>
+                            <label class="checkbox-label"><input type="checkbox" checked> Livret d'accueil sécurité</label>
+                            <label class="checkbox-label"><input type="checkbox" checked> Cartes d'habilitation équipe</label>
+                            <label class="checkbox-label"><input type="checkbox" checked> Plan de prévention</label>
+                            <label class="checkbox-label"><input type="checkbox"> PPSPS</label>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="generateDocs()">⚡ Générer le dossier</button>
+                </div>
+            </div>
+
+            <div id="doc-result" class="card" style="display:none;">
+                <h3>📁 Dossier généré — <span id="doc-result-chantier"></span></h3>
+                <div class="doc-list" id="doc-list">
+                    <!-- Filled by JS -->
+                </div>
+                <div class="gain-banner" style="margin-top:1rem;">
+                    <strong>⏱️ Gain estimé :</strong> ~1h30 par chantier — les documents sont pré-remplis avec les données du chantier, de l'équipe et du client.
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Documents récents</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Document</th>
+                            <th>Chantier</th>
+                            <th>Généré le</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>📋 Fiche de préparation</td>
+                            <td>Antenne relais — Jaunay-Marigny</td>
+                            <td>22/03/2026</td>
+                            <td><button class="btn btn-small">Voir</button></td>
+                        </tr>
+                        <tr>
+                            <td>🦺 Livret accueil sécurité</td>
+                            <td>Antenne relais — Jaunay-Marigny</td>
+                            <td>22/03/2026</td>
+                            <td><button class="btn btn-small">Voir</button></td>
+                        </tr>
+                        <tr>
+                            <td>📋 Fiche de préparation</td>
+                            <td>VRD Lotissement Les Music'halles</td>
+                            <td>15/03/2026</td>
+                            <td><button class="btn btn-small">Voir</button></td>
+                        </tr>
+                        <tr>
+                            <td>🦺 Livret accueil sécurité</td>
+                            <td>VRD Lotissement Les Music'halles</td>
+                            <td>15/03/2026</td>
+                            <td><button class="btn btn-small">Voir</button></td>
+                        </tr>
+                        <tr>
+                            <td>🪪 Cartes habilitation</td>
+                            <td>VRD Lotissement Les Music'halles</td>
+                            <td>15/03/2026</td>
+                            <td><button class="btn btn-small">Voir</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ===== RENTABILITE ===== -->
+        <section id="page-rentabilite" class="page">
+            <div class="page-header">
+                <h1>Rentabilité chantier</h1>
+                <div class="header-actions">
+                    <select id="renta-filter" class="select-input">
+                        <option value="all">Tous les chantiers</option>
+                        <option value="en-cours">En cours uniquement</option>
+                        <option value="termines">Terminés</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="renta-overview">
+                <div class="kpi-card">
+                    <div class="kpi-value">487 200 €</div>
+                    <div class="kpi-label">CA en cours</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">369 100 €</div>
+                    <div class="kpi-label">Coûts engagés</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">118 100 €</div>
+                    <div class="kpi-label">Marge brute</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">24,3%</div>
+                    <div class="kpi-label">Taux de marge</div>
+                    <div class="kpi-trend up">Objectif : 22%</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Détail par chantier</h3>
+                <table class="table" id="renta-table">
+                    <thead>
+                        <tr>
+                            <th>Chantier</th>
+                            <th>Client</th>
+                            <th>Montant HT</th>
+                            <th>Main d'oeuvre</th>
+                            <th>Intérim</th>
+                            <th>Matériaux</th>
+                            <th>Location</th>
+                            <th>Total coûts</th>
+                            <th>Marge</th>
+                            <th>%</th>
+                        </tr>
+                    </thead>
+                    <tbody id="renta-body">
+                        <!-- Filled by JS -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card" id="renta-detail" style="display:none;">
+                <h3>Détail — <span id="renta-detail-name"></span></h3>
+                <div id="renta-detail-content"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Toast notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
