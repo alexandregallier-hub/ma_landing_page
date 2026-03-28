@@ -399,36 +399,47 @@
                             <td>📋 Fiche de préparation</td>
                             <td>Antenne relais — Jaunay-Marigny</td>
                             <td>22/03/2026</td>
-                            <td><button class="btn btn-small">Voir</button></td>
+                            <td><button class="btn btn-small" onclick="previewDoc('Fiche de préparation', 'antenne-jaunay')">Voir</button></td>
                         </tr>
                         <tr>
                             <td>🦺 Livret accueil sécurité</td>
                             <td>Antenne relais — Jaunay-Marigny</td>
                             <td>22/03/2026</td>
-                            <td><button class="btn btn-small">Voir</button></td>
+                            <td><button class="btn btn-small" onclick="previewDoc('Livret accueil sécurité', 'antenne-jaunay')">Voir</button></td>
                         </tr>
                         <tr>
                             <td>📋 Fiche de préparation</td>
-                            <td>VRD Lotissement Les Music'halles</td>
+                            <td>VRD Lotissement Les Music\'halles</td>
                             <td>15/03/2026</td>
-                            <td><button class="btn btn-small">Voir</button></td>
+                            <td><button class="btn btn-small" onclick="previewDoc('Fiche de préparation', 'vrd-musichalles')">Voir</button></td>
                         </tr>
                         <tr>
                             <td>🦺 Livret accueil sécurité</td>
-                            <td>VRD Lotissement Les Music'halles</td>
+                            <td>VRD Lotissement Les Music\'halles</td>
                             <td>15/03/2026</td>
-                            <td><button class="btn btn-small">Voir</button></td>
+                            <td><button class="btn btn-small" onclick="previewDoc('Livret accueil sécurité', 'vrd-musichalles')">Voir</button></td>
                         </tr>
                         <tr>
                             <td>🪪 Cartes habilitation</td>
                             <td>VRD Lotissement Les Music'halles</td>
                             <td>15/03/2026</td>
-                            <td><button class="btn btn-small">Voir</button></td>
+                            <td><button class="btn btn-small" onclick="previewDoc('Cartes habilitation', 'vrd-musichalles')">Voir</button></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </section>
+
+        <!-- ===== MODAL APERÇU DOCUMENT ===== -->
+        <div id="doc-modal" class="modal-overlay" onclick="closeDocModal(event)">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="modal-title"></h3>
+                    <button class="modal-close" onclick="closeDocModal()">&times;</button>
+                </div>
+                <div id="modal-body" class="modal-body"></div>
+            </div>
+        </div>
 
         <!-- ===== RENTABILITE ===== -->
         <section id="page-rentabilite" class="page">

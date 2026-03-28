@@ -203,24 +203,170 @@ function generateDocs() {
     const nameSpan = document.getElementById('doc-result-chantier');
     const docList = document.getElementById('doc-list');
 
+    // Show loading state
     nameSpan.textContent = chantier.nom;
-
-    let html = '';
-    DOCS_TEMPLATES.forEach(doc => {
-        html += `<div class="doc-item">
-            <span class="doc-item-icon">${doc.icon}</span>
-            <div>
-                <div class="doc-item-name">${doc.nom}</div>
-                <div class="doc-item-size">Généré automatiquement — ${doc.taille}</div>
-            </div>
-        </div>`;
-    });
-
-    docList.innerHTML = html;
+    docList.innerHTML = '<div class="generating"><div class="spinner"></div> Génération en cours...</div>';
     result.style.display = 'block';
     result.scrollIntoView({ behavior: 'smooth' });
 
-    showToast(`⚡ Dossier chantier "${chantier.nom}" généré en 2 secondes`);
+    // Simulate generation delay
+    setTimeout(() => {
+        let html = '';
+        DOCS_TEMPLATES.forEach(doc => {
+            html += `<div class="doc-item" style="cursor:pointer;" onclick="previewDoc('${doc.nom}', '${select.value}')">
+                <span class="doc-item-icon">${doc.icon}</span>
+                <div>
+                    <div class="doc-item-name">${doc.nom}</div>
+                    <div class="doc-item-size">Généré automatiquement — ${doc.taille}</div>
+                </div>
+            </div>`;
+        });
+        docList.innerHTML = html;
+        showToast(`⚡ 4 documents générés pour "${chantier.nom}" en 2 secondes`);
+    }, 1500);
+}
+
+// ===== DOCUMENT PREVIEW =====
+function getDocPreview(docType, chantierId) {
+    const chantier = CHANTIERS.find(c => c.id === chantierId);
+    if (!chantier) return '<p>Chantier non trouvé</p>';
+
+    const today = new Date().toLocaleDateString('fr-FR');
+
+    if (docType.includes('préparation') || docType.includes('Fiche')) {
+        return `
+            <span class="doc-preview-badge">DOCUMENT PRÉ-REMPLI AUTOMATIQUEMENT</span>
+            <div class="doc-preview-section">
+                <h4>📋 Fiche de préparation chantier</h4>
+                <p><strong>Chantier :</strong> ${chantier.nom}<br>
+                <strong>Client :</strong> ${chantier.client}<br>
+                <strong>Type :</strong> ${chantier.type}<br>
+                <strong>Chef de chantier :</strong> ${chantier.chefChantier}<br>
+                <strong>Début :</strong> ${formatDateShort(chantier.dateDebut)} — <strong>Fin prévue :</strong> ${formatDateShort(chantier.dateFin)}</p>
+            </div>
+            <div class="doc-preview-section">
+                <h4>Moyens humains</h4>
+                <ul>
+                    ${EMPLOYES.filter(e => e.chantier === chantierId).map(e => `<li>${e.nom} — ${e.role || e.type}${e.agence ? ' (' + e.agence + ')' : ''}</li>`).join('')}
+                </ul>
+            </div>
+            <div class="doc-preview-section">
+                <h4>Matériel affecté</h4>
+                <ul>
+                    ${MATERIEL.filter(m => m.affectation === chantierId).map(m => `<li>${m.nom} — ${m.immat}</li>`).join('')}
+                </ul>
+            </div>
+            <div class="doc-preview-section">
+                <h4>Montant marché</h4>
+                <p><strong>${formatMoney(chantier.montantHT)} HT</strong></p>
+            </div>
+            <div class="doc-preview-stamp">✅ Document généré le ${today} — GS BTP</div>
+        `;
+    }
+
+    if (docType.includes('sécurité') || docType.includes('accueil')) {
+        return `
+            <span class="doc-preview-badge">DOCUMENT PRÉ-REMPLI AUTOMATIQUEMENT</span>
+            <div class="doc-preview-section">
+                <h4>🦺 Livret d'accueil sécurité</h4>
+                <p><strong>Chantier :</strong> ${chantier.nom}<br>
+                <strong>Client :</strong> ${chantier.client}<br>
+                <strong>Adresse :</strong> Chasseneuil-du-Poitou (86360)</p>
+            </div>
+            <div class="doc-preview-section">
+                <h4>Consignes générales de sécurité</h4>
+                <ul>
+                    <li>Port obligatoire des EPI : casque, gilet haute visibilité, chaussures de sécurité</li>
+                    <li>Interdiction d'accès aux zones de travail sans autorisation du chef de chantier</li>
+                    <li>Respect des zones de circulation et de stockage balisées</li>
+                    <li>Signalement immédiat de tout incident ou situation dangereuse</li>
+                    <li>Interdiction de consommation d'alcool et de substances illicites</li>
+                </ul>
+            </div>
+            <div class="doc-preview-section">
+                <h4>Numéros d'urgence</h4>
+                <ul>
+                    <li>SAMU : 15 / Pompiers : 18 / Urgences : 112</li>
+                    <li>Responsable sécurité GS BTP : Adrien Guyot — +33 7 81 22 10 44</li>
+                    <li>Chef de chantier : ${chantier.chefChantier}</li>
+                </ul>
+            </div>
+            <div class="doc-preview-section">
+                <h4>Équipe présente</h4>
+                <ul>
+                    ${EMPLOYES.filter(e => e.chantier === chantierId).map(e => `<li>${e.nom} — ${e.type}${e.agence ? ' (' + e.agence + ')' : ''}</li>`).join('')}
+                </ul>
+            </div>
+            <div class="doc-preview-stamp">✅ Document généré le ${today} — GS BTP</div>
+        `;
+    }
+
+    if (docType.includes('habilitation') || docType.includes('Cartes')) {
+        const equipe = EMPLOYES.filter(e => e.chantier === chantierId);
+        return `
+            <span class="doc-preview-badge">DOCUMENT PRÉ-REMPLI AUTOMATIQUEMENT</span>
+            <div class="doc-preview-section">
+                <h4>🪪 Cartes d'habilitation — ${chantier.nom}</h4>
+                <p>${equipe.length} carte(s) générée(s) pour le personnel affecté à ce chantier.</p>
+            </div>
+            ${equipe.map(e => `
+            <div class="doc-preview-section" style="background:var(--primary-light);padding:0.75rem;border-radius:var(--radius);margin-bottom:0.5rem;">
+                <p style="margin:0;"><strong>${e.nom}</strong><br>
+                Fonction : ${e.role || 'Ouvrier'}<br>
+                Statut : ${e.type}${e.agence ? ' — ' + e.agence : ''}<br>
+                Habilitations : AIPR Concepteur, H0B0 — Validité : 12 mois</p>
+            </div>
+            `).join('')}
+            <div class="doc-preview-stamp">✅ Document généré le ${today} — GS BTP</div>
+        `;
+    }
+
+    // Default / Plan de prévention
+    return `
+        <span class="doc-preview-badge">DOCUMENT PRÉ-REMPLI AUTOMATIQUEMENT</span>
+        <div class="doc-preview-section">
+            <h4>⚠️ Plan de prévention — ${chantier.nom}</h4>
+            <p><strong>Entreprise utilisatrice :</strong> ${chantier.client}<br>
+            <strong>Entreprise extérieure :</strong> GS BTP — SARL<br>
+            <strong>Lieu :</strong> Chasseneuil-du-Poitou (86360)<br>
+            <strong>Période :</strong> ${formatDateShort(chantier.dateDebut)} au ${formatDateShort(chantier.dateFin)}</p>
+        </div>
+        <div class="doc-preview-section">
+            <h4>Risques identifiés</h4>
+            <ul>
+                <li>Risque d'ensevelissement (fouilles et tranchées)</li>
+                <li>Risque de chute de hauteur</li>
+                <li>Risque de heurt par engins de chantier</li>
+                <li>Risque électrique (réseaux enterrés)</li>
+                <li>Risque lié à la manutention mécanique</li>
+            </ul>
+        </div>
+        <div class="doc-preview-section">
+            <h4>Mesures de prévention</h4>
+            <ul>
+                <li>Blindage systématique des fouilles > 1,30m</li>
+                <li>Balisage et signalisation des zones de travail</li>
+                <li>DICT réalisée avant tout terrassement</li>
+                <li>Briefing sécurité quotidien par le chef de chantier</li>
+            </ul>
+        </div>
+        <div class="doc-preview-stamp">✅ Document généré le ${today} — GS BTP</div>
+    `;
+}
+
+function previewDoc(docType, chantierId) {
+    const modal = document.getElementById('doc-modal');
+    const title = document.getElementById('modal-title');
+    const body = document.getElementById('modal-body');
+
+    title.textContent = docType + ' — ' + getChantierNom(chantierId);
+    body.innerHTML = getDocPreview(docType, chantierId);
+    modal.classList.add('show');
+}
+
+function closeDocModal(event) {
+    if (event && event.target !== event.currentTarget) return;
+    document.getElementById('doc-modal').classList.remove('show');
 }
 
 // ===== RENTABILITE MODULE =====
