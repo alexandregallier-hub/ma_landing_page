@@ -1,0 +1,123 @@
+/* ==========================================================================
+   COULEURS D'ÉQUIPE — EN DUR, VOLONTAIREMENT NON BRANDABLES.
+
+   Ce sont des éléments fonctionnels de lisibilité au vidéoprojecteur, pas de
+   la décoration. Ouvertes à la personnalisation, un client y mettrait quatre
+   nuances de son bleu corporate et le jeu deviendrait injouable.
+
+   Source de vérité et justification complète : src/lib/branding/teams.ts
+   (les valeurs y sont vérifiées par des tests de contraste).
+   ========================================================================== */
+
+:root {
+  --team-bleu: #1d4ed8;
+  --team-bleu-dark: #1e3a8a;
+  --team-orange: #c2410c;
+  --team-orange-dark: #9a3412;
+  --team-vert: #047857;
+  --team-vert-dark: #065f46;
+  --team-violet: #a21caf;
+  --team-violet-dark: #86198f;
+}
+
+.team-bleu   { --team: var(--team-bleu);   --team-dark: var(--team-bleu-dark); }
+.team-orange { --team: var(--team-orange); --team-dark: var(--team-orange-dark); }
+.team-vert   { --team: var(--team-vert);   --team-dark: var(--team-vert-dark); }
+.team-violet { --team: var(--team-violet); --team-dark: var(--team-violet-dark); }
+
+/* --------------------------------------------------------------------------
+   Pion d'équipe.
+   Cible ≥ 56 px : indispensable au trackpad comme au doigt, et suffisant pour
+   être visé sans précision depuis l'écran projeté.
+   -------------------------------------------------------------------------- */
+.team-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 56px;
+  padding: 0.5rem 1rem 0.5rem 0.625rem;
+  background: var(--team);
+  color: #fff;
+  /* Bordure blanche de 3 px : le pion se détache de n'importe quel fond,
+     y compris d'une carte-réponse colorée. */
+  border: 3px solid #fff;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: clamp(0.9rem, 1.1vw, 1.15rem);
+  line-height: 1.1;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.25);
+  transition:
+    transform 120ms ease,
+    box-shadow 120ms ease,
+    outline-color 120ms ease;
+  outline: 3px solid transparent;
+  outline-offset: 3px;
+}
+
+.team-chip:hover {
+  transform: translateY(-2px);
+}
+
+/* Équipe sélectionnée : l'animateur a cliqué le pion, il va cliquer la réponse.
+   Le halo doit être visible à 5 mètres, d'où l'anneau épais et l'échelle. */
+.team-chip[data-selected='true'] {
+  outline-color: var(--brand-text);
+  transform: scale(1.08);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.35);
+}
+
+/* Équipe déplacée à la main : un clic sur une autre réponse ne la bougera plus. */
+.team-chip[data-pinned='true'] {
+  box-shadow:
+    0 0 0 3px var(--team-dark),
+    0 2px 6px rgba(15, 23, 42, 0.25);
+}
+
+/* --------------------------------------------------------------------------
+   Formes — le codage redondant, obligatoire.
+   Aucune palette de 4 couleurs saturées n'est parfaitement sûre en daltonisme :
+   la forme, elle, reste distinguable même en achromatopsie totale.
+   -------------------------------------------------------------------------- */
+.team-shape {
+  width: 1.5em;
+  height: 1.5em;
+  flex: 0 0 auto;
+  background: #fff;
+}
+
+.team-shape[data-shape='circle'] {
+  border-radius: 50%;
+}
+
+.team-shape[data-shape='square'] {
+  border-radius: 2px;
+}
+
+.team-shape[data-shape='triangle'] {
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+}
+
+.team-shape[data-shape='diamond'] {
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+/* --------------------------------------------------------------------------
+   Barres de score
+   -------------------------------------------------------------------------- */
+.team-score-bar {
+  background: var(--team);
+  border-radius: 6px;
+  transition: width 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .team-chip,
+  .team-score-bar {
+    transition: none;
+  }
+  .team-chip:hover,
+  .team-chip[data-selected='true'] {
+    transform: none;
+  }
+}

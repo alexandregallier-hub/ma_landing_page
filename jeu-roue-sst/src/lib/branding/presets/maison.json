@@ -1,0 +1,12 @@
+{
+  "$comment": "Charte maison. Pour créer un preset client : copier ce fichier sous le nom du client, ajuster les couleurs, la police et le logo. Toutes les clés sont facultatives — ce qui n'est pas renseigné retombe sur src/lib/branding/defaults.ts. Les 4 couleurs d'équipe et le vert/rouge sémantique ne sont volontairement PAS personnalisables (voir tokens.ts).",
+  "name": "Charte maison",
+  "tokens": {
+    "primary": "#0F4C81",
+    "secondary": "#1E3A5F",
+    "accent": "#D97706",
+    "bg": "#F8FAFC",
+    "surface": "#FFFFFF",
+    "radius": "12px"
+  }
+}

@@ -1,0 +1,262 @@
+@import 'tailwindcss';
+@import '../styles/teams.css';
+
+/* ==========================================================================
+   Les tokens de marque sont injectés en SSR par src/app/layout.tsx sous forme
+   de custom properties --brand-*. Cette feuille ne doit JAMAIS coder une
+   couleur en dur : sinon la marque blanche cesse de fonctionner.
+   (Seule exception assumée : src/styles/teams.css — voir son en-tête.)
+   ========================================================================== */
+
+@theme inline {
+  --color-primary: var(--brand-primary);
+  --color-primary-contrast: var(--brand-primary-contrast);
+  --color-secondary: var(--brand-secondary);
+  --color-accent: var(--brand-accent);
+  --color-surface: var(--brand-surface);
+  --color-ink: var(--brand-text);
+  --color-ink-muted: var(--brand-text-muted);
+  --color-edge: var(--brand-border);
+  --color-ok: var(--brand-success);
+  --color-ko: var(--brand-danger);
+
+  --font-sans: var(--brand-font-sans);
+  --font-display: var(--brand-font-display);
+
+  --radius-brand: var(--brand-radius);
+}
+
+/* --------------------------------------------------------------------------
+   TYPOGRAPHIE DE PROJECTION
+
+   Deux règles non négociables, apprises en salle :
+     - graisse minimale 500 pour le corps de texte. Une fonte en 300 disparaît
+       littéralement au vidéoprojecteur ;
+     - tailles en clamp(), car l'écran de jeu doit tenir SANS SCROLL en
+       1024×768 (résolution encore courante des projecteurs de salle) comme en
+       1920×1080.
+   -------------------------------------------------------------------------- */
+
+html {
+  /* --game-scale est piloté par les touches + et − et persisté :
+     un Mac en écran dupliqué tombe à la résolution du projecteur et la mise en
+     page saute — l'animateur doit pouvoir rattraper ça en une touche. */
+  font-size: calc(16px * var(--game-scale, 1));
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--brand-bg);
+  color: var(--brand-text);
+  font-family: var(--brand-font-sans);
+  font-weight: 500;
+  line-height: 1.45;
+  /* Le jeu ne défile jamais : tout doit tenir dans la fenêtre. */
+  overscroll-behavior: none;
+}
+
+h1, h2, h3 {
+  font-family: var(--brand-font-display);
+  font-weight: 700;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+/* Les scores s'incrémentent : sans chiffres à largeur fixe, ils sautillent. */
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* --------------------------------------------------------------------------
+   Composants
+   -------------------------------------------------------------------------- */
+
+.card {
+  background: var(--brand-surface);
+  border: 1px solid var(--brand-border);
+  border-radius: var(--brand-radius);
+  box-shadow: var(--brand-shadow);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  /* 48 px minimum : cliquable sans viser, y compris au doigt. */
+  min-height: 48px;
+  padding: 0.625rem 1.25rem;
+  border-radius: var(--brand-radius);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: filter 120ms ease, background-color 120ms ease;
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--brand-primary);
+  color: var(--brand-primary-contrast);
+}
+
+.btn-primary:hover:not(:disabled) {
+  filter: brightness(1.1);
+}
+
+.btn-secondary {
+  background: var(--brand-surface);
+  color: var(--brand-text);
+  border-color: var(--brand-border);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--brand-primary) 8%, var(--brand-surface));
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--brand-text-muted);
+}
+
+.btn-ghost:hover:not(:disabled) {
+  color: var(--brand-text);
+}
+
+.btn-danger {
+  background: var(--brand-danger);
+  color: #fff;
+}
+
+/* Focus visible partout : l'animateur peut piloter entièrement au clavier. */
+:focus-visible {
+  outline: 3px solid var(--brand-primary);
+  outline-offset: 2px;
+}
+
+.field {
+  width: 100%;
+  min-height: 48px;
+  padding: 0.625rem 0.875rem;
+  background: var(--brand-surface);
+  color: var(--brand-text);
+  border: 1px solid var(--brand-border);
+  border-radius: var(--brand-radius);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* --------------------------------------------------------------------------
+   Cartes-réponses de l'écran de jeu
+   -------------------------------------------------------------------------- */
+
+.answer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  padding: clamp(0.75rem, 1.2vh, 1.125rem) clamp(0.875rem, 1.2vw, 1.25rem);
+  background: var(--brand-surface);
+  border: 2px solid var(--brand-border);
+  border-radius: var(--brand-radius);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 120ms ease, background-color 120ms ease;
+}
+
+.answer:hover {
+  border-color: var(--brand-primary);
+}
+
+.answer[data-state='correct'] {
+  border-color: var(--brand-success);
+  background: color-mix(in srgb, var(--brand-success) 10%, var(--brand-surface));
+}
+
+.answer[data-state='wrong'] {
+  border-color: var(--brand-danger);
+  background: color-mix(in srgb, var(--brand-danger) 10%, var(--brand-surface));
+}
+
+/* Raccourci clavier de la réponse (1-4), affiché en pastille. */
+.answer-key {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  flex: 0 0 auto;
+  background: color-mix(in srgb, var(--brand-primary) 12%, transparent);
+  color: var(--brand-primary);
+  border-radius: 8px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+/* --------------------------------------------------------------------------
+   Roue
+
+   Rendue en SVG et animée par UNE SEULE transition CSS sur `transform` : le
+   navigateur compose sur le GPU, donc ZÉRO JavaScript pendant les 4,5 secondes
+   d'animation. C'est ce qui la rend increvable sur le vieux portable branché au
+   projecteur de la salle.
+   -------------------------------------------------------------------------- */
+
+/* transform-box: view-box → transform-origin se calcule dans le repère du
+   viewBox. Celui-ci est symétrique autour de (100, 100), donc 50% 50% tombe
+   exactement sur le centre de la roue. Sans cette propriété, le navigateur
+   utiliserait la boîte englobante du groupe et la roue tournerait de travers. */
+.wheel-rotor {
+  transform-box: view-box;
+  transform-origin: 50% 50%;
+  will-change: transform;
+}
+
+/* L'ombre est portée par un PARENT STATIQUE et non par l'élément en rotation :
+   un filter sur un élément animé casse la composition GPU et fait chuter les FPS. */
+.wheel-shadow {
+  filter: drop-shadow(0 8px 24px rgba(15, 23, 42, 0.22));
+}
+
+@keyframes wheel-settle {
+  0% { transform: rotate(0deg); }
+  35% { transform: rotate(-1.5deg); }
+  70% { transform: rotate(0.6deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Le « cliquet » final qui simule le taquet. */
+.wheel-settling {
+  animation: wheel-settle 220ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wheel-settling {
+    animation: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Impression — podium et fiches. Utilisé aussi comme filet de secours :
+   si tout échoue, l'animateur repart avec une feuille.
+   -------------------------------------------------------------------------- */
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #fff;
+  }
+  .card {
+    box-shadow: none;
+    border-color: #94a3b8;
+  }
+  .print-break-avoid {
+    break-inside: avoid;
+  }
+}

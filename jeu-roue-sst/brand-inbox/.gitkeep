@@ -1,0 +1,5 @@
+Déposez ici le PDF de charte graphique d'un client, puis demandez à Claude Code :
+« applique cette charte pour le client <Nom> ».
+
+Le contenu de ce dossier est ignoré par git (voir .gitignore) : les chartes
+clients peuvent être confidentielles et n'ont pas à être versionnées.

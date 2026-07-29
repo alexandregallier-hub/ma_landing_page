@@ -1,0 +1,1097 @@
+{
+  "$comment": "Banque de questions du catalogue GLOBAL (org_id NULL). Régénérez supabase/seed.sql avec `npm run seed:sql` après toute modification. Chaque question porte une source_ref vérifiable : c'est ce qui rend la relecture rapide et le contenu défendable en séance.",
+  "version": 1,
+  "themes": [
+    { "key": "epi", "label": "EPI", "short_label": "EPI", "icon": "🦺", "sort_order": 1, "description": "Équipements de protection individuelle : choix, port, entretien, limites" },
+    { "key": "risque-chimique", "label": "Risque chimique", "short_label": "Chimique", "icon": "⚗️", "sort_order": 2, "description": "Étiquetage CLP, fiches de données de sécurité, stockage, CMR" },
+    { "key": "incendie", "label": "Incendie & évacuation", "short_label": "Incendie", "icon": "🔥", "sort_order": 3, "description": "Triangle du feu, classes de feux, extincteurs, consignes d'évacuation" },
+    { "key": "gestes-postures", "label": "Gestes, postures & TMS", "short_label": "Gestes & TMS", "icon": "🏋️", "sort_order": 4, "description": "Manutention manuelle, troubles musculo-squelettiques, aides à la manutention" },
+    { "key": "risque-electrique", "label": "Risque électrique", "short_label": "Électrique", "icon": "⚡", "sort_order": 5, "description": "Habilitation, consignation, seuils de sécurité, conduite à tenir" },
+    { "key": "travail-hauteur", "label": "Travail en hauteur", "short_label": "Hauteur", "icon": "🪜", "sort_order": 6, "description": "Protection collective, garde-corps, échelles, harnais, tirant d'air" },
+    { "key": "circulation-engins", "label": "Circulation & engins", "short_label": "Engins", "icon": "🚜", "sort_order": 7, "description": "Autorisation de conduite, CACES, co-activité, angles morts, plan de circulation" },
+    { "key": "machines", "label": "Machines & consignation", "short_label": "Machines", "icon": "⚙️", "sort_order": 8, "description": "Protecteurs, arrêt d'urgence, consignation, vérifications périodiques" },
+    { "key": "premiers-secours", "label": "Premiers secours", "short_label": "Secours", "icon": "🚑", "sort_order": 9, "description": "Protéger-Alerter-Secourir, numéros d'urgence, brûlures, hémorragies, DAE" },
+    { "key": "organisation-prevention", "label": "Organisation de la prévention & RPS", "short_label": "Organisation", "icon": "📋", "sort_order": 10, "description": "DUERP, principes généraux de prévention, droit de retrait, risques psychosociaux" }
+  ],
+  "questions": [
+    {
+      "theme": "epi",
+      "kind": "mcq_single",
+      "difficulty": 1,
+      "statement": "Qui paie les équipements de protection individuelle ?",
+      "options": [
+        { "label": "L'employeur, gratuitement", "correct": true },
+        { "label": "Le salarié, qui se fait rembourser ensuite" },
+        { "label": "Moitié-moitié entre l'employeur et le salarié" },
+        { "label": "Le comité social et économique sur son budget" }
+      ],
+      "explanation": "L'employeur met gratuitement à disposition les EPI appropriés et veille à leur utilisation effective. Cela couvre l'achat, mais aussi le remplacement, l'entretien et le nettoyage. Un EPI usé ou perdu doit être remplacé sans que le salarié n'ait à en supporter le coût.",
+      "source_ref": "Art. R4321-4 et R4323-95 du Code du travail"
+    },
+    {
+      "theme": "epi",
+      "kind": "mcq_single",
+      "difficulty": 2,
+      "statement": "Dans la hiérarchie des mesures de prévention, où se situe l'EPI ?",
+      "options": [
+        { "label": "En dernier recours, quand la protection collective ne suffit pas", "correct": true },
+        { "label": "En premier, c'est la mesure la plus efficace" },
+        { "label": "Au même niveau que la protection collective, c'est au choix" },
+        { "label": "L'EPI n'est pas une mesure de prévention" }
+      ],
+      "explanation": "Les principes généraux de prévention imposent de donner la priorité aux mesures de protection collective et de n'utiliser les EPI qu'en complément, lorsque le risque ne peut être suffisamment réduit autrement. Un EPI ne supprime pas le danger : il protège la personne qui le porte, et seulement si elle le porte correctement.",
+      "source_ref": "Art. L4121-2 (7°) du Code du travail"
+    },
+    {
+      "theme": "epi",
+      "kind": "mcq_single",
+      "difficulty": 2,
+      "statement": "Votre casque de chantier a reçu un choc important mais ne présente aucune fissure visible. Que faites-vous ?",
+      "options": [
+        { "label": "Vous le mettez au rebut et en demandez un neuf", "correct": true },
+        { "label": "Vous le gardez, puisqu'il n'est pas fissuré" },
+        { "label": "Vous le gardez mais en le signalant au chef d'équipe" },
+        { "label": "Vous vérifiez sa date de fabrication : s'il a moins de 2 ans, il est bon" }
+      ],
+      "explanation": "Un choc peut déformer la calotte ou fragiliser le harnais interne sans laisser de trace visible : le casque a absorbé l'énergie une fois, il ne le refera pas. Après tout choc significatif, il est mis au rebut. Les casques ont par ailleurs une durée de vie limitée indiquée par le fabricant, à compter de la mise en service et non de l'achat.",
+      "source_ref": "INRS — Casques de protection (ED 998)"
+    },
+    {
+      "theme": "epi",
+      "kind": "mcq_single",
+      "difficulty": 2,
+      "statement": "À partir de quel niveau de bruit l'employeur doit-il mettre des protections auditives à disposition des salariés ?",
+      "options": [
+        { "label": "80 dB(A) sur 8 heures", "correct": true },
+        { "label": "60 dB(A) sur 8 heures" },
+        { "label": "95 dB(A) sur 8 heures" },
+        { "label": "Dès que le bruit est jugé gênant par les salariés" }
+      ],
+      "explanation": "Deux seuils à ne pas confondre. À 80 dB(A) sur 8 heures (valeur inférieure déclenchant l'action), l'employeur met les protections à disposition et propose une information et un examen audiométrique. À 85 dB(A) (valeur supérieure), le port devient obligatoire et un programme de réduction du bruit doit être engagé. La valeur limite d'exposition est de 87 dB(A), mesurée sous la protection.",
+      "source_ref": "Art. R4431-2 et R4434-7 du Code du travail"
+    },
+    {
+      "theme": "epi",
+      "kind": "mcq_single",
+      "difficulty": 3,
+      "statement": "Un harnais antichute est un EPI de catégorie III. Quelle est la périodicité de sa vérification par une personne compétente ?",
+      "options": [
+        { "label": "Au moins tous les 12 mois", "correct": true },
+        { "label": "Tous les 5 ans" },
+        { "label": "Uniquement après une chute" },
+        { "label": "Aucune vérification n'est imposée, seul l'examen visuel avant usage compte" }
+      ],
+      "explanation": "Les EPI contre les chutes de hauteur font l'objet d'une vérification générale périodique au moins annuelle par une personne qualifiée, tracée dans un registre. Cela ne remplace pas l'examen visuel que l'utilisateur doit faire avant chaque usage (sangles, coutures, boucles, mousquetons). Après une chute, le harnais est mis au rebut, même s'il paraît intact.",
+      "source_ref": "Art. R4323-99 du Code du travail et arrêté du 19 mars 1993"
+    },
+    {
+      "theme": "epi",
+      "kind": "mcq_single",
+      "difficulty": 3,
+      "statement": "Dans quelle situation le port de gants est-il justement DÉCONSEILLÉ, voire dangereux ?",
+      "options": [
+        { "label": "À proximité de pièces en rotation (perceuse, tour, arbre de transmission)", "correct": true },
+        { "label": "Lors de la manipulation de pièces coupantes" },
+        { "label": "Lors de la manipulation de produits chimiques" },
+        { "label": "Lors de travaux par temps froid" }
+      ],
+      "explanation": "Près d'une pièce en rotation, un gant peut être happé et entraîner la main dans la machine : le gant devient le danger. C'est un bon rappel qu'un EPI mal choisi peut créer un risque nouveau. Dans ces situations, on privilégie les protecteurs de la machine, les cheveux attachés, l'absence de bijoux et de vêtements flottants.",
+      "source_ref": "INRS — Les équipements de protection individuelle (ED 6077)"
+    },
+    {
+      "theme": "epi",
+      "kind": "mcq_multi",
+      "difficulty": 2,
+      "statement": "Parmi ces éléments, lesquels doivent obligatoirement figurer sur un EPI ou sa notice ? (plusieurs réponses)",
+      "options": [
+        { "label": "Le marquage CE", "correct": true },
+        { "label": "Une notice d'utilisation en français", "correct": true },
+        { "label": "Le nom du salarié à qui il est attribué" },
+        { "label": "Le prix d'achat de l'équipement" }
+      ],
+      "explanation": "Tout EPI mis sur le marché dans l'Union européenne porte le marquage CE et est accompagné d'une notice en français précisant l'usage, les limites d'emploi, l'entretien et la durée de vie. Le nom du porteur n'est pas une obligation réglementaire, mais l'attribution personnelle est vivement recommandée pour des raisons d'hygiène et de suivi (casques, harnais, protections auditives moulées).",
+      "source_ref": "Règlement (UE) 2016/425 relatif aux EPI"
+    },
+    {
+      "theme": "epi",
+      "kind": "debate",
+      "difficulty": 2,
+      "statement": "Un collègue vous dit : « Je ne porte pas mes lunettes de sécurité, elles s'embuent et je vois moins bien qu'à l'œil nu — c'est donc plus dangereux de les mettre. » Que lui répondez-vous ?",
+      "expected_answer": "L'argument est à prendre au sérieux : un EPI inconfortable n'est pas porté, et un EPI non porté ne protège pas. Mais la réponse n'est pas de renoncer à la protection, c'est de traiter la cause. Attendu : (1) reconnaître que la gêne est un vrai problème de sécurité, pas un caprice ; (2) le signaler pour obtenir un modèle adapté — traitement antibuée, verres correcteurs de sécurité, modèle ventilé, écran facial ; (3) rappeler que l'employeur doit fournir un EPI adapté à la personne et à la tâche, et associer les utilisateurs au choix ; (4) rappeler qu'entre-temps le risque de projection ne disparaît pas, et qu'une lésion oculaire est très souvent irréversible.",
+      "explanation": "Le vrai enseignement de cette question est que le taux de port d'un EPI est d'abord un indicateur de la qualité de son choix. Les EPI choisis sans consulter les utilisateurs sont ceux qu'on retrouve dans les tiroirs. Associer les salariés à l'essai et au choix des modèles est la mesure la plus efficace pour faire monter le port réel.",
+      "source_ref": "INRS — Les équipements de protection individuelle (ED 6077)"
+    },
+
+    {
+      "theme": "risque-chimique",
+      "kind": "mcq_single",
+      "difficulty": 1,
+      "statement": "Que signifie l'abréviation « FDS » ?",
+      "options": [
+        { "label": "Fiche de Données de Sécurité", "correct": true },
+        { "label": "Fiche de Danger Substantiel" },
+        { "label": "Formulaire de Déclaration de Stockage" },
+        { "label": "Fiche de Décontamination Standard" }
+      ],
+      "explanation": "La FDS est fournie gratuitement et en français par le fournisseur pour tout produit dangereux. Elle comporte 16 rubriques normalisées : composition, dangers, premiers secours, mesures de lutte contre l'incendie, manipulation et stockage, contrôle de l'exposition et protection individuelle, etc. C'est le document de référence pour évaluer le risque et rédiger une fiche de poste.",
+      "source_ref": "Art. R4624-4 du Code du travail et règlement REACH (CE) n°1907/2006, art. 31"
+    },
+    {
+      "theme": "risque-chimique",
+      "kind": "mcq_single",
+      "difficulty": 2,
+      "statement": "Que signifie le pictogramme CLP représentant un buste humain avec une étoile blanche sur le thorax ?",
+      "options": [
+        { "label": "Danger grave pour la santé : cancérogène, mutagène, toxique pour la reproduction, sensibilisant respiratoire", "correct": true },
+        { "label": "Produit irritant pour la peau et les yeux" },
+        { "label": "Produit corrosif" },
+        { "label": "Produit dangereux pour le milieu aquatique" }
+      ],
+      "explanation": "Ce pictogramme signale les dangers les plus graves à long terme, dont les effets CMR (Cancérogène, Mutagène, Reprotoxique). Il ne faut pas le confondre avec le point d'exclamation, qui signale des dangers moindres (irritation, toxicité aiguë de catégorie 4). Les produits CMR relèvent de règles renforcées : substitution obligatoire dès qu'elle est techniquement possible, mesures de captage, suivi individuel renforcé.",
+      "source_ref": "Règlement CLP (CE) n°1272/2008 — annexe V"
+    },
+    {
+      "theme": "risque-chimique",
+      "kind": "mcq_single",
+      "difficulty": 1,
+      "statement": "Vous devez utiliser un solvant sur votre poste. Le bidon d'origine est trop lourd. Que faites-vous ?",
+      "options": [
+        { "label": "Vous transvasez dans un récipient prévu à cet effet et vous l'étiquetez immédiatement", "correct": true },
+        { "label": "Vous transvasez dans une bouteille d'eau minérale vide, c'est plus pratique" },
+        { "label": "Vous transvasez sans étiqueter, vous êtes le seul à utiliser ce poste" },
+        { "label": "Vous utilisez le bidon d'origine quel que soit son poids" }
+      ],
+      "explanation": "Tout récipient de transvasement doit être adapté au produit (compatibilité chimique) et porter un étiquetage reprenant l'identité du produit et ses pictogrammes de danger. L'usage de contenants alimentaires est formellement à exclure : c'est une cause récurrente d'intoxications graves, en particulier chez les enfants lorsque le contenant sort de l'entreprise.",
+      "source_ref": "Art. R4412-6 du Code du travail — INRS ED 6041"
+    },
+    {
+      "theme": "risque-chimique",
+      "kind": "mcq_single",
+      "difficulty": 2,
+      "statement": "Vous préparez une dilution d'acide. Dans quel sens procédez-vous ?",
+      "options": [
+        { "label": "On verse l'acide dans l'eau, lentement", "correct": true },
+        { "label": "On verse l'eau dans l'acide, lentement" },
+        { "label": "Peu importe, seule la quantité finale compte" },
+        { "label": "On mélange les deux simultanément dans un troisième récipient" }
+      ],
+      "explanation": "La dilution d'un acide concentré est fortement exothermique. En versant l'acide dans un grand volume d'eau, la chaleur est diluée et absorbée. Dans l'autre sens, l'eau ajoutée à l'acide provoque un échauffement localisé pouvant aller jusqu'à l'ébullition et la projection d'acide au visage. Le moyen mnémotechnique classique : « l'acide dans l'eau, jamais l'inverse ».",
+      "source_ref": "INRS — Stockage et transfert des produits chimiques dangereux (ED 753)"
+    },
+    {
+      "theme": "risque-chimique",
+      "kind": "mcq_single",
+      "difficulty": 2,
+      "statement": "Quelle mesure de prévention est prioritaire face à un risque chimique ?",
+      "options": [
+        { "label": "Supprimer ou remplacer le produit par un produit moins dangereux", "correct": true },
+        { "label": "Fournir des gants et un masque adaptés" },
+        { "label": "Afficher les consignes de sécurité près du poste" },
+        { "label": "Former les salariés à la lecture des étiquettes" }
+      ],
+      "explanation": "La hiérarchie est toujours la même : supprimer, puis substituer, puis agir sur le procédé (travail en vase clos), puis capter à la source (aspiration localisée), puis ventiler, et seulement ensuite protéger la personne. La substitution est même une obligation explicite pour les agents CMR dès qu'elle est techniquement possible. Les EPI et l'affichage sont utiles, mais ils arrivent en dernier.",
+      "source_ref": "Art. R4412-15 et R4412-66 du Code du travail"
+    },
+    {
+      "theme": "risque-chimique",
+      "kind": "mcq_single",
+      "difficulty": 3,
+      "statement": "Que désigne une « VLEP » ?",
+      "options": [
+        { "label": "La concentration maximale d'un polluant dans l'air d'un lieu de travail", "correct": true },
+        { "label": "La quantité maximale d'un produit stockable dans un local" },
+        { "label": "La durée maximale d'exposition d'un salarié à un produit" },
+        { "label": "Le volume minimal de ventilation d'un atelier" }
+      ],
+      "explanation": "La Valeur Limite d'Exposition Professionnelle est la concentration dans l'air que l'on ne doit pas dépasser, exprimée soit sur 8 heures (VLEP-8h), soit sur 15 minutes (valeur limite court terme). Certaines VLEP sont réglementaires et contraignantes, d'autres sont indicatives. Attention à l'interprétation : rester sous la VLEP ne garantit pas l'absence d'effet, en particulier pour les agents CMR pour lesquels l'objectif reste le niveau le plus bas possible.",
+      "source_ref": "Art. R4412-149 et R4412-150 du Code du travail"
+    },
+    {
+      "theme": "risque-chimique",
+      "kind": "mcq_multi",
+      "difficulty": 2,
+      "statement": "Quelles règles s'appliquent au stockage des produits chimiques ? (plusieurs réponses)",
+      "options": [
+        { "label": "Séparer les produits chimiquement incompatibles", "correct": true },
+        { "label": "Prévoir une rétention sous les contenants de liquides", "correct": true },
+        { "label": "Ventiler le local de stockage", "correct": true },
+        { "label": "Stocker les bidons lourds en hauteur pour libérer le sol" }
+      ],
+      "explanation": "Un stockage sûr repose sur la séparation des incompatibilités (acides / bases, comburants / combustibles, produits toxiques à part), une rétention capable de contenir une fuite, une ventilation adaptée et un accès contrôlé. Les charges lourdes se stockent au contraire à hauteur de hanche : bas pour éviter la chute d'objet et la manutention au-dessus des épaules, pas au sol pour éviter la flexion du dos.",
+      "source_ref": "INRS — Stockage des produits chimiques au laboratoire (ED 6015) et ED 753"
+    },
+    {
+      "theme": "risque-chimique",
+      "kind": "debate",
+      "difficulty": 3,
+      "statement": "Un produit porte la mention « Peut provoquer le cancer » et il n'existe pas de substitut sur le marché pour votre application. Quelles mesures mettez-vous en place ?",
+      "expected_answer": "Attendu, dans cet ordre : (1) documenter et tracer la recherche de substitution, qui reste une obligation continue et doit être réexaminée régulièrement — l'absence de substitut aujourd'hui n'est pas définitive ; (2) réduire l'exposition au niveau le plus bas techniquement possible : travail en système clos, sinon captage à la source au plus près de l'émission, ventilation générale en complément ; (3) réduire le nombre de personnes exposées et les durées d'exposition, délimiter et signaler la zone ; (4) contrôler l'exposition par des mesures d'atmosphère et vérifier périodiquement les installations de captage ; (5) fournir les EPI adaptés, en dernière barrière ; (6) établir la notice de poste et former ; (7) tenir la liste des travailleurs exposés et assurer le suivi individuel renforcé avec le service de prévention et de santé au travail.",
+      "explanation": "Cette question fait travailler la logique complète de prévention plutôt qu'un réflexe « masque + gants ». Le point le plus souvent oublié en séance est le suivi individuel renforcé et la traçabilité de l'exposition, qui conditionnent le suivi médical du salarié parfois des décennies plus tard.",
+      "source_ref": "Art. R4412-59 à R4412-93 du Code du travail (agents CMR)"
+    },
+
+    {
+      "theme": "incendie",
+      "kind": "mcq_single",
+      "difficulty": 1,
+      "statement": "Quels sont les trois éléments du « triangle du feu » ?",
+      "options": [
+        { "label": "Un combustible, un comburant et une énergie d'activation", "correct": true },
+        { "label": "De la chaleur, de la fumée et des flammes" },
+        { "label": "Un carburant, de l'oxygène et de l'eau" },
+        { "label": "Une étincelle, un gaz et une pression" }
+      ],
+      "explanation": "Il faut réunir simultanément un combustible (ce qui brûle), un comburant (le plus souvent l'oxygène de l'air) et une énergie d'activation (flamme, étincelle, surface chaude, friction). Toute la prévention et l'extinction consistent à supprimer un des trois côtés : c'est pourquoi étouffer un feu (supprimer le comburant) ou refroidir (supprimer l'énergie) fonctionne aussi bien que retirer le combustible.",
+      "source_ref": "INRS — Incendie sur le lieu de travail (ED 990)"
+    },
+    {
+      "theme": "incendie",
+      "kind": "mcq_single",
+      "difficulty": 2,
+      "statement": "Un feu se déclare dans une armoire électrique sous tension. Quel extincteur utilisez-vous ?",
+      "options": [
+        { "label": "Un extincteur à CO₂ (dioxyde de carbone)", "correct": true },
+        { "label": "Un extincteur à eau pulvérisée sans additif" },
+        { "label": "Un seau d'eau, c'est le plus rapide" },
+        { "label": "Un extincteur à mousse" }
+      ],
+      "explanation": "Le CO₂ est un gaz inerte qui n'est pas conducteur et ne laisse aucun résidu : il est adapté aux feux d'origine électrique et préserve le matériel. Attention à deux limites : il refroidit très peu, donc le feu peut reprendre si la source d'énergie n'est pas coupée, et il consomme l'oxygène du local — à utiliser avec prudence dans un espace confiné. Le premier réflexe reste de couper l'alimentation quand c'est possible.",
+      "source_ref": "INRS — Les extincteurs d'incendie portatifs (ED 6259)"
+    },
+    {
+      "theme": "incendie",
+      "kind": "mcq_single",
+      "difficulty": 2,
+      "statement": "Une friteuse s'enflamme dans le local de restauration. Quel est le bon geste ?",
+      "options": [
+        { "label": "Couper l'énergie et étouffer le feu avec un couvercle ou une couverture anti-feu", "correct": true },
+        { "label": "Jeter de l'eau pour refroidir l'huile" },
+        { "label": "Sortir la friteuse à l'extérieur du bâtiment" },
+        { "label": "Utiliser un extincteur à eau pulvérisée" }
+      ],
+      "explanation": "L'eau versée sur de l'huile en feu se vaporise instantanément et projette l'huile enflammée en une boule de feu : c'est l'un des accidents domestiques et professionnels les plus graves. Il s'agit d'un feu de classe F, qui s'éteint par étouffement (couvercle, couverture anti-feu) ou avec un extincteur spécifiquement classé F. Déplacer un récipient en feu est également à exclure.",
+      "source_ref": "Norme NF EN 2 — classes de feux ; INRS ED 6259"
+    },
+    {
+      "theme": "incendie",
+      "kind": "mcq_single",
+      "difficulty": 2,
+      "statement": "À quelle fréquence les exercices d'évacuation doivent-ils avoir lieu dans un établissement ?",
+      "options": [
+        { "label": "Au moins tous les 6 mois", "correct": true },
+        { "label": "Au moins une fois par an" },
+        { "label": "Au moins tous les 2 ans" },
+        { "label": "Uniquement à l'arrivée de nouveaux salariés" }
+      ],
+      "explanation": "La consigne de sécurité incendie prévoit des essais et visites périodiques du matériel et des exercices d'évacuation au moins tous les six mois, avec une date consignée sur un registre. L'objectif n'est pas de cocher une case : c'est de vérifier que les issues sont réellement praticables, que le point de rassemblement fonctionne et que le comptage des personnes est possible.",
+      "source_ref": "Art. R4227-39 du Code du travail"
+    },
+    {
+      "theme": "incendie",
+      "kind": "mcq_single",
+      "difficulty": 1,
+      "statement": "L'alarme d'évacuation retentit. Vous êtes en pleine tâche urgente. Que faites-vous ?",
+      "options": [
+        { "label": "Vous évacuez immédiatement par l'issue la plus proche et rejoignez le point de rassemblement", "correct": true },
+        { "label": "Vous terminez votre tâche puis vous évacuez" },
+        { "label": "Vous allez vérifier s'il y a vraiment un feu avant d'évacuer" },
+        { "label": "Vous attendez qu'un responsable vienne confirmer l'ordre" }
+      ],
+      "explanation": "L'évacuation est immédiate et sans condition : dans un incendie, la fumée envahit les circulations en quelques dizaines de secondes et c'est elle qui tue, avant les flammes. On laisse ses affaires, on ferme les portes derrière soi sans les verrouiller, on n'utilise pas l'ascenseur, on rejoint le point de rassemblement et on s'y fait recenser — c'est ce comptage qui évite d'envoyer les secours chercher quelqu'un déjà sorti.",
+      "source_ref": "Art. R4227-28 et suivants du Code du travail"
+    },
+    {
+      "theme": "incendie",
+      "kind": "mcq_single",
+      "difficulty": 3,
+      "statement": "Dans un feu de bâtiment, quelle est la principale cause de décès ?",
+      "options": [
+        { "label": "Les fumées et les gaz toxiques inhalés", "correct": true },
+        { "label": "Les brûlures directes par les flammes" },
+        { "label": "L'effondrement des structures" },
+        { "label": "La panique et les bousculades" }
+      ],
+      "explanation": "Les fumées sont chaudes, opaques et toxiques : le monoxyde de carbone et l'acide cyanhydrique provoquent une perte de connaissance en quelques inspirations. Elles désorientent aussi complètement, même dans un local que l'on connaît par cœur. C'est pour cela que l'on évacue au plus bas si l'on doit traverser une fumée, que l'on ferme les portes pour la cantonner, et que le désenfumage est un équipement de sécurité à part entière.",
+      "source_ref": "INRS — Incendie et lieu de travail (ED 990)"
+    },
+    {
+      "theme": "incendie",
+      "kind": "mcq_multi",
+      "difficulty": 2,
+      "statement": "Quelles situations constituent une infraction aux règles de sécurité incendie ? (plusieurs réponses)",
+      "options": [
+        { "label": "Une issue de secours obstruée par des palettes", "correct": true },
+        { "label": "Une porte coupe-feu maintenue ouverte par une cale", "correct": true },
+        { "label": "Un extincteur inaccessible derrière une armoire", "correct": true },
+        { "label": "Un plan d'évacuation affiché à chaque étage" }
+      ],
+      "explanation": "Les trois premières sont des classiques du terrain, et les trois annulent des dispositifs qui ont coûté cher à installer. Une porte coupe-feu calée ouverte ne coupe plus rien : elle laisse la fumée envahir les circulations. Les dégagements doivent rester libres en permanence et les moyens d'extinction accessibles sans obstacle. Le plan d'évacuation affiché est au contraire une obligation.",
+      "source_ref": "Art. R4227-4 à R4227-14 et R4227-36 du Code du travail"
+    },
+    {
+      "theme": "incendie",
+      "kind": "debate",
+      "difficulty": 2,
+      "statement": "Vous découvrez un début d'incendie dans un local de stockage. Décrivez votre conduite à tenir, dans l'ordre.",
+      "expected_answer": "Attendu : (1) donner l'alarme — déclencheur manuel ou alerte des personnes présentes — avant toute tentative d'extinction ; (2) faire évacuer les personnes menacées ; (3) alerter les secours (18 ou 112) en donnant lieu précis, nature du sinistre, présence de victimes et de produits dangereux ; (4) n'attaquer le feu avec un extincteur que si le feu est naissant, qu'on est formé, qu'on dispose de l'extincteur adapté, qu'on a une issue de repli dans le dos et qu'on n'est pas seul ; (5) couper les énergies si c'est accessible sans risque ; (6) fermer les portes en sortant pour cantonner la fumée ; (7) rejoindre le point de rassemblement et rendre compte. Point clé attendu : on n'engage jamais une attaque au détriment de l'alarme et de l'évacuation, et on renonce dès que la fumée gêne la respiration ou la vue.",
+      "explanation": "L'erreur la plus fréquente en séance est d'attaquer le feu en premier et d'alerter ensuite. Un extincteur donne quelques dizaines de secondes d'action utile : si l'alarme n'a pas été donnée pendant ce temps, on a perdu les minutes qui comptent. L'autre point à faire émerger : deux personnes valent mieux qu'une, dont une qui surveille la sortie.",
+      "source_ref": "INRS — Consignes de sécurité incendie (ED 929)"
+    },
+
+    {
+      "theme": "gestes-postures",
+      "kind": "mcq_single",
+      "difficulty": 1,
+      "statement": "Que désigne l'abréviation « TMS » ?",
+      "options": [
+        { "label": "Troubles musculo-squelettiques", "correct": true },
+        { "label": "Traumatismes musculaires sévères" },
+        { "label": "Techniques de manutention sécurisée" },
+        { "label": "Tableau de maladies suivies" }
+      ],
+      "explanation": "Les TMS regroupent les atteintes des muscles, tendons, nerfs et articulations : lombalgies, syndrome du canal carpien, tendinopathie de l'épaule, épicondylite. Ils représentent la très grande majorité des maladies professionnelles reconnues en France. Leur particularité est de s'installer progressivement : quand la douleur apparaît, l'atteinte est souvent déjà ancienne.",
+      "source_ref": "INRS — Troubles musculo-squelettiques (dossier TMS) ; tableaux 57, 69, 79, 97, 98 des MP"
+    },
+    {
+      "theme": "gestes-postures",
+      "kind": "mcq_single",
+      "difficulty": 2,
+      "statement": "Vous devez soulever une charge lourde posée au sol. Quel est le bon geste ?",
+      "options": [
+        { "label": "Fléchir les genoux, garder le dos droit et la charge près du corps", "correct": true },
+        { "label": "Garder les jambes tendues et se pencher en arrondissant le dos" },
+        { "label": "Fléchir les genoux et tenir la charge à bout de bras" },
+        { "label": "Soulever en pivotant le buste pour gagner du temps" }
+      ],
+      "explanation": "Le principe est de faire travailler les jambes et non le dos, et de réduire le bras de levier en gardant la charge près du corps : à 60 cm du tronc, une charge de 10 kg génère une contrainte lombaire plusieurs fois supérieure à la même charge collée au corps. On oriente les pieds vers la destination avant de soulever, car la torsion du tronc sous charge est le geste le plus délétère pour les disques intervertébraux.",
+      "source_ref": "INRS — Méthode de prévention des TMS ; norme NF X35-109"
+    },
+    {
+      "theme": "gestes-postures",
+      "kind": "mcq_single",
+      "difficulty": 3,
+      "statement": "Le Code du travail fixe-t-il une limite au port manuel de charges ?",
+      "options": [
+        { "label": "Oui : 55 kg, et au-delà seulement avec avis d'aptitude du médecin du travail, sans dépasser 105 kg", "correct": true },
+        { "label": "Non, aucune limite n'est fixée réglementairement" },
+        { "label": "Oui : 25 kg pour tous les salariés, sans exception" },
+        { "label": "Oui : 15 kg au-delà de 50 ans" }
+      ],
+      "explanation": "Le plafond réglementaire est de 55 kg, franchissable seulement après avis d'aptitude du médecin du travail et sans jamais dépasser 105 kg. Attention au piège : ce plafond est une limite absolue, pas un objectif. Les valeurs de référence en ergonomie sont bien plus basses — l'ordre de 25 kg comme maximum acceptable pour un homme et 15 kg pour une femme dans des conditions favorables — et l'obligation première reste d'éviter le recours à la manutention manuelle par des aides mécaniques.",
+      "source_ref": "Art. R4541-9 du Code du travail ; norme NF X35-109"
+    },
+    {
+      "theme": "gestes-postures",
+      "kind": "mcq_single",
+      "difficulty": 2,
+      "statement": "Quelle est la première mesure à rechercher face à un risque lié à la manutention manuelle ?",
+      "options": [
+        { "label": "Éviter la manutention manuelle, par exemple avec une aide mécanique", "correct": true },
+        { "label": "Former les salariés aux bons gestes et postures" },
+        { "label": "Fournir une ceinture de maintien lombaire" },
+        { "label": "Limiter le temps de travail sur le poste concerné" }
+      ],
+      "explanation": "L'employeur doit d'abord éviter le recours à la manutention manuelle, par l'organisation ou par des équipements mécaniques : table élévatrice, transpalette, manipulateur, convoyeur, diable. La formation aux gestes est utile mais ne compense pas un poste mal conçu — c'est même une erreur classique de miser dessus seule, car elle déplace la responsabilité sur le salarié sans réduire la contrainte. La ceinture lombaire n'a pas démontré d'efficacité préventive.",
+      "source_ref": "Art. R4541-2 et R4541-3 du Code du travail"
+    },
+    {
+      "theme": "gestes-postures",
+      "kind": "mcq_single",
+      "difficulty": 2,
+      "statement": "À quelle hauteur idéale se situe une charge que l'on doit manipuler fréquemment ?",
+      "options": [
+        { "label": "Entre les hanches et les épaules", "correct": true },
+        { "label": "Au niveau du sol, pour éviter les chutes d'objets" },
+        { "label": "Au-dessus des épaules, pour dégager l'espace de travail" },
+        { "label": "La hauteur n'a pas d'importance si le poids est faible" }
+      ],
+      "explanation": "La zone de confort se situe entre les hanches et les épaules, bras près du corps : c'est là que l'effort et les contraintes articulaires sont minimaux. Sous les genoux, on impose une flexion du tronc ; au-dessus des épaules, on sollicite fortement la coiffe des rotateurs et l'on perd le contrôle de la charge. Réorganiser le stockage selon la fréquence de prise — le plus manipulé à mi-hauteur — est souvent la mesure la moins chère et la plus efficace.",
+      "source_ref": "INRS — Aide-mémoire ED 6161 ; norme NF X35-109"
+    },
+    {
+      "theme": "gestes-postures",
+      "kind": "mcq_single",
+      "difficulty": 3,
+      "statement": "Parmi ces facteurs, lequel n'est PAS un facteur de risque reconnu de TMS ?",
+      "options": [
+        { "label": "Le fait de travailler debout plutôt qu'assis", "correct": true },
+        { "label": "La répétitivité des gestes" },
+        { "label": "Les vibrations transmises aux membres supérieurs" },
+        { "label": "Le manque de marge de manœuvre dans le travail" }
+      ],
+      "explanation": "Attention : c'est la première proposition qui n'est pas un facteur de risque en soi. Ce qui compte n'est pas la position debout ou assise, mais son maintien prolongé sans possibilité de varier : l'alternance est protectrice, la fixité est délétère. Les trois autres sont des facteurs établis, et le dernier surprend souvent en séance — les facteurs organisationnels et psychosociaux (contrainte de temps, faible autonomie, manque de reconnaissance) sont bien documentés comme aggravants des TMS.",
+      "source_ref": "INRS — Facteurs de risque de TMS (dossier TMS)"
+    },
+    {
+      "theme": "gestes-postures",
+      "kind": "mcq_multi",
+      "difficulty": 2,
+      "statement": "Vous devez déplacer une charge encombrante. Quels réflexes adoptez-vous avant de la soulever ? (plusieurs réponses)",
+      "options": [
+        { "label": "Tester le poids et vérifier la prise", "correct": true },
+        { "label": "Repérer le trajet et vérifier qu'il est dégagé", "correct": true },
+        { "label": "Demander de l'aide si la charge est trop lourde ou encombrante", "correct": true },
+        { "label": "Prendre son élan pour utiliser la dynamique du mouvement" }
+      ],
+      "explanation": "La préparation compte autant que le geste : tester le poids, assurer la prise, dégager le trajet, prévoir où déposer, et savoir renoncer pour appeler un collègue ou un moyen mécanique. Le mouvement brusque ou « à l'élan » est au contraire un facteur majeur de lombalgie aiguë : la charge doit être levée progressivement, sans à-coup, sans torsion, en soufflant.",
+      "source_ref": "INRS — ED 6161 Manutention manuelle"
+    },
+    {
+      "theme": "gestes-postures",
+      "kind": "debate",
+      "difficulty": 2,
+      "statement": "Un salarié se plaint depuis des semaines de douleurs à l'épaule sur un poste répétitif, mais ne veut pas le déclarer par peur d'être déclaré inapte. Comment agissez-vous ?",
+      "expected_answer": "Attendu : (1) prendre la plainte au sérieux — une douleur persistante sur un poste répétitif est un signal d'alerte, et plus on intervient tôt plus la lésion est réversible ; (2) l'orienter vers le service de prévention et de santé au travail, en rappelant que le médecin du travail est soumis au secret médical et que son rôle est de maintenir dans l'emploi, non d'exclure ; (3) expliquer que la visite peut se faire à la demande du salarié, sans passer par l'employeur ; (4) traiter le poste sans attendre : analyser l'activité réelle, réduire la répétitivité et les efforts, revoir les hauteurs et les prises, introduire des rotations et des pauses ; (5) rechercher si d'autres salariés du même poste présentent des signes — une plainte isolée révèle souvent un problème collectif ; (6) mettre à jour le DUERP.",
+      "explanation": "La crainte de l'inaptitude est un frein très réel au signalement précoce, et c'est ce qui transforme une gêne réversible en maladie professionnelle indemnisable. Le message à faire passer est double : le médecin du travail est un allié du maintien dans l'emploi, et un signalement individuel doit déclencher une action sur le poste, pas seulement un suivi de la personne.",
+      "source_ref": "Art. R4624-34 du Code du travail (visite à la demande du salarié)"
+    },
+
+    {
+      "theme": "risque-electrique",
+      "kind": "mcq_single",
+      "difficulty": 2,
+      "statement": "Qui délivre l'habilitation électrique ?",
+      "options": [
+        { "label": "L'employeur, après s'être assuré que le salarié a été formé", "correct": true },
+        { "label": "L'organisme de formation, à la fin du stage" },
+        { "label": "Le service de prévention et de santé au travail" },
+        { "label": "Le fournisseur d'électricité" }
+      ],
+      "explanation": "C'est une confusion très fréquente : l'organisme de formation délivre une attestation de compétence, mais l'habilitation est un acte de l'employeur, écrit, nominatif, précisant le domaine de tension et la nature des opérations autorisées. L'employeur reste responsable de sa pertinence : il doit vérifier l'aptitude médicale, la connaissance des installations et renouveler la formation périodiquement, tous les trois ans en pratique courante.",
+      "source_ref": "Art. R4544-9 et R4544-10 du Code du travail ; norme NF C18-510"
+    },
+    {
+      "theme": "risque-electrique",
+      "kind": "mcq_single",
+      "difficulty": 2,
+      "statement": "Quelles sont les étapes d'une consignation électrique, dans l'ordre ?",
+      "options": [
+        { "label": "Séparation, condamnation, identification, vérification d'absence de tension", "correct": true },
+        { "label": "Identification, séparation, vérification d'absence de tension, condamnation" },
+        { "label": "Vérification d'absence de tension, séparation, condamnation, identification" },
+        { "label": "Condamnation, séparation, identification, mise à la terre" }
+      ],
+      "explanation": "L'ordre importe : on sépare l'ouvrage de toute source de tension, on condamne l'organe de séparation en position d'ouverture (cadenas et pancarte, pour qu'un tiers ne puisse pas réenclencher), on identifie l'ouvrage pour être certain de travailler sur le bon départ, puis on vérifie l'absence de tension au plus près du lieu de travail, suivie si nécessaire d'une mise à la terre et en court-circuit. La VAT se fait juste avant l'intervention, et l'appareil de mesure est testé avant et après.",
+      "source_ref": "Norme NF C18-510 ; art. R4544-5 du Code du travail"
+    },
+    {
+      "theme": "risque-electrique",
+      "kind": "mcq_single",
+      "difficulty": 2,
+      "statement": "Un collègue est en contact avec un conducteur sous tension et ne peut plus se dégager. Quel est votre premier geste ?",
+      "options": [
+        { "label": "Couper l'alimentation électrique", "correct": true },
+        { "label": "Le tirer par le bras pour l'éloigner du conducteur" },
+        { "label": "Commencer immédiatement un massage cardiaque" },
+        { "label": "Lui jeter de l'eau pour rompre le contact" }
+      ],
+      "explanation": "Tant que le courant passe, toucher la victime fait de vous une seconde victime : on coupe d'abord, au disjoncteur ou à l'interrupteur le plus proche. Si la coupure est impossible, on écarte la victime ou le conducteur avec un objet isolant et sec, en se plaçant soi-même sur un support isolant. Ce n'est qu'après la mise en sécurité que l'on alerte et que l'on porte secours : l'électrisation provoque fréquemment un arrêt cardiaque, le défibrillateur est donc à demander d'emblée.",
+      "source_ref": "INRS — Risque électrique, conduite à tenir (ED 6344)"
+    },
+    {
+      "theme": "risque-electrique",
+      "kind": "mcq_single",
+      "difficulty": 3,
+      "statement": "En courant alternatif, à partir de quelle tension de contact considère-t-on qu'il y a un danger pour l'organisme en milieu sec ?",
+      "options": [
+        { "label": "50 volts", "correct": true },
+        { "label": "12 volts" },
+        { "label": "230 volts" },
+        { "label": "400 volts" }
+      ],
+      "explanation": "La tension limite conventionnelle de sécurité est de 50 V en alternatif en milieu sec, et elle chute à 25 V en milieu humide, voire 12 V en milieu immergé : c'est l'humidité qui fait s'effondrer la résistance du corps. Retenir aussi que c'est l'intensité qui tue, pas la tension : à partir d'environ 30 mA traversant le thorax, la fibrillation ventriculaire devient possible — d'où les dispositifs différentiels 30 mA sur les circuits de prises.",
+      "source_ref": "Norme NF C15-100 ; INRS ED 6344"
+    },
+    {
+      "theme": "risque-electrique",
+      "kind": "mcq_single",
+      "difficulty": 1,
+      "statement": "Quelle est la différence entre électrisation et électrocution ?",
+      "options": [
+        { "label": "L'électrocution est une électrisation qui entraîne la mort", "correct": true },
+        { "label": "L'électrocution concerne la haute tension, l'électrisation la basse tension" },
+        { "label": "L'électrisation est un contact direct, l'électrocution un contact indirect" },
+        { "label": "Les deux termes sont synonymes" }
+      ],
+      "explanation": "L'électrisation désigne le passage du courant dans le corps quelles qu'en soient les conséquences ; l'électrocution en est l'issue mortelle. La distinction a un intérêt pratique en séance : les électrisations sont bien plus nombreuses que les électrocutions et sont souvent banalisées (« j'ai juste pris une châtaigne »), alors qu'elles justifient toujours un examen médical — des troubles du rythme cardiaque peuvent apparaître à retardement, et des brûlures internes ne se voient pas.",
+      "source_ref": "INRS — Dossier risque électrique"
+    },
+    {
+      "theme": "risque-electrique",
+      "kind": "mcq_single",
+      "difficulty": 2,
+      "statement": "À quelle fréquence les installations électriques d'un lieu de travail doivent-elles être vérifiées ?",
+      "options": [
+        { "label": "Tous les ans", "correct": true },
+        { "label": "Tous les 5 ans" },
+        { "label": "Tous les 10 ans" },
+        { "label": "Uniquement à la mise en service" }
+      ],
+      "explanation": "La vérification périodique est annuelle, réalisée par une personne ou un organisme compétent, et consignée dans un registre avec les suites données aux observations. C'est ce dernier point qui pose problème en pratique : un rapport de vérification dont les remarques ne sont pas levées est un élément à charge, pas une preuve de conformité.",
+      "source_ref": "Art. R4226-16 du Code du travail ; arrêté du 26 décembre 2011"
+    },
+    {
+      "theme": "risque-electrique",
+      "kind": "mcq_multi",
+      "difficulty": 2,
+      "statement": "Quels signes doivent vous alerter sur une installation ou un appareil électrique ? (plusieurs réponses)",
+      "options": [
+        { "label": "Une odeur de brûlé ou de plastique chaud", "correct": true },
+        { "label": "Un échauffement anormal d'une prise ou d'un câble", "correct": true },
+        { "label": "Un câble dont la gaine est entaillée", "correct": true },
+        { "label": "Un disjoncteur différentiel qui se déclenche régulièrement", "correct": true }
+      ],
+      "explanation": "Les quatre sont des signaux d'alerte à faire remonter sans délai, et le quatrième est le plus souvent négligé : un différentiel qui déclenche fait exactement son travail, il signale un défaut d'isolement. Le réflexe consistant à le réarmer en boucle — ou pire, à le neutraliser — supprime la protection des personnes. Un appareil suspect est mis hors service et étiqueté, pas laissé sur le poste.",
+      "source_ref": "INRS — ED 6344 Risque électrique"
+    },
+    {
+      "theme": "risque-electrique",
+      "kind": "debate",
+      "difficulty": 3,
+      "statement": "Vous devez remplacer un néon dans un atelier. Faut-il une habilitation électrique, et laquelle ?",
+      "expected_answer": "Attendu : le remplacement d'une lampe est une opération d'ordre non électrique réalisée hors tension sur un matériel dont les parties actives sont protégées ; elle relève typiquement d'une habilitation B0 (exécutant non électricien) lorsqu'elle a lieu dans un local d'accès réservé aux électriciens ou à proximité de pièces nues sous tension. Le raisonnement attendu est surtout : (1) on ne raisonne pas par la simplicité apparente du geste mais par l'environnement et la présence de pièces nues sous tension ; (2) on coupe et on condamne le circuit d'éclairage avant l'intervention, l'interrupteur seul ne garantit pas l'absence de tension au niveau de la douille ; (3) si l'opération implique d'ouvrir un appareillage, de déconnecter ou de raccorder, on change de catégorie et il faut une habilitation d'ordre électrique (BS ou BR selon le cas) ; (4) s'ajoutent le risque de chute de hauteur — donc le moyen d'accès adapté — et la manipulation d'un tube contenant du mercure.",
+      "explanation": "Cette question a l'intérêt de montrer que le geste banal cache deux risques et non un seul : l'électrique et la chute de hauteur, cette dernière étant statistiquement la plus fréquente sur ce type d'intervention. Elle permet aussi de faire dire que « couper l'interrupteur » n'est pas une consignation.",
+      "source_ref": "Norme NF C18-510 ; art. R4544-9 du Code du travail"
+    },
+
+    {
+      "theme": "travail-hauteur",
+      "kind": "mcq_single",
+      "difficulty": 2,
+      "statement": "À partir de quelle hauteur la réglementation française impose-t-elle des mesures de protection contre les chutes ?",
+      "options": [
+        { "label": "Il n'existe pas de hauteur minimale : le risque s'apprécie dès qu'il y a une différence de niveau", "correct": true },
+        { "label": "À partir de 3 mètres" },
+        { "label": "À partir de 2 mètres" },
+        { "label": "À partir de 1,50 mètre" }
+      ],
+      "explanation": "Contrairement à une idée très répandue, le Code du travail ne fixe aucun seuil déclenchant. L'employeur doit évaluer le risque de chute quelle que soit la hauteur et prendre les mesures adaptées : des chutes mortelles sont régulièrement constatées de moins de trois mètres, et une chute d'un mètre dans un escalier ou sur une arête peut être grave. Le seuil de 3 mètres que l'on entend souvent provient d'anciens textes du bâtiment, abrogés.",
+      "source_ref": "Art. R4323-58 et suivants du Code du travail ; INRS ED 130"
+    },
+    {
+      "theme": "travail-hauteur",
+      "kind": "mcq_single",
+      "difficulty": 1,
+      "statement": "Entre un garde-corps et un harnais antichute, que faut-il privilégier ?",
+      "options": [
+        { "label": "Le garde-corps, car c'est une protection collective", "correct": true },
+        { "label": "Le harnais, car il suit la personne partout" },
+        { "label": "Les deux se valent, c'est au salarié de choisir" },
+        { "label": "Le harnais, car il est moins coûteux à installer" }
+      ],
+      "explanation": "Le garde-corps protège tout le monde en permanence, sans action ni compétence de la part des personnes présentes, et il empêche la chute au lieu de l'arrêter. Le harnais, lui, ne fonctionne que s'il est correctement ajusté, relié à un point d'ancrage résistant, avec un tirant d'air suffisant, et il laisse la personne suspendue — donc à secourir en urgence. Le harnais n'intervient que lorsque la protection collective est techniquement impossible.",
+      "source_ref": "Art. R4323-58 et R4323-61 du Code du travail"
+    },
+    {
+      "theme": "travail-hauteur",
+      "kind": "mcq_single",
+      "difficulty": 3,
+      "statement": "Quelles sont les caractéristiques réglementaires d'un garde-corps ?",
+      "options": [
+        { "label": "Lisse haute entre 1 m et 1,10 m, lisse intermédiaire vers 45 cm, plinthe de 10 à 15 cm", "correct": true },
+        { "label": "Une seule lisse à 90 cm suffit" },
+        { "label": "Lisse haute à 80 cm et plinthe de 5 cm" },
+        { "label": "Aucune dimension n'est imposée, seule la résistance compte" }
+      ],
+      "explanation": "Trois éléments, trois fonctions : la lisse haute entre 1 m et 1,10 m retient le corps, la lisse intermédiaire (ou un remplissage) empêche le passage à travers, et la plinthe de 10 à 15 cm empêche le pied de glisser sous la lisse et surtout empêche les objets de tomber sur les personnes en dessous. C'est la plinthe que l'on oublie le plus souvent, alors que la chute d'objet est un risque majeur en co-activité.",
+      "source_ref": "Art. R4323-59 du Code du travail"
+    },
+    {
+      "theme": "travail-hauteur",
+      "kind": "mcq_single",
+      "difficulty": 2,
+      "statement": "Peut-on utiliser une échelle comme poste de travail ?",
+      "options": [
+        { "label": "Non, sauf impossibilité technique d'utiliser un équipement plus sûr, et pour des travaux de courte durée à faible risque", "correct": true },
+        { "label": "Oui, sans restriction, si l'échelle est en bon état" },
+        { "label": "Oui, à condition d'être deux, dont un qui tient l'échelle" },
+        { "label": "Non, l'échelle est totalement interdite en entreprise" }
+      ],
+      "explanation": "L'échelle est un moyen d'accès, pas un poste de travail. Son usage comme poste est possible seulement par exception : impossibilité technique de recourir à un équipement assurant la protection collective, et travaux de courte durée présentant un risque faible. Dans tous les cas, elle doit reposer sur un support stable, être fixée ou calée, et l'utilisateur garde toujours une main disponible et trois points d'appui — ce qui exclut de porter une charge ou d'utiliser un outil à deux mains.",
+      "source_ref": "Art. R4323-63 et R4323-81 à R4323-88 du Code du travail"
+    },
+    {
+      "theme": "travail-hauteur",
+      "kind": "mcq_single",
+      "difficulty": 3,
+      "statement": "Que désigne le « tirant d'air » dans un système d'arrêt de chute ?",
+      "options": [
+        { "label": "La hauteur libre nécessaire sous l'utilisateur pour que le système arrête la chute avant l'impact", "correct": true },
+        { "label": "La ventilation minimale requise dans un espace confiné" },
+        { "label": "La distance horizontale maximale au point d'ancrage" },
+        { "label": "Le débit d'air de l'appareil respiratoire isolant" }
+      ],
+      "explanation": "Le tirant d'air additionne la longueur de la longe, le déploiement de l'absorbeur d'énergie, la taille de l'utilisateur, l'effet de glissement du harnais et une marge de sécurité — soit couramment 6 à 7 mètres avec une longe classique. En dessous, la personne touche le sol ou un obstacle avant que le système n'ait pu freiner : le harnais donne alors un sentiment de sécurité sans protéger. À faible hauteur, on utilise un antichute à rappel automatique ou, mieux encore, un système de retenue qui empêche d'atteindre le vide.",
+      "source_ref": "INRS — Les équipements de protection individuelle contre les chutes de hauteur (ED 6110)"
+    },
+    {
+      "theme": "travail-hauteur",
+      "kind": "mcq_single",
+      "difficulty": 2,
+      "statement": "Pourquoi un salarié équipé d'un harnais ne doit-il jamais travailler seul en hauteur ?",
+      "options": [
+        { "label": "Parce qu'une personne suspendue doit être secourue très rapidement", "correct": true },
+        { "label": "Parce qu'il faut être deux pour ajuster un harnais" },
+        { "label": "Parce que le point d'ancrage doit être surveillé en permanence" },
+        { "label": "Parce que la réglementation impose deux harnais par point d'ancrage" }
+      ],
+      "explanation": "Après une chute, la personne reste suspendue et immobile : la compression des sangles au niveau des cuisses entrave le retour veineux et peut provoquer un malaise grave, parfois en moins de trente minutes. C'est le syndrome du harnais. Le travail en hauteur avec système d'arrêt de chute suppose donc qu'une seconde personne puisse donner l'alerte, et surtout qu'un moyen de dépose ait été prévu et testé avant l'intervention — pas improvisé le jour de l'accident.",
+      "source_ref": "INRS — ED 6110 ; art. R4543-1 et suivants (travail isolé)"
+    },
+    {
+      "theme": "travail-hauteur",
+      "kind": "mcq_multi",
+      "difficulty": 2,
+      "statement": "Vous devez intervenir sur une toiture. Quels risques devez-vous évaluer en plus de la chute par le bord ? (plusieurs réponses)",
+      "options": [
+        { "label": "La chute à travers un matériau fragile (plaque de fibrociment, verrière, tôle rouillée)", "correct": true },
+        { "label": "La chute d'objets sur les personnes situées en dessous", "correct": true },
+        { "label": "La présence de lignes électriques aériennes", "correct": true },
+        { "label": "Le vent, la pluie ou le gel rendant la surface glissante", "correct": true }
+      ],
+      "explanation": "Les quatre sont réels, et la chute à travers un matériau fragile est l'un des accidents mortels les plus fréquents en toiture : la surface paraît porteuse et cède d'un coup. Elle impose des dispositifs spécifiques — passerelles de circulation, filets ou platelage sous la zone, protection des lumières de toit. À cela s'ajoutent les conditions météo, qui doivent conduire à interrompre le travail, et le balisage au sol contre la chute d'objets.",
+      "source_ref": "Art. R4323-60 et R4534-85 et suivants du Code du travail ; INRS ED 130"
+    },
+    {
+      "theme": "travail-hauteur",
+      "kind": "debate",
+      "difficulty": 2,
+      "statement": "Un intervenant doit accéder à une vanne située à 4 mètres, deux fois par jour, tous les jours. On vous propose d'acheter des harnais. Que proposez-vous ?",
+      "expected_answer": "Attendu : refuser l'entrée par l'EPI et remonter d'un cran dans la hiérarchie. (1) Interroger d'abord le besoin : la vanne peut-elle être déportée, motorisée, commandée à distance, ou l'installation modifiée pour supprimer l'accès en hauteur ? C'est la seule solution qui supprime le risque. (2) Si l'accès reste nécessaire, et parce qu'il est répétitif et quotidien, il faut un accès permanent et sûr : passerelle ou plateforme fixe avec garde-corps, escalier ou échelle à crinoline selon la configuration. (3) Le harnais serait une réponse inadaptée à un besoin permanent : il suppose un ancrage, un tirant d'air suffisant — douteux à 4 mètres — une formation, des vérifications annuelles, un second intervenant et un plan de sauvetage, deux fois par jour. (4) Le coût d'une plateforme est à comparer au coût complet de la solution harnais sur plusieurs années, et non à son seul prix d'achat.",
+      "explanation": "C'est le cas d'école du réflexe « on achète des EPI » appliqué à un besoin permanent. La question à poser en séance est celle de la fréquence : un accès occasionnel et exceptionnel peut relever d'un système d'arrêt de chute, un accès quotidien relève d'un aménagement définitif. Le tirant d'air insuffisant à 4 mètres est l'argument technique qui clôt souvent la discussion.",
+      "source_ref": "Art. L4121-2 et R4323-58 du Code du travail ; INRS ED 130"
+    },
+
+    {
+      "theme": "circulation-engins",
+      "kind": "mcq_single",
+      "difficulty": 2,
+      "statement": "Le CACES suffit-il pour conduire un chariot élévateur en entreprise ?",
+      "options": [
+        { "label": "Non : l'obligation légale est l'autorisation de conduite délivrée par l'employeur", "correct": true },
+        { "label": "Oui, le CACES est le document réglementaire de référence" },
+        { "label": "Oui, à condition qu'il ait moins de 5 ans" },
+        { "label": "Non, il faut un permis délivré par la préfecture" }
+      ],
+      "explanation": "Le CACES est une recommandation de la Caisse nationale d'assurance maladie : c'est un excellent moyen de prouver le contrôle des connaissances, mais ce n'est pas l'obligation. Ce que la réglementation exige, c'est une autorisation de conduite écrite, délivrée par l'employeur, qui repose sur trois conditions cumulatives : l'aptitude médicale, le contrôle des connaissances et savoir-faire, et la connaissance des lieux et des instructions propres au site.",
+      "source_ref": "Art. R4323-55 à R4323-57 du Code du travail ; recommandation CNAM R489"
+    },
+    {
+      "theme": "circulation-engins",
+      "kind": "mcq_single",
+      "difficulty": 1,
+      "statement": "Un collègue vous demande de le soulever sur les fourches de votre chariot pour atteindre une étagère. Que faites-vous ?",
+      "options": [
+        { "label": "Vous refusez : c'est interdit et c'est une cause classique d'accident mortel", "correct": true },
+        { "label": "Vous acceptez s'il se tient bien à la charge" },
+        { "label": "Vous acceptez si vous montez lentement et à faible hauteur" },
+        { "label": "Vous acceptez à condition qu'il porte un casque" }
+      ],
+      "explanation": "L'élévation de personnes n'est autorisée qu'avec un équipement conçu pour cela : nacelle ou plateforme de travail spécifiquement adaptée au chariot, fixée, avec garde-corps, et selon des conditions strictes. Sur les fourches ou sur une palette, rien ne retient la personne, et l'engin n'est ni conçu ni vérifié pour cet usage. C'est un scénario d'accident mortel régulièrement constaté, souvent lors d'une opération « juste une minute ».",
+      "source_ref": "Art. R4323-32 et R4323-36 du Code du travail"
+    },
+    {
+      "theme": "circulation-engins",
+      "kind": "mcq_single",
+      "difficulty": 2,
+      "statement": "Quelle est la mesure la plus efficace pour prévenir les collisions entre piétons et engins ?",
+      "options": [
+        { "label": "Séparer physiquement les flux piétons et les flux d'engins", "correct": true },
+        { "label": "Imposer le port du gilet haute visibilité à tous les piétons" },
+        { "label": "Limiter la vitesse des engins à 10 km/h" },
+        { "label": "Installer des avertisseurs de recul sur tous les engins" }
+      ],
+      "explanation": "Les trois dernières mesures sont utiles mais reposent sur la vigilance et n'empêchent pas la rencontre. La séparation physique — allées piétonnes matérialisées et protégées, portes distinctes, quais isolés, sens unique de circulation — supprime la possibilité même de la collision. C'est l'application directe du principe qui consiste à combattre le risque à la source plutôt qu'à demander aux personnes de faire attention.",
+      "source_ref": "Art. R4323-51 et R4224-3 du Code du travail ; INRS ED 975"
+    },
+    {
+      "theme": "circulation-engins",
+      "kind": "mcq_single",
+      "difficulty": 2,
+      "statement": "À quelle fréquence un chariot élévateur doit-il faire l'objet d'une vérification générale périodique ?",
+      "options": [
+        { "label": "Tous les 6 mois", "correct": true },
+        { "label": "Tous les 12 mois" },
+        { "label": "Tous les 3 mois" },
+        { "label": "Tous les 2 ans" }
+      ],
+      "explanation": "Les appareils de levage servant au déplacement de charges, dont les chariots élévateurs, sont vérifiés tous les six mois. La périodicité passe à douze mois pour certains appareils sans élévation de personnes ni de charges dans des conditions précises, mais le réflexe à retenir pour un chariot est semestriel. Cela n'exclut pas le contrôle quotidien par le conducteur avant la prise de poste — niveaux, pneumatiques, fuites, avertisseur, freins, état des fourches.",
+      "source_ref": "Arrêté du 1er mars 2004 relatif aux vérifications des appareils de levage"
+    },
+    {
+      "theme": "circulation-engins",
+      "kind": "mcq_single",
+      "difficulty": 2,
+      "statement": "Vous devez traverser une zone où manœuvre une pelle mécanique. Quelle est la bonne conduite ?",
+      "options": [
+        { "label": "Rester hors de la zone d'évolution et n'approcher qu'après un contact visuel confirmé avec le conducteur", "correct": true },
+        { "label": "Passer rapidement derrière l'engin pendant qu'il travaille devant" },
+        { "label": "Klaxonner ou crier pour signaler votre présence, puis passer" },
+        { "label": "Passer sous la flèche, c'est le chemin le plus court" }
+      ],
+      "explanation": "Le conducteur d'un engin a des angles morts importants, il est concentré sur sa tâche et il n'entend rien dans une cabine fermée : un signal sonore ne garantit pas qu'il vous a vu. La règle est de rester hors de la zone d'évolution, d'établir un contact visuel et d'obtenir un signe explicite du conducteur avant d'approcher. Passer derrière un engin ou sous une charge suspendue est à exclure absolument.",
+      "source_ref": "INRS — Circulation d'engins sur les chantiers (ED 6083)"
+    },
+    {
+      "theme": "circulation-engins",
+      "kind": "mcq_single",
+      "difficulty": 3,
+      "statement": "Que se passe-t-il si l'on soulève une charge conforme au poids maximal du chariot, mais au-delà du centre de gravité prévu ?",
+      "options": [
+        { "label": "La capacité réelle diminue et le chariot peut basculer vers l'avant", "correct": true },
+        { "label": "Rien, seul le poids total compte" },
+        { "label": "Le chariot cale mais ne risque pas de basculer" },
+        { "label": "Le limiteur de charge empêche systématiquement le levage" }
+      ],
+      "explanation": "La capacité d'un chariot est toujours donnée pour une distance déterminée entre le talon des fourches et le centre de gravité de la charge — couramment 500 mm. Une charge plus profonde ou déportée éloigne son centre de gravité, augmente le moment de renversement et fait chuter la capacité réelle, parfois de moitié. La hauteur d'élévation et l'inclinaison du mât jouent dans le même sens. C'est pour cela que la plaque de charge doit être lisible dans la cabine et effectivement consultée.",
+      "source_ref": "Recommandation CNAM R489 ; INRS ED 6301"
+    },
+    {
+      "theme": "circulation-engins",
+      "kind": "mcq_multi",
+      "difficulty": 2,
+      "statement": "Quels éléments doit comporter un plan de circulation sur un site ? (plusieurs réponses)",
+      "options": [
+        { "label": "Des allées piétonnes matérialisées et distinctes des voies d'engins", "correct": true },
+        { "label": "Un sens de circulation défini, limitant les marches arrière", "correct": true },
+        { "label": "Des zones de manœuvre et de stationnement identifiées", "correct": true },
+        { "label": "Une vitesse maximale affichée", "correct": true }
+      ],
+      "explanation": "Les quatre sont attendus. Le point le plus rentable en pratique est la limitation des marches arrière : la manœuvre en recul concentre une part importante des accidents avec engins, car c'est là que les angles morts sont les plus larges. Organiser la circulation en boucle, avec des aires de retournement, supprime le besoin de reculer bien plus efficacement qu'un avertisseur sonore ou une caméra.",
+      "source_ref": "Art. R4323-51 du Code du travail ; INRS ED 975"
+    },
+    {
+      "theme": "circulation-engins",
+      "kind": "debate",
+      "difficulty": 2,
+      "statement": "Une entreprise extérieure vient livrer et décharger sur votre site avec son propre chariot. De qui relève la sécurité de cette opération ?",
+      "expected_answer": "Attendu : la responsabilité est partagée et doit être organisée à l'avance, pas arbitrée après l'accident. (1) L'entreprise utilisatrice, qui accueille, doit communiquer les consignes du site, le plan de circulation, les zones interdites, les risques propres au lieu ; (2) l'entreprise extérieure reste responsable de son personnel, de son matériel, de l'autorisation de conduite de son cariste et des vérifications de son engin ; (3) la co-activité impose une coordination formalisée : un protocole de sécurité pour les opérations de chargement et déchargement, qui est le document dédié à ce cas précis et doit être établi avant l'opération ; (4) pour des interventions plus larges, c'est une inspection commune préalable et un plan de prévention, obligatoire notamment au-delà de 400 heures par an ou en cas de travaux dangereux ; (5) le point pratique le plus souvent oublié : désigner qui commande la manœuvre et interdire la présence du chauffeur dans la zone d'évolution pendant le déchargement.",
+      "explanation": "Le protocole de sécurité chargement/déchargement est un document peu connu alors qu'il est obligatoire et qu'il couvre une opération extrêmement fréquente. Il permet de faire comprendre que « c'est le livreur, ce n'est pas nous » n'est pas une réponse recevable : accueillir une entreprise extérieure crée une obligation de coordination.",
+      "source_ref": "Art. R4515-1 et suivants (protocole de sécurité) et R4511-1 et suivants (plan de prévention) du Code du travail"
+    },
+
+    {
+      "theme": "machines",
+      "kind": "mcq_single",
+      "difficulty": 1,
+      "statement": "Un protecteur gêne votre travail sur une machine. Que faites-vous ?",
+      "options": [
+        { "label": "Vous arrêtez la machine, signalez le problème et attendez une solution", "correct": true },
+        { "label": "Vous le retirez le temps de l'opération et le remettez après" },
+        { "label": "Vous le neutralisez avec un aimant ou un adhésif" },
+        { "label": "Vous continuez en redoublant de vigilance" }
+      ],
+      "explanation": "Neutraliser un protecteur est interdit et engage la responsabilité du salarié comme celle de l'employeur qui le tolère. Mais l'essentiel est ailleurs : un protecteur régulièrement contourné est presque toujours un protecteur mal conçu pour l'activité réelle. Le signalement doit donc déclencher une reconception — protecteur mobile asservi, ouverture adaptée, alimentation repensée — et non une consigne de vigilance.",
+      "source_ref": "Art. L4122-1 et R4323-2 du Code du travail"
+    },
+    {
+      "theme": "machines",
+      "kind": "mcq_single",
+      "difficulty": 2,
+      "statement": "Avant toute intervention de maintenance sur une machine, quelle est la mesure fondamentale ?",
+      "options": [
+        { "label": "Consigner la machine : couper, condamner, identifier, vérifier, dissiper les énergies résiduelles", "correct": true },
+        { "label": "Appuyer sur l'arrêt d'urgence" },
+        { "label": "Mettre la machine en mode « maintenance » sur le pupitre" },
+        { "label": "Prévenir verbalement les collègues de l'atelier" }
+      ],
+      "explanation": "L'arrêt d'urgence et le mode maintenance ne sont pas des consignations : ils ne garantissent pas contre un redémarrage, une remise en énergie par un tiers, ni contre les énergies résiduelles — inertie d'un volant, pression d'un accumulateur hydraulique, air comprimé, condensateurs chargés, charge suspendue, pièces chaudes. La consignation ajoute la condamnation physique par cadenas individuel et la vérification effective de l'absence d'énergie.",
+      "source_ref": "Art. R4323-13 et R4323-14 du Code du travail ; INRS ED 6109"
+    },
+    {
+      "theme": "machines",
+      "kind": "mcq_single",
+      "difficulty": 2,
+      "statement": "Quel est le rôle exact d'un arrêt d'urgence ?",
+      "options": [
+        { "label": "Arrêter le mouvement dangereux le plus rapidement possible, sans créer de risque nouveau", "correct": true },
+        { "label": "Consigner la machine pour permettre une intervention" },
+        { "label": "Couper l'alimentation générale de l'atelier" },
+        { "label": "Signaler une anomalie au service maintenance" }
+      ],
+      "explanation": "L'arrêt d'urgence est une fonction de secours : il stoppe le mouvement dangereux et interdit le redémarrage automatique, la remise en service exigeant une action volontaire de réarmement. Il ne remplace ni les protecteurs, ni la consignation. À vérifier en séance : son accessibilité — souvent encombrée — et le fait que les opérateurs sachent où il se trouve sans avoir à le chercher.",
+      "source_ref": "Art. R4324-4 du Code du travail ; norme NF EN ISO 13850"
+    },
+    {
+      "theme": "machines",
+      "kind": "mcq_single",
+      "difficulty": 2,
+      "statement": "Que doit obligatoirement accompagner une machine neuve mise sur le marché en France ?",
+      "options": [
+        { "label": "Le marquage CE, une déclaration de conformité et une notice d'instructions en français", "correct": true },
+        { "label": "Uniquement le marquage CE" },
+        { "label": "Un certificat délivré par l'inspection du travail" },
+        { "label": "Une attestation d'assurance du fabricant" }
+      ],
+      "explanation": "Le marquage CE, la déclaration de conformité et la notice d'instructions rédigée en français forment un ensemble indissociable. La notice est un document de prévention à part entière : elle définit les usages prévus, les usages à exclure, les modes de réglage et de maintenance, les protecteurs à utiliser et les vérifications. Une machine d'occasion ou modifiée pose la question de qui assume la conformité — celui qui la remet sur le marché ou celui qui la transforme.",
+      "source_ref": "Art. R4313-1 et suivants du Code du travail ; directive Machines 2006/42/CE"
+    },
+    {
+      "theme": "machines",
+      "kind": "mcq_single",
+      "difficulty": 3,
+      "statement": "Qu'est-ce qu'un protecteur « asservi » ?",
+      "options": [
+        { "label": "Un protecteur dont l'ouverture provoque l'arrêt du mouvement dangereux", "correct": true },
+        { "label": "Un protecteur fixé par des vis nécessitant un outil pour être retiré" },
+        { "label": "Un protecteur transparent permettant de voir l'usinage" },
+        { "label": "Un protecteur réglable manuellement selon la pièce usinée" }
+      ],
+      "explanation": "Le protecteur mobile asservi est relié au système de commande : l'ouvrir arrête le mouvement, et le mouvement ne peut reprendre qu'après refermeture. Avec dispositif d'interverrouillage, il reste même bloqué fermé tant que le mouvement n'est pas complètement arrêté — indispensable lorsqu'il y a de l'inertie. C'est la solution à privilégier pour les accès fréquents, là où un protecteur fixé par vis serait démonté une fois pour ne jamais être remonté.",
+      "source_ref": "Art. R4324-1 à R4324-3 du Code du travail ; norme NF EN ISO 14119"
+    },
+    {
+      "theme": "machines",
+      "kind": "mcq_single",
+      "difficulty": 2,
+      "statement": "Qui peut réaliser la vérification périodique d'un équipement de travail ?",
+      "options": [
+        { "label": "Une personne qualifiée, appartenant ou non à l'entreprise, avec la compétence et les moyens nécessaires", "correct": true },
+        { "label": "Obligatoirement un organisme accrédité extérieur" },
+        { "label": "N'importe quel salarié utilisant régulièrement la machine" },
+        { "label": "Uniquement le fabricant de la machine" }
+      ],
+      "explanation": "La vérification peut être interne à condition que la personne dispose de la compétence, de l'expérience, de l'indépendance de jugement et des moyens de mesure nécessaires. Le point qui compte autant que la vérification elle-même est la traçabilité : les résultats sont consignés dans un registre de sécurité tenu à disposition, et surtout les observations doivent être suivies d'effet. Un registre à jour dont les réserves ne sont jamais levées ne protège personne.",
+      "source_ref": "Art. R4323-24 et R4323-25 du Code du travail"
+    },
+    {
+      "theme": "machines",
+      "kind": "mcq_multi",
+      "difficulty": 2,
+      "statement": "Quelles précautions prendre avant de travailler sur une machine tournante ? (plusieurs réponses)",
+      "options": [
+        { "label": "Retirer bagues, montre, bracelets et chaînes", "correct": true },
+        { "label": "Attacher les cheveux longs", "correct": true },
+        { "label": "Éviter les vêtements flottants et les manches ouvertes", "correct": true },
+        { "label": "Porter des gants pour mieux tenir la pièce" }
+      ],
+      "explanation": "Tout ce qui peut être happé doit disparaître : bijoux, cheveux, vêtements amples, cordons, badge à enrouleur. Les gants font partie de cette liste près d'une pièce en rotation : happés, ils entraînent la main. C'est un des rares cas où un EPI est contre-indiqué, et cela mérite d'être dit explicitement en séance car le réflexe « gants = sécurité » est très ancré.",
+      "source_ref": "INRS — Prévention des risques liés aux machines (ED 807)"
+    },
+    {
+      "theme": "machines",
+      "kind": "debate",
+      "difficulty": 3,
+      "statement": "Sur une ligne de production, les opérateurs ont pris l'habitude de dégager un bourrage sans consigner, parce que l'arrêt complet fait perdre vingt minutes de redémarrage. Comment traitez-vous cette situation ?",
+      "expected_answer": "Attendu : traiter la cause organisationnelle et non seulement le comportement. (1) Reconnaître la logique du contournement : le mode opératoire officiel est incompatible avec l'objectif de production, donc les opérateurs arbitrent en faveur de la production — sanctionner sans changer le système reproduira le contournement en le rendant invisible ; (2) analyser la fréquence et la cause des bourrages : c'est souvent là que se trouve la vraie solution, car supprimer le bourrage supprime l'intervention ; (3) concevoir un accès sûr et rapide : protecteur mobile asservi avec interverrouillage, trappe de dégagement, outil de débourrage déporté, mode « dégagement » à vitesse réduite et validation par action maintenue ; (4) revoir le temps de redémarrage, qui est le véritable levier de la déviation ; (5) formaliser un mode opératoire réellement praticable, avec consignation par cadenas individuel pour les interventions qui le nécessitent ; (6) tracer dans le DUERP, informer l'encadrement de proximité, et vérifier ensuite sur le terrain que la nouvelle solution est effectivement utilisée.",
+      "explanation": "C'est le cœur du sujet machines : l'écart entre travail prescrit et travail réel. Un contournement systématique et connu de tous n'est pas un problème de discipline, c'est un signal de conception. La question à poser en séance est simple et souvent révélatrice : « depuis combien de temps tout le monde le sait ? »",
+      "source_ref": "Art. R4323-13 et R4323-17 du Code du travail ; INRS ED 6109 Consignation"
+    },
+
+    {
+      "theme": "premiers-secours",
+      "kind": "mcq_single",
+      "difficulty": 1,
+      "statement": "Quel est l'ordre des trois actions de base du secourisme du travail ?",
+      "options": [
+        { "label": "Protéger, Alerter, Secourir", "correct": true },
+        { "label": "Alerter, Protéger, Secourir" },
+        { "label": "Secourir, Alerter, Protéger" },
+        { "label": "Protéger, Secourir, Alerter" }
+      ],
+      "explanation": "On protège d'abord : supprimer le danger ou soustraire la victime, faute de quoi le sauveteur devient la deuxième victime — c'est un scénario réel et fréquent en électrique, en atmosphère confinée et sur la route. On alerte ensuite, ou on fait alerter, pour déclencher les secours au plus tôt. On secourt enfin, dans la limite de sa formation. Un cas fait exception à l'ordre : devant un arrêt cardiaque, l'alerte et la demande de défibrillateur ne se retardent pas.",
+      "source_ref": "INRS — Sauvetage secourisme du travail, dispositif SST"
+    },
+    {
+      "theme": "premiers-secours",
+      "kind": "mcq_single",
+      "difficulty": 1,
+      "statement": "Quel numéro appelez-vous pour une urgence médicale en France ?",
+      "options": [
+        { "label": "Le 15, ou le 112 depuis un mobile", "correct": true },
+        { "label": "Le 17" },
+        { "label": "Le 18 uniquement" },
+        { "label": "Le 115" }
+      ],
+      "explanation": "Le 15 correspond au SAMU pour une urgence médicale, le 18 aux sapeurs-pompiers pour un incendie ou un accident, le 17 à la police et le 112 est le numéro d'urgence européen accessible partout dans l'Union. Le 114 permet d'alerter par SMS ou visio pour les personnes sourdes ou malentendantes. En pratique, tous ces numéros se réorientent entre eux : mieux vaut appeler que d'hésiter, et rester joignable après l'appel.",
+      "source_ref": "Service-public.fr — Numéros d'urgence"
+    },
+    {
+      "theme": "premiers-secours",
+      "kind": "mcq_single",
+      "difficulty": 2,
+      "statement": "Que faites-vous devant une brûlure thermique récente sur l'avant-bras ?",
+      "options": [
+        { "label": "Vous refroidissez à l'eau tempérée qui ruisselle, pendant au moins 15 minutes", "correct": true },
+        { "label": "Vous appliquez de la glace directement sur la brûlure" },
+        { "label": "Vous appliquez une pommade puis un pansement serré" },
+        { "label": "Vous percez les cloques pour éviter l'infection" }
+      ],
+      "explanation": "Le refroidissement précoce et prolongé limite l'extension de la brûlure en profondeur. Le repère classique est la règle des trois « 15 » : eau à environ 15 °C, à 15 cm de la peau, pendant 15 minutes. La glace est à exclure — elle aggrave la lésion et le risque d'hypothermie sur les grandes surfaces. On ne perce pas les cloques, on n'applique ni corps gras ni pommade avant avis médical, et on retire bagues et bracelets avant l'œdème.",
+      "source_ref": "INRS — Conduite à tenir en cas de brûlure ; référentiel national SST"
+    },
+    {
+      "theme": "premiers-secours",
+      "kind": "mcq_single",
+      "difficulty": 2,
+      "statement": "Une victime est inconsciente et ne respire pas. Que faites-vous ?",
+      "options": [
+        { "label": "Vous faites alerter, demandez un défibrillateur et commencez les compressions thoraciques", "correct": true },
+        { "label": "Vous la mettez en position latérale de sécurité et attendez les secours" },
+        { "label": "Vous lui donnez à boire pour la faire réagir" },
+        { "label": "Vous attendez l'arrivée du SST de l'atelier avant d'agir" }
+      ],
+      "explanation": "Inconscience plus absence de respiration signent l'arrêt cardiaque : chaque minute sans réanimation fait chuter les chances de survie d'environ 10 %. On alerte, on demande le défibrillateur automatisé externe et on comprime sans attendre — au centre du thorax, 5 à 6 cm de profondeur, à une fréquence de 100 à 120 par minute. La position latérale de sécurité est réservée à la victime inconsciente qui respire.",
+      "source_ref": "Référentiel national de compétences de sécurité civile — PSC1 ; INRS SST"
+    },
+    {
+      "theme": "premiers-secours",
+      "kind": "mcq_single",
+      "difficulty": 2,
+      "statement": "Qui peut utiliser un défibrillateur automatisé externe (DAE) ?",
+      "options": [
+        { "label": "Toute personne, même sans formation", "correct": true },
+        { "label": "Uniquement un secouriste formé et à jour de son recyclage" },
+        { "label": "Uniquement un professionnel de santé" },
+        { "label": "Uniquement le SST désigné de l'établissement" }
+      ],
+      "explanation": "Depuis 2007, toute personne peut utiliser un DAE. L'appareil analyse le rythme cardiaque et ne délivre un choc que s'il est indiqué : il est conçu pour ne pas pouvoir nuire. Le vrai risque n'est pas de mal s'en servir, c'est de ne pas s'en servir par peur de mal faire. Deux repères pratiques : on suit les instructions vocales, et on ne touche pas la victime pendant l'analyse et le choc.",
+      "source_ref": "Décret n°2007-705 du 4 mai 2007 relatif à l'utilisation des défibrillateurs"
+    },
+    {
+      "theme": "premiers-secours",
+      "kind": "mcq_single",
+      "difficulty": 3,
+      "statement": "Dans quel cas déplace-t-on une victime d'accident ?",
+      "options": [
+        { "label": "Uniquement si elle est exposée à un danger immédiat qu'on ne peut pas supprimer", "correct": true },
+        { "label": "Systématiquement, pour l'installer plus confortablement" },
+        { "label": "Dès qu'elle demande à être déplacée" },
+        { "label": "Jamais, en aucune circonstance" }
+      ],
+      "explanation": "On ne déplace pas une victime, en raison notamment du risque d'aggravation d'une lésion du rachis, sauf si elle est exposée à un danger vital immédiat qu'on ne peut pas supprimer autrement : incendie, risque d'explosion, atmosphère toxique, engin en mouvement. Dans ce cas, on effectue un dégagement d'urgence, le plus court possible et dans l'axe. Sinon on protège la zone, on couvre la victime, on la rassure et on attend les secours.",
+      "source_ref": "Référentiel national de compétences de sécurité civile — dégagements d'urgence"
+    },
+    {
+      "theme": "premiers-secours",
+      "kind": "mcq_multi",
+      "difficulty": 2,
+      "statement": "Que devez-vous transmettre lors d'un appel aux secours ? (plusieurs réponses)",
+      "options": [
+        { "label": "Le lieu précis de l'accident et les moyens d'y accéder", "correct": true },
+        { "label": "La nature de l'accident et le nombre de victimes", "correct": true },
+        { "label": "L'état apparent des victimes et les gestes déjà effectués", "correct": true },
+        { "label": "Un numéro de téléphone où vous restez joignable", "correct": true }
+      ],
+      "explanation": "Les quatre sont attendus, et deux points font souvent la différence sur le temps d'arrivée. D'abord l'accès réel : code de portail, numéro de bâtiment, quai, étage, personne qui attendra les secours à l'entrée — un site industriel est un labyrinthe pour une équipe extérieure. Ensuite, on ne raccroche pas le premier : le médecin régulateur guide les gestes, et il peut rappeler.",
+      "source_ref": "INRS — Sauvetage secourisme du travail (dispositif SST)"
+    },
+    {
+      "theme": "premiers-secours",
+      "kind": "debate",
+      "difficulty": 2,
+      "statement": "Combien de sauveteurs secouristes du travail faut-il dans un atelier, et pourquoi cette obligation existe-t-elle ?",
+      "expected_answer": "Attendu : (1) la règle de base est qu'un membre du personnel doit avoir reçu la formation nécessaire pour donner les premiers secours en cas d'urgence dans chaque atelier où sont effectués des travaux dangereux, et sur les chantiers occupant vingt personnes au moins pendant plus de quinze jours lorsque les travaux exposent à des risques particuliers ; (2) le raisonnement attendu va au-delà du minimum : il faut tenir compte de l'effectif, de l'organisation du travail, des horaires — équipes de nuit, week-ends, astreintes — de l'étendue et de la configuration des locaux, de la présence de travailleurs isolés et du délai réel d'arrivée des secours ; (3) un seul SST par site est une couverture illusoire dès qu'il y a des absences, des congés ou plusieurs équipes ; (4) l'organisation des secours se définit avec le service de prévention et de santé au travail et se matérialise par des consignes affichées, du matériel de premiers secours accessible et adapté, et un moyen d'alerte fonctionnel partout, y compris dans les zones sans réseau ; (5) la formation doit être maintenue à jour par des recyclages.",
+      "explanation": "L'objectif de cette question est de faire sortir du « combien faut-il ? » réglementaire pour arriver au « notre organisation tient-elle un mardi à 3 heures du matin ? ». C'est le test qui révèle le plus souvent une faille : SST unique, trousse de secours introuvable ou périmée, ou zone sans couverture réseau pour appeler.",
+      "source_ref": "Art. R4224-15 et R4224-16 du Code du travail"
+    },
+
+    {
+      "theme": "organisation-prevention",
+      "kind": "mcq_single",
+      "difficulty": 1,
+      "statement": "À partir de quel effectif le document unique d'évaluation des risques professionnels (DUERP) est-il obligatoire ?",
+      "options": [
+        { "label": "Dès le premier salarié", "correct": true },
+        { "label": "À partir de 11 salariés" },
+        { "label": "À partir de 20 salariés" },
+        { "label": "À partir de 50 salariés" }
+      ],
+      "explanation": "Le DUERP est obligatoire dès l'embauche du premier salarié, sans seuil. L'effectif joue en revanche sur les modalités : dans les entreprises d'au moins onze salariés, la mise à jour est au minimum annuelle, et à partir de cinquante salariés le document doit déboucher sur un programme annuel de prévention avec actions, moyens et calendrier. Le DUERP doit aussi être conservé dans ses versions successives pendant quarante ans, afin de retracer les expositions.",
+      "source_ref": "Art. R4121-1 et R4121-2 du Code du travail ; loi n°2021-1018 du 2 août 2021"
+    },
+    {
+      "theme": "organisation-prevention",
+      "kind": "mcq_single",
+      "difficulty": 2,
+      "statement": "Quel est le premier des neuf principes généraux de prévention ?",
+      "options": [
+        { "label": "Éviter les risques", "correct": true },
+        { "label": "Évaluer les risques qui ne peuvent pas être évités" },
+        { "label": "Former et informer les travailleurs" },
+        { "label": "Donner la priorité aux protections collectives" }
+      ],
+      "explanation": "L'ordre est une hiérarchie d'efficacité, pas une liste. On commence par éviter : supprimer le risque à la conception, renoncer à une opération, substituer un produit, automatiser une manutention. Évaluer ne vient qu'en deuxième position, pour ce qui n'a pas pu être évité. La formation et les EPI arrivent en fin de liste : ce sont les mesures les plus dépendantes du comportement humain, donc les plus fragiles.",
+      "source_ref": "Art. L4121-2 du Code du travail"
+    },
+    {
+      "theme": "organisation-prevention",
+      "kind": "mcq_single",
+      "difficulty": 2,
+      "statement": "Dans quelles conditions un salarié peut-il exercer son droit de retrait ?",
+      "options": [
+        { "label": "S'il a un motif raisonnable de penser que la situation présente un danger grave et imminent pour sa vie ou sa santé", "correct": true },
+        { "label": "Dès qu'il estime ses conditions de travail dégradées" },
+        { "label": "Uniquement après autorisation écrite de son supérieur" },
+        { "label": "Uniquement si un membre du CSE le constate avec lui" }
+      ],
+      "explanation": "Trois conditions : un motif raisonnable, un danger grave, et un danger imminent. Le salarié alerte l'employeur et se retire, sans avoir besoin d'autorisation ; aucune sanction ni retenue de salaire ne peut en découler si le droit est exercé de bonne foi. Deux limites à connaître : le retrait ne doit pas créer un danger pour autrui, et il porte sur la situation dangereuse — il n'autorise pas à quitter l'entreprise.",
+      "source_ref": "Art. L4131-1 à L4131-3 du Code du travail"
+    },
+    {
+      "theme": "organisation-prevention",
+      "kind": "mcq_single",
+      "difficulty": 2,
+      "statement": "La sécurité au travail est-elle uniquement la responsabilité de l'employeur ?",
+      "options": [
+        { "label": "Non : le salarié doit aussi prendre soin de sa sécurité et de celle des autres, selon ses moyens et sa formation", "correct": true },
+        { "label": "Oui, le salarié n'a aucune obligation en la matière" },
+        { "label": "Oui, sauf pour les salariés encadrants" },
+        { "label": "Non, la responsabilité est strictement partagée à parts égales" }
+      ],
+      "explanation": "L'employeur porte une obligation générale de sécurité, de nature très exigeante, et c'est lui qui dispose des moyens d'organisation. Mais le salarié a lui aussi une obligation : prendre soin de sa santé et de sa sécurité ainsi que de celles des autres personnes concernées, conformément aux instructions et à sa formation. Cette obligation ne dégage jamais l'employeur de la sienne — les deux se cumulent, elles ne se partagent pas.",
+      "source_ref": "Art. L4121-1 et L4122-1 du Code du travail"
+    },
+    {
+      "theme": "organisation-prevention",
+      "kind": "mcq_single",
+      "difficulty": 2,
+      "statement": "Que désignent les « RPS » ?",
+      "options": [
+        { "label": "Les risques psychosociaux : stress, violences internes ou externes, épuisement", "correct": true },
+        { "label": "Les référentiels de prévention sectoriels" },
+        { "label": "Les registres de plan de sécurité" },
+        { "label": "Les risques physiques et sonores" }
+      ],
+      "explanation": "Les RPS désignent les risques pour la santé physique et mentale liés aux conditions d'emploi et d'organisation : intensité et temps de travail, exigences émotionnelles, faible autonomie, rapports sociaux dégradés, conflits de valeurs, insécurité de la situation de travail. Point important : ce sont des risques professionnels comme les autres, qui doivent figurer dans le DUERP, et qui s'analysent à partir de l'organisation du travail plutôt que de la fragilité supposée des personnes.",
+      "source_ref": "INRS — Risques psychosociaux ; rapport Gollac (2011)"
+    },
+    {
+      "theme": "organisation-prevention",
+      "kind": "mcq_single",
+      "difficulty": 3,
+      "statement": "Dans quel délai un salarié doit-il informer son employeur d'un accident du travail ?",
+      "options": [
+        { "label": "Dans les 24 heures, sauf cas de force majeure", "correct": true },
+        { "label": "Dans les 48 heures" },
+        { "label": "Dans les 8 jours" },
+        { "label": "Aucun délai n'est fixé" }
+      ],
+      "explanation": "Le salarié informe ou fait informer l'employeur dans les 24 heures ; l'employeur déclare ensuite l'accident à la caisse primaire d'assurance maladie dans les 48 heures et remet la feuille d'accident permettant la prise en charge sans avance de frais. À retenir surtout : un accident bénin doit être tracé — registre des accidents bénins ou déclaration — car c'est l'absence de trace initiale qui bloque la reconnaissance lorsqu'une séquelle apparaît des mois plus tard.",
+      "source_ref": "Art. R441-2 et R441-3 du Code de la sécurité sociale"
+    },
+    {
+      "theme": "organisation-prevention",
+      "kind": "mcq_multi",
+      "difficulty": 2,
+      "statement": "Que doit contenir le DUERP ? (plusieurs réponses)",
+      "options": [
+        { "label": "L'inventaire des risques par unité de travail", "correct": true },
+        { "label": "Le classement des risques évalués", "correct": true },
+        { "label": "Les actions de prévention retenues et leur suivi", "correct": true },
+        { "label": "Le dossier médical de chaque salarié" }
+      ],
+      "explanation": "Le DUERP identifie les risques par unité de travail, les classe pour permettre de hiérarchiser l'action, et débouche sur des actions de prévention avec un suivi. Il ne contient aucune donnée médicale nominative : celles-ci relèvent du secret médical et du seul service de prévention et de santé au travail. Le DUERP est tenu à disposition des salariés, du CSE, du médecin du travail et de l'inspection du travail.",
+      "source_ref": "Art. R4121-1 et R4121-4 du Code du travail"
+    },
+    {
+      "theme": "organisation-prevention",
+      "kind": "debate",
+      "difficulty": 3,
+      "statement": "Votre entreprise n'a eu aucun accident du travail depuis deux ans. Peut-on en conclure que la prévention est efficace ?",
+      "expected_answer": "Attendu : non, et savoir dire pourquoi. (1) Le nombre d'accidents est un indicateur de résultat, tardif, et très sensible aux petits effectifs : sur un site de trente personnes, deux ans sans accident peut relever du hasard statistique ; (2) l'absence d'accident déclaré n'est pas l'absence d'accident — la sous-déclaration augmente précisément là où l'absence d'accident devient un objectif affiché ou primé, ce qui rend l'indicateur trompeur au moment où il compte le plus ; (3) les indicateurs de fréquence et de gravité ne disent rien des maladies professionnelles à latence longue : TMS, surdité, cancers professionnels se déclarent des années plus tard ; (4) il faut donc regarder aussi des indicateurs avancés : remontées de presqu'accidents et de situations dangereuses, taux de traitement de ces remontées, avancement du programme annuel de prévention, mise à jour réelle du DUERP, taux de port effectif des EPI, résultats des vérifications périodiques et levée des réserves, absentéisme et turnover ; (5) conclusion attendue : on ne pilote pas la prévention avec le seul compteur d'accidents, on la pilote avec ce qui se passe avant l'accident.",
+      "explanation": "C'est la question la plus utile à poser à une direction, et elle prépare directement la lecture du rapport de synthèse remis en fin de journée. Le point qui fait généralement réagir est le paradoxe de la prime à l'absence d'accident : elle achète du silence, pas de la sécurité, et elle prive l'entreprise de ses signaux faibles.",
+      "source_ref": "INRS — Indicateurs en santé et sécurité au travail ; art. L4121-3 du Code du travail"
+    }
+  ]
+}
