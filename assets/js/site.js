@@ -145,9 +145,9 @@
   /* ---------------------------------------------------------- Phrase qui s'allume */
   const lit = $('[data-lit]');
   if (lit) {
-    const words = lit.textContent.trim().split(/[ \n\t]+/);
-    lit.setAttribute('aria-label', lit.textContent.trim());
-    lit.innerHTML = words.map((w) => `<span class="w" aria-hidden="true">${w}</span>`).join(' ');
+    const full = lit.textContent.trim();
+    const words = full.split(/[ \n\t]+/);
+    lit.innerHTML = `<span class="visually-hidden">${full}</span>` + words.map((w) => `<span class="w" aria-hidden="true">${w}</span>`).join(' ');
     const spans = $$('.w', lit);
     if (reduce.matches) spans.forEach((s) => s.classList.add('on'));
     else {
@@ -223,7 +223,22 @@
         t.textContent = view === 'before' ? t.dataset.b : t.dataset.a;
       });
       tmap.classList.toggle('after', view === 'after');
+      items.forEach((b, i) => {
+        b.setAttribute('aria-pressed', String(i === sel));
+        b.classList.toggle('ai', view === 'after' && data[i].a <= data[i].b / 3);
+        b.lastChild.textContent = hm(view === 'before' ? data[i].b : data[i].a);
+      });
     };
+    const list = $('.flow-list', tmap);
+    const items = data.map((x, i) => {
+      const li = document.createElement('li');
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.innerHTML = `<span>${x.n}</span><span></span>`;
+      b.addEventListener('click', () => { sel = i; render(); });
+      li.appendChild(b); list.appendChild(li);
+      return b;
+    });
     nodes.forEach((g) => {
       const pick = () => { sel = +g.dataset.k; render(); };
       g.addEventListener('click', pick);
@@ -360,6 +375,7 @@
     const dayName = new Intl.DateTimeFormat('fr-FR', { weekday: 'short' });
     const longDate = new Intl.DateTimeFormat('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' });
     const monthName = new Intl.DateTimeFormat('fr-FR', { month: 'long', year: 'numeric' });
+    const monthOnly = new Intl.DateTimeFormat('fr-FR', { month: 'long' });
 
     // Jours ouvrés à partir de demain (J+1), cinq par page
     const workdays = (() => {
@@ -383,9 +399,8 @@
       page.forEach((d) => {
         const b = document.createElement('button');
         b.type = 'button'; b.className = 'day';
-        b.setAttribute('aria-pressed', String(day && d.getTime() === day.getTime()));
-        b.setAttribute('aria-label', longDate.format(d));
-        b.innerHTML = `<small>${dayName.format(d).replace('.', '')}</small><b>${d.getDate()}</b>`;
+        b.setAttribute('aria-pressed', String(!!day && d.getTime() === day.getTime()));
+        b.innerHTML = `<small>${dayName.format(d).replace('.', '')}</small><b>${d.getDate()}</b><span class="visually-hidden"> ${monthOnly.format(d)}</span>`;
         b.addEventListener('click', () => { day = d; slot = null; renderDays(); renderSlots(); live.textContent = longDate.format(d) + ' sélectionné. Choisissez un horaire.'; });
         daysEl.appendChild(b);
       });

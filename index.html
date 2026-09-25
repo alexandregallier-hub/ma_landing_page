@@ -26,49 +26,183 @@
 <script>document.documentElement.classList.add('js')</script>
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@graph": [
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "ProfessionalService",
+   "@id": "https://www.elisegarnier.fr/#entreprise",
+   "name": "Élise Garnier Conseil",
+   "url": "https://www.elisegarnier.fr/",
+   "description": "Conseil et formation à l'intelligence artificielle pour les PME et ETI : diagnostic, formation en intra finançable par les OPCO, accompagnement à la mise en place d'outils IA conformes au RGPD.",
+   "email": "contact@elisegarnier.fr",
+   "telephone": "+33261914217",
+   "image": "https://www.elisegarnier.fr/assets/img/og.png",
+   "priceRange": "2 400 € à 9 800 € HT",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "12 rue de la Fosse",
+    "postalCode": "44000",
+    "addressLocality": "Nantes",
+    "addressCountry": "FR"
+   },
+   "areaServed": [
     {
-      "@type": "ProfessionalService",
-      "@id": "https://www.elisegarnier.fr/#entreprise",
-      "name": "Élise Garnier Conseil",
-      "url": "https://www.elisegarnier.fr/",
-      "description": "Conseil et formation à l'intelligence artificielle pour les PME et ETI : diagnostic, formation en intra finançable par les OPCO, accompagnement à la mise en place d'outils IA conformes au RGPD.",
-      "email": "contact@elisegarnier.fr",
-      "telephone": "+33261914217",
-      "image": "https://www.elisegarnier.fr/assets/img/og.png",
-      "priceRange": "2 400 € à 9 800 € HT",
-      "address": {"@type": "PostalAddress", "streetAddress": "12 rue de la Fosse", "postalCode": "44000", "addressLocality": "Nantes", "addressCountry": "FR"},
-      "areaServed": [{"@type": "AdministrativeArea", "name": "Pays de la Loire"}, {"@type": "AdministrativeArea", "name": "Bretagne"}, {"@type": "Country", "name": "France"}],
-      "founder": {"@id": "https://www.elisegarnier.fr/#elise"},
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Offres",
-        "itemListElement": [
-          {"@type": "Offer", "name": "Diagnostic IA", "price": "2400", "priceCurrency": "EUR", "description": "Deux jours sur place, carte des tâches chiffrée et feuille de route à 90 jours."},
-          {"@type": "Offer", "name": "Formation « L'IA au travail »", "price": "2900", "priceCurrency": "EUR", "description": "Deux jours en intra pour 4 à 10 personnes, finançable par l'OPCO.", "itemOffered": {"@id": "https://www.elisegarnier.fr/formation-ia.html#formation"}},
-          {"@type": "Offer", "name": "Accompagnement 90 jours", "price": "9800", "priceCurrency": "EUR", "description": "Diagnostic, formation, mise en place des automatisations et bilan chiffré au 90e jour."}
-        ]
-      }
+     "@type": "AdministrativeArea",
+     "name": "Pays de la Loire"
     },
     {
-      "@type": "Person",
-      "@id": "https://www.elisegarnier.fr/#elise",
-      "name": "Élise Garnier",
-      "jobTitle": "Consultante et formatrice en intelligence artificielle",
-      "worksFor": {"@id": "https://www.elisegarnier.fr/#entreprise"},
-      "knowsAbout": ["Intelligence artificielle générative", "Automatisation des processus", "RGPD", "Règlement européen sur l'IA", "Microsoft 365 Copilot", "Mistral Le Chat", "Dust"],
-      "sameAs": ["https://www.linkedin.com/in/elise-garnier-exemple"]
+     "@type": "AdministrativeArea",
+     "name": "Bretagne"
     },
     {
-      "@type": "WebSite",
-      "@id": "https://www.elisegarnier.fr/#site",
-      "url": "https://www.elisegarnier.fr/",
-      "name": "Élise Garnier, conseil et formation IA",
-      "inLanguage": "fr-FR",
-      "publisher": {"@id": "https://www.elisegarnier.fr/#entreprise"}
+     "@type": "Country",
+     "name": "France"
     }
-  ]
+   ],
+   "founder": {
+    "@id": "https://www.elisegarnier.fr/#elise"
+   },
+   "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Offres",
+    "itemListElement": [
+     {
+      "@type": "Offer",
+      "name": "Diagnostic IA",
+      "price": "2400",
+      "priceCurrency": "EUR",
+      "description": "Deux jours sur place, carte des tâches chiffrée et feuille de route à 90 jours."
+     },
+     {
+      "@type": "Offer",
+      "name": "Formation « L'IA au travail »",
+      "price": "2900",
+      "priceCurrency": "EUR",
+      "description": "Deux jours en intra pour 4 à 10 personnes, finançable par l'OPCO.",
+      "itemOffered": {
+       "@id": "https://www.elisegarnier.fr/formation-ia.html#formation"
+      }
+     },
+     {
+      "@type": "Offer",
+      "name": "Accompagnement 90 jours",
+      "price": "9800",
+      "priceCurrency": "EUR",
+      "description": "Diagnostic, formation, mise en place des automatisations et bilan chiffré au 90e jour."
+     }
+    ]
+   }
+  },
+  {
+   "@type": "Person",
+   "@id": "https://www.elisegarnier.fr/#elise",
+   "name": "Élise Garnier",
+   "jobTitle": "Consultante et formatrice en intelligence artificielle",
+   "worksFor": {
+    "@id": "https://www.elisegarnier.fr/#entreprise"
+   },
+   "knowsAbout": [
+    "Intelligence artificielle générative",
+    "Automatisation des processus",
+    "RGPD",
+    "Règlement européen sur l'IA",
+    "Microsoft 365 Copilot",
+    "Mistral Le Chat",
+    "Dust"
+   ],
+   "sameAs": [
+    "https://www.linkedin.com/in/elise-garnier-exemple"
+   ]
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://www.elisegarnier.fr/#site",
+   "url": "https://www.elisegarnier.fr/",
+   "name": "Élise Garnier, conseil et formation IA",
+   "inLanguage": "fr-FR",
+   "publisher": {
+    "@id": "https://www.elisegarnier.fr/#entreprise"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://www.elisegarnier.fr/#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "La formation est-elle vraiment prise en charge par mon OPCO ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Elle est éligible, parce que je suis certifiée Qualiopi. La prise en charge dépend ensuite de votre OPCO, de votre taille et des fonds qui lui restent : pour les entreprises de moins de 50 salariés, l’enveloppe nationale 2026 a baissé (521 millions d’euros contre 550 en 2025). Il faut donc déposer tôt. Je vous envoie le programme, le devis et la convention dès l’appel, et je vous aide à remplir la demande. Comptez un mois avant la date de formation. Si vous financez directement, on peut commencer sous 15 jours."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Nous avons déjà Microsoft 365 et Copilot. À quoi bon ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "C’est souvent le meilleur point de départ : l’outil est là, il respecte déjà les droits d’accès de vos fichiers. Ce qui manque en général, ce sont les bonnes habitudes. Beaucoup d’entreprises paient des licences que peu de salariés ouvrent chaque semaine. La formation se fait alors directement dans Copilot, sur vos documents."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Vous formez aussi sur ChatGPT, Claude ou Gemini ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Oui. La méthode est la même d’un outil à l’autre, et je forme sur celui que vos équipes utilisent déjà. Une seule condition : pour des données de l’entreprise, on passe par une offre professionnelle avec contrat (ChatGPT Team ou Enterprise, Claude Team, Gemini dans Google Workspace), jamais par un compte gratuit personnel."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Nos données partent-elles aux États-Unis ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Pas si on choisit bien. Selon vos contraintes, je vous oriente vers un outil hébergé dans l’Union européenne, comme Le Chat de Mistral ou Dust, ou vers une configuration Microsoft 365 adaptée. Dans tous les cas, on vérifie trois choses avant de commencer : le contrat de sous-traitance RGPD, l’exclusion de vos données de l’entraînement des modèles, et le lieu d’hébergement."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "L’AI Act m’oblige-t-il à former mes salariés ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Il vous demande de prendre des mesures pour développer leur maîtrise de l’IA, depuis février 2025. Depuis sa réécriture de juillet 2026, le texte précise qu’il n’exige pas un niveau donné pour chaque personne. Une formation n’est donc pas obligatoire en tant que telle, mais c’est la façon la plus simple de montrer que vous avez agi, avec attestations et programme à l’appui."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Mes équipes ne sont pas à l’aise avec l’informatique.",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "C’est le cas de la moitié des groupes que je forme. On part de leur travail réel, pas de l’outil : le premier exercice consiste à reformuler un mail qu’ils ont écrit la veille. Personne ne code, et personne n’est interrogé devant les autres."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Combien de temps ça me prend, à moi, dirigeant ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Environ six heures sur trois mois : l’appel, deux heures pendant le diagnostic, une demi-journée de présence à la formation si vous le souhaitez, et le bilan final. Le reste se fait avec vos équipes et votre référent interne."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Et si les gains ne sont pas au rendez-vous ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Sur l’accompagnement 90 jours, on fixe ensemble un objectif chiffré à la fin du diagnostic, sur des tâches mesurées. Si le bilan du 90 e jour ne l’atteint pas, je continue sans facturer jusqu’à ce qu’il soit atteint. C’est écrit dans la proposition."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Intervenez-vous hors de la région nantaise ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Je me déplace en Pays de la Loire et en Bretagne sans frais supplémentaires. Ailleurs en France, la formation peut se faire à distance, en quatre demi-journées plutôt que deux jours pleins. Le diagnostic, lui, se fait toujours sur place."
+     }
+    }
+   ]
+  }
+ ]
 }
 </script>
 </head>
@@ -100,7 +234,7 @@
 
 <header class="nav" id="nav">
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="Élise Garnier, retour en haut de page">
+    <a class="brand" href="#top">
       <svg class="brand-mark" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="7" fill="#14161A"/><path d="M8 8.5h9M8 14h7M8 19.5h9M8 8.5v11" stroke="#F7F6F2" stroke-width="2" stroke-linecap="round"/><circle cx="20.5" cy="14" r="2" fill="#6FD4AE"/></svg>
       <span>Élise Garnier<small>Conseil et formation IA</small></span>
     </a>
@@ -157,7 +291,7 @@
       </div>
     </div>
 
-    <div class="stage" aria-label="Démonstration : une demande de devis traitée avec un assistant IA">
+    <div class="stage" role="figure" aria-label="Démonstration : une demande de devis traitée avec un assistant IA">
       <div class="bubble bubble--2" aria-hidden="true"><div><span class="ic"><svg><use href="#i-shield"/></svg></span><span>Hébergé dans l’UE<small>données exclues de l’entraînement</small></span></div></div>
       <div class="win" id="demo">
         <div class="win-bar">
@@ -374,6 +508,7 @@
             <path class="hand" aria-hidden="true" d="M196 30 C 260 12, 540 10, 560 34 C 574 52, 566 108, 540 116 C 420 128, 230 122, 205 110 C 186 98, 184 44, 196 30 Z"/>
           </svg>
         </div>
+        <ol class="flow-list" aria-label="Étapes du traitement d’un devis"></ol>
         <aside class="tmap-side" aria-live="polite">
           <div>
             <p class="t-mono muted" id="tm-step">Étape 3 sur 6</p>
@@ -450,7 +585,7 @@
         <button class="case-tab" role="tab" id="tab-3" aria-controls="case-3" aria-selected="false" tabindex="-1"><b>Transports Mauduit</b><span>Transport · 115 salariés</span></button>
       </div>
       <div>
-        <article class="case" id="case-1" role="tabpanel" aria-labelledby="tab-1" tabindex="0">
+        <div class="case" id="case-1" role="tabpanel" aria-labelledby="tab-1" tabindex="0">
           <div class="case-top">
             <h3>Des devis envoyés le jour même au lieu de la semaine suivante</h3>
             <div class="case-id"><span>Vendée</span><span>Le Chat Pro</span></div>
@@ -466,8 +601,8 @@
           </div>
           <p class="case-src"><svg><use href="#i-ruler"/></svg>Relevé des temps tenu par l’entreprise pendant 4 semaines, avant et après. Chiffres déclarés par le client.</p>
           <blockquote class="case-quote"><p>« Karim ne tape presque plus rien. Il relit, il corrige, il appelle le client. C’est exactement ce que je voulais qu’il fasse de ses journées. »</p><footer><b>Yannick Le Goff</b>, dirigeant</footer></blockquote>
-        </article>
-        <article class="case" id="case-2" role="tabpanel" aria-labelledby="tab-2" tabindex="0" hidden>
+        </div>
+        <div class="case" id="case-2" role="tabpanel" aria-labelledby="tab-2" tabindex="0" hidden>
           <div class="case-top">
             <h3>Des licences Copilot enfin utilisées, en pleine période fiscale</h3>
             <div class="case-id"><span>Finistère</span><span>Microsoft 365 Copilot</span></div>
@@ -483,8 +618,8 @@
           </div>
           <p class="case-src"><svg><use href="#i-ruler"/></svg>Temps déclarés par les collaborateurs sur feuille de temps, usage relevé dans la console d’administration Microsoft 365. Chiffres déclarés par le client.</p>
           <blockquote class="case-quote"><p>« Deux jours ont suffi pour que les équipes s’en servent vraiment. Et on sait enfin ce qu’on a le droit d’y mettre. »</p><footer><b>Nolwenn Tanguy</b>, associée</footer></blockquote>
-        </article>
-        <article class="case" id="case-3" role="tabpanel" aria-labelledby="tab-3" tabindex="0" hidden>
+        </div>
+        <div class="case" id="case-3" role="tabpanel" aria-labelledby="tab-3" tabindex="0" hidden>
           <div class="case-top">
             <h3>Des réclamations traitées en trois heures au lieu d’une journée</h3>
             <div class="case-id"><span>Maine-et-Loire</span><span>Dust</span></div>
@@ -500,7 +635,7 @@
           </div>
           <p class="case-src"><svg><use href="#i-ruler"/></svg>Horodatage de la messagerie et enquête trimestrielle de l’entreprise auprès de ses clients. Chiffres déclarés par le client.</p>
           <blockquote class="case-quote"><p>« Mes deux gestionnaires ne subissent plus la boîte mail. Elles gardent leur énergie pour les vrais problèmes, ceux où il faut décrocher le téléphone. »</p><footer><b>Céline Mauduit</b>, directrice générale</footer></blockquote>
-        </article>
+        </div>
       </div>
     </div>
 
@@ -587,7 +722,7 @@
           <li class="rv" style="--i:1"><svg><use href="#i-lock"/></svg><div><b>Pas de données personnelles sans contrat</b><p>Avant tout déploiement, on vérifie le contrat de sous-traitance, l’exclusion de vos données de l’entraînement et le lieu d’hébergement, comme le demande la CNIL.</p></div></li>
           <li class="rv" style="--i:2"><svg><use href="#i-eye"/></svg><div><b>Une relecture humaine avant tout envoi</b><p>Un brouillon produit par l’IA ne part jamais seul chez un client ou un salarié.</p></div></li>
         </ul>
-        <div class="doc" aria-label="Exemple de charte d’usage IA">
+        <div class="doc" role="figure" aria-label="Exemple de charte d’usage IA">
           <div class="doc-h"><b>Charte d’usage IA · Arvor Expertise</b><span>v1.2</span></div>
           <ol>
             <li>Outil autorisé : Microsoft 365 Copilot, licence du cabinet.</li>
@@ -674,11 +809,15 @@
     <div class="faq">
       <details>
         <summary>La formation est-elle vraiment prise en charge par mon OPCO ?<span class="pm" aria-hidden="true"></span></summary>
-        <div class="ans"><p>Elle est éligible, parce que je suis certifiée Qualiopi. La prise en charge dépend ensuite de votre OPCO, de votre taille et des fonds qui lui restent : pour les entreprises de moins de 50 salariés, l’enveloppe nationale 2026 a baissé (521 millions d’euros contre 550 en 2025). Il faut donc déposer tôt.</p><p>Je vous envoie le programme, le devis et la convention dès l’appel, et je vous aide à remplir la demande. Comptez un mois avant la date de formation.</p></div>
+        <div class="ans"><p>Elle est éligible, parce que je suis certifiée Qualiopi. La prise en charge dépend ensuite de votre OPCO, de votre taille et des fonds qui lui restent : pour les entreprises de moins de 50 salariés, l’enveloppe nationale 2026 a baissé (521 millions d’euros contre 550 en 2025). Il faut donc déposer tôt.</p><p>Je vous envoie le programme, le devis et la convention dès l’appel, et je vous aide à remplir la demande. Comptez un mois avant la date de formation. Si vous financez directement, on peut commencer sous 15 jours.</p></div>
       </details>
       <details>
         <summary>Nous avons déjà Microsoft 365 et Copilot. À quoi bon ?<span class="pm" aria-hidden="true"></span></summary>
         <div class="ans"><p>C’est souvent le meilleur point de départ : l’outil est là, il respecte déjà les droits d’accès de vos fichiers. Ce qui manque en général, ce sont les bonnes habitudes. Beaucoup d’entreprises paient des licences que peu de salariés ouvrent chaque semaine. La formation se fait alors directement dans Copilot, sur vos documents.</p></div>
+      </details>
+      <details>
+        <summary>Vous formez aussi sur ChatGPT, Claude ou Gemini ?<span class="pm" aria-hidden="true"></span></summary>
+        <div class="ans"><p>Oui. La méthode est la même d’un outil à l’autre, et je forme sur celui que vos équipes utilisent déjà. Une seule condition : pour des données de l’entreprise, on passe par une offre professionnelle avec contrat (ChatGPT Team ou Enterprise, Claude Team, Gemini dans Google Workspace), jamais par un compte gratuit personnel.</p></div>
       </details>
       <details>
         <summary>Nos données partent-elles aux États-Unis ?<span class="pm" aria-hidden="true"></span></summary>
