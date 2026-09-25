@@ -314,12 +314,12 @@
       dust: {
         k: 'Première piste', t: 'Dust, branché sur vos logiciels',
         p: "Plateforme française qui connecte des modèles d’IA à vos outils internes. Vos équipes créent leurs assistants métier sans écrire de code.",
-        l: ['Hébergement des données en Europe', 'Connexion à la messagerie, au drive, au CRM', 'Droits d’accès définis par équipe'],
+        l: ['Hébergement en Europe au choix', 'Vos données jamais utilisées pour entraîner les modèles', 'Connexion à la messagerie, au drive, au CRM'],
       },
       mistral: {
-        k: 'Première piste', t: 'Le Chat de Mistral, offre Entreprise',
-        p: "Éditeur français, données traitées en Europe, contrat de sous-traitance RGPD. Pour les données les plus sensibles, les modèles peuvent aussi tourner sur vos propres serveurs.",
-        l: ['Vos contenus exclus de l’entraînement', 'Contrat de sous-traitance signé', 'Déploiement sur vos serveurs possible'],
+        k: 'Première piste', t: 'Mistral Vibe, offre Enterprise',
+        p: "L’assistant de l’éditeur français Mistral (ex-Le Chat). En offre Enterprise, vos données sont exclues de l’entraînement par défaut, et l’outil peut tourner sur vos serveurs, dans un cloud privé ou chez Mistral avec résidence des données.",
+        l: ['Exclusion de l’entraînement par défaut', 'Avenant de traitement des données (DPA)', 'Déploiement sur vos serveurs possible'],
       },
       copilot: {
         k: 'Première piste', t: 'Microsoft 365 Copilot, bien réglé',
@@ -327,9 +327,9 @@
         l: ['Audit des partages de fichiers avant activation', 'Bibliothèque de requêtes partagée', 'Règles écrites sur les données clients'],
       },
       chat: {
-        k: 'Première piste', t: 'Le Chat Pro de Mistral',
-        p: "Un assistant généraliste, indépendant de votre suite bureautique, avec des données traitées en Europe. Simple à déployer sur une petite équipe.",
-        l: ['Abonnement par utilisateur, sans engagement long', 'Données traitées en Europe', 'Pas de réglage lourd côté informatique'],
+        k: 'Première piste', t: 'Mistral Vibe, offre Team',
+        p: "Un assistant généraliste d’un éditeur français, indépendant de votre suite bureautique. Simple à déployer sur une petite équipe, à une condition : désactiver l’entraînement sur vos données dans l’administration, car il est actif par défaut hors offre Enterprise.",
+        l: ['Abonnement par utilisateur', 'Espace partagé avec console d’administration', 'Entraînement désactivé par l’administrateur'],
       },
     };
     const decide = () => {

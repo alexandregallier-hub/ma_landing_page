@@ -85,7 +85,7 @@ p{margin:0;text-wrap:pretty}
 .wrap{width:100%;max-width:calc(var(--wrap) + 2 * var(--gut));margin-inline:auto;padding-inline:var(--gut)}
 
 /* ------------------------------------------------------------------ Type */
-.t-hero{font-size:clamp(2.2rem,4.3vw,3.6rem);line-height:1.03;letter-spacing:-.024em;font-weight:500}
+.t-hero{font-size:clamp(2.2rem,4.05vw,3.35rem);line-height:1.03;letter-spacing:-.024em;font-weight:500}
 .t-h2{font-size:clamp(1.9rem,3.6vw,2.95rem);line-height:1.08;letter-spacing:-.021em;font-weight:500}
 .t-h3{font-size:1.1875rem;line-height:1.3;letter-spacing:-.01em;font-weight:500}
 .t-lead{font-size:clamp(1.125rem,1.5vw,1.25rem);line-height:1.5;color:var(--ink-2);max-width:56ch}
@@ -253,7 +253,7 @@ html.js .hero.in h1 .ln:nth-child(3)>span{transition-delay:120ms}
 .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
 .chip{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 9px;border-radius:var(--r-1);background:var(--s1);color:var(--ink-2);font-size:.71875rem;white-space:nowrap}
 .chip svg{width:12px;height:12px}
-.q-list{margin-top:14px;display:grid;gap:6px}
+.q-list{margin-top:14px;display:grid;grid-template-columns:minmax(0,1fr);gap:6px}
 .q-item{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:var(--r-1);background:transparent;color:var(--ink-3);font-size:.75rem}
 .q-item.on{background:var(--s1);color:var(--ink)}
 .q-item i{width:6px;height:6px;border-radius:50%;background:#CFCBC0;flex:none}
@@ -269,6 +269,8 @@ html.js .hero.in h1 .ln:nth-child(3)>span{transition-delay:120ms}
 .draft th{font-weight:500;text-align:left;color:var(--ink-3);padding:8px 10px;border-bottom:1px solid var(--line);font-size:.6875rem}
 .draft td{padding:7px 10px;border-bottom:1px solid #F0EEE8;color:var(--ink-2)}
 .draft td:last-child,.draft th:last-child{text-align:right}
+.draft .flag{display:inline-block;margin-left:4px;padding:1px 6px;border-radius:4px;background:#FCEFD9;color:#7A4B00;font-size:.65625rem;white-space:nowrap}
+.timer>span:last-child{white-space:nowrap}
 .draft tr.total td{color:var(--ink);font-weight:500;border-bottom:0}
 .draft tbody tr{opacity:0;transform:translateY(4px);transition:opacity 240ms var(--e-enter),transform 240ms var(--e-enter)}
 .draft tbody tr.on{opacity:1;transform:none}
