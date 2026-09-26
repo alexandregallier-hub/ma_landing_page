@@ -33,7 +33,7 @@
    "@id": "https://www.elisegarnier.fr/#entreprise",
    "name": "Élise Garnier Conseil",
    "url": "https://www.elisegarnier.fr/",
-   "description": "Conseil et formation à l'intelligence artificielle pour les PME et ETI : diagnostic, formation en intra finançable par les OPCO, accompagnement à la mise en place d'outils IA conformes au RGPD.",
+   "description": "Conseil et formation à l'intelligence artificielle pour les PME de 10 à 250 salariés : diagnostic, formation en intra finançable par les OPCO, accompagnement à la mise en place d'outils IA conformes au RGPD.",
    "email": "contact@elisegarnier.fr",
    "telephone": "+33261914217",
    "image": "https://www.elisegarnier.fr/assets/img/og.png",
@@ -154,14 +154,6 @@
     },
     {
      "@type": "Question",
-     "name": "Nos données partent-elles aux États-Unis ?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Pas si on choisit bien. Selon vos contraintes, je vous oriente vers un outil hébergé dans l’Union européenne, comme Vibe de Mistral (ex-Le Chat) ou Dust, ou vers une configuration Microsoft 365 adaptée. Dans tous les cas, on vérifie trois choses avant de commencer : le contrat de sous-traitance RGPD, l’exclusion de vos données de l’entraînement des modèles, et le lieu d’hébergement."
-     }
-    },
-    {
-     "@type": "Question",
      "name": "L’AI Act m’oblige-t-il à former mes salariés ?",
      "acceptedAnswer": {
       "@type": "Answer",
@@ -240,10 +232,9 @@
     </a>
     <nav aria-label="Navigation principale">
       <ul class="nav-links">
-        <li><a href="#offres">Offres</a></li>
-        <li><a href="#parcours">Déroulé</a></li>
         <li><a href="#resultats">Résultats</a></li>
-        <li><a href="#cadre">Données et AI Act</a></li>
+        <li><a href="#offres">Offres</a></li>
+        <li><a href="methode.html">Méthode</a></li>
         <li><a href="#apropos">À propos</a></li>
         <li><a href="#faq">Questions</a></li>
       </ul>
@@ -257,10 +248,9 @@
 
 <div class="mobile-menu" id="mobile-menu" aria-label="Menu">
   <ul>
-    <li><a href="#offres">Offres <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
-    <li><a href="#parcours">Déroulé <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
     <li><a href="#resultats">Résultats <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
-    <li><a href="#cadre">Données et AI Act <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+    <li><a href="#offres">Offres <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+    <li><a href="methode.html">Méthode <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
     <li><a href="#apropos">À propos <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
     <li><a href="#faq">Questions <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
   </ul>
@@ -273,13 +263,12 @@
 <section class="hero" id="top" aria-labelledby="hero-title">
   <div class="wrap hero-grid">
     <div>
-      <p class="hero-for"><span class="dot" aria-hidden="true"></span>Pour les PME et ETI de 10 à 250 salariés</p>
       <h1 class="t-hero" id="hero-title">
         <span class="ln"><span>Vos équipes gagnent</span></span>
         <span class="ln"><span class="accent">4 heures par semaine</span></span>
         <span class="ln"><span>avec l’IA.</span></span>
       </h1>
-      <p class="t-lead">Je forme vos salariés sur leurs propres devis, mails et comptes rendus, puis je mets les outils en place avec eux. Formation finançable par votre OPCO, données gardées sous contrôle, bilan chiffré au 90<sup>e</sup> jour.</p>
+      <p class="t-lead">Pour les PME de 10 à 250 salariés. Je forme vos équipes sur leurs propres devis, mails et comptes rendus, puis je mets les outils en place avec elles. Formation finançable par votre OPCO, bilan chiffré au 90<sup>e</sup> jour.</p>
       <div class="hero-actions">
         <a class="btn btn--lg" href="#rdv"><span class="btn-label">Réserver un appel de 30 min</span><svg class="arr" aria-hidden="true"><use href="#i-arrow"/></svg><span class="spin" aria-hidden="true"></span></a>
         <a class="link" href="#calcul">Estimer votre gain<svg class="arr" aria-hidden="true"><use href="#i-arrow"/></svg></a>
@@ -369,210 +358,8 @@
   </div>
 </section>
 
-<!-- ============================================================ CONSTAT -->
-<section class="sec" id="constat" aria-labelledby="constat-title">
-  <div class="wrap facts">
-    <div>
-      <h2 class="visually-hidden" id="constat-title">Où en sont les PME françaises</h2>
-      <p class="lit" data-lit>La moitié des PME françaises utilisent déjà l’IA générative. Dans la plupart, chacun se débrouille avec l’outil qu’il a trouvé, et personne ne sait vraiment ce qui part dans les requêtes.</p>
-      <p class="facts-foot">L’accès aux outils est réglé. Il reste à décider quoi en faire, poste par poste, et à l’écrire quelque part. C’est ce que je fais avec vous.</p>
-    </div>
-    <ul class="fact-list">
-      <li class="rv"><strong class="num">55 %</strong><p>des TPE et PME utilisent l’IA générative fin 2025, contre 31 % un an plus tôt.</p><cite>Bpifrance Le Lab, étude de conjoncture 2025, relayée par <a href="https://itsocial.fr/contenus/actualites/intelligence-artificielle-actualites-contenus/bpifrance-constate-un-basculement-des-usages-avec-55-des-tpe-pme-utilisatrices-dia-generative-fin-2025/" rel="noopener">IT Social</a></cite></li>
-      <li class="rv" style="--i:1"><strong class="num">80 %</strong><p>des dirigeants français utilisent l’IA générative au moins une fois par semaine. Dans les TPE, 55 % des collaborateurs.</p><cite>Microsoft France et YouGov, janvier 2026, 657 cadres et dirigeants, <a href="https://news.microsoft.com/source/emea/2026/02/etude-microsoft-france-lusage-de-lia-progresse-dans-les-entreprises-francaises-mais-se-heurte-a-un-manque-daccompagnement/?lang=fr" rel="noopener">étude</a></cite></li>
-      <li class="rv" style="--i:2"><strong class="num">61 %</strong><p>des utilisateurs de l’IA en entreprise passent par un compte personnel au moins une fois par semaine.</p><cite>Même étude</cite></li>
-    </ul>
-  </div>
-</section>
-
-<!-- ============================================================ OFFRES -->
-<section class="sec night" id="offres" aria-labelledby="offres-title">
-  <div class="wrap">
-    <div class="sec-head">
-      <h2 class="t-h2" id="offres-title">Choisissez par où commencer</h2>
-      <p class="t-lead">La plupart de mes clients commencent par le diagnostic. D’autres viennent directement pour la formation, parce qu’ils savent déjà où ils perdent du temps.</p>
-    </div>
-    <div class="offers">
-      <a class="offer rv" href="#parcours">
-        <span class="offer-n">A</span>
-        <div><h3>Diagnostic IA</h3><p class="offer-sub">Deux jours chez vous pour repérer où l’IA fait gagner du temps, et où elle ne sert à rien.</p></div>
-        <ul><li>Entretiens avec 6 à 10 personnes de vos équipes</li><li>Carte des tâches chiffrée, poste par poste</li><li>Choix des outils et feuille de route à 90 jours</li></ul>
-        <div class="offer-meta"><strong class="num">2 400 € HT</strong><span>2 jours sur place, restitution sous 10 jours</span></div>
-        <span class="offer-arr" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
-      </a>
-      <a class="offer rv" href="formation-ia.html" style="--i:1">
-        <span class="offer-n">B</span>
-        <div><h3>Formation « L’IA au travail »</h3><p class="offer-sub">Deux jours en intra, sur vos documents, pour un groupe de 4 à 10 personnes.</p></div>
-        <ul><li>Exercices sur vos devis, mails et comptes rendus</li><li>Charte d’usage IA rédigée pendant la formation</li><li>Fiches méthode par poste</li><li>Attestation individuelle, évaluation à 3 mois</li></ul>
-        <div class="offer-meta"><strong class="num">2 900 € HT</strong><span>par groupe, présentiel ou distanciel</span><span class="tag">Finançable OPCO</span></div>
-        <span class="offer-arr" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
-      </a>
-      <a class="offer rv" href="#parcours" style="--i:2">
-        <span class="offer-n">C</span>
-        <div><h3>Accompagnement 90 jours</h3><p class="offer-sub">Diagnostic, formation, puis je construis les automatisations avec vos équipes et on mesure.</p></div>
-        <ul><li>Diagnostic et formation inclus</li><li>3 à 5 automatisations en place et documentées</li><li>Point toutes les deux semaines, bilan chiffré au 90<sup>e</sup> jour</li></ul>
-        <div class="offer-meta"><strong class="num">dès 9 800 € HT</strong><span>12 semaines</span><span class="tag">Gain garanti ou prolongé</span></div>
-        <span class="offer-arr" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
-      </a>
-    </div>
-    <div class="offers-foot">
-      <p>Vous hésitez entre deux formules ? C’est justement l’objet du premier appel.</p>
-      <a class="btn" href="#rdv"><span class="btn-label">Réserver un appel de 30 min</span><svg class="arr" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================ PARCOURS -->
-<section class="sec" id="parcours" aria-labelledby="parcours-title">
-  <div class="wrap path">
-    <div class="path-head">
-      <h2 class="t-h2" id="parcours-title">Ce qui se passe, semaine par semaine</h2>
-      <p class="t-lead">L’accompagnement complet dure 12 semaines. Vous savez à l’avance ce que je vous demande et ce que vous aurez en main à chaque étape.</p>
-      <a class="link" href="formation-ia.html">Programme détaillé de la formation<svg class="arr" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-    </div>
-    <ol class="steps" id="steps">
-      <span class="steps-progress" aria-hidden="true"></span>
-      <li class="step">
-        <span class="step-dot" aria-hidden="true"></span>
-        <p class="step-when">Jour 0</p>
-        <h3 class="t-h3">Un appel de 30 minutes</h3>
-        <p>Vous me décrivez l’entreprise et ce qui coince. Je vous dis franchement si je peux aider. Sinon, je vous oriente vers quelqu’un qui le peut.</p>
-        <div class="step-out"><span><svg><use href="#i-check"/></svg>Compte rendu écrit sous 24 h</span></div>
-        <p class="you"><b>Votre temps :</b> 30 minutes.</p>
-      </li>
-      <li class="step">
-        <span class="step-dot" aria-hidden="true"></span>
-        <p class="step-when">Semaines 1 et 2</p>
-        <h3 class="t-h3">Le diagnostic, sur place</h3>
-        <p>Je passe deux jours avec vos équipes. Je suis un devis, une facture ou une réclamation d’un bout à l’autre de l’entreprise, et je chronomètre chaque étape.</p>
-        <div class="step-out"><span><svg><use href="#i-check"/></svg>Carte des tâches</span><span><svg><use href="#i-check"/></svg>Feuille de route à 90 jours</span></div>
-        <p class="you"><b>Votre temps :</b> 2 heures, plus 45 minutes par personne interrogée.</p>
-      </li>
-      <li class="step">
-        <span class="step-dot" aria-hidden="true"></span>
-        <p class="step-when">Semaine 3</p>
-        <h3 class="t-h3">La formation, sur vos documents</h3>
-        <p>Deux jours avec 4 à 10 personnes. Chacun repart avec ses modèles de requêtes, testés sur les dossiers de sa semaine. Je monte le dossier de prise en charge OPCO avec vous.</p>
-        <div class="step-out"><span><svg><use href="#i-check"/></svg>Charte d’usage IA</span><span><svg><use href="#i-check"/></svg>Fiches méthode par poste</span><span><svg><use href="#i-check"/></svg>Attestations</span></div>
-        <p class="you"><b>Votre temps :</b> une demi-journée de présence conseillée.</p>
-      </li>
-      <li class="step">
-        <span class="step-dot" aria-hidden="true"></span>
-        <p class="step-when">Semaines 4 à 11</p>
-        <h3 class="t-h3">La mise en place</h3>
-        <p>On construit ensemble les automatisations prévues : tri des mails entrants, préparation des devis, synthèse des réunions de chantier. Un point de 45 minutes toutes les deux semaines, et je forme une personne de chez vous pour prendre le relais.</p>
-        <div class="step-out"><span><svg><use href="#i-check"/></svg>Automatisations documentées</span><span><svg><use href="#i-check"/></svg>Référent IA interne</span></div>
-      </li>
-      <li class="step">
-        <span class="step-dot" aria-hidden="true"></span>
-        <p class="step-when">Jour 90</p>
-        <h3 class="t-h3">Le bilan chiffré</h3>
-        <p>On remesure les mêmes tâches qu’au diagnostic. Si le gain fixé ensemble n’est pas atteint, je continue sans facturer jusqu’à ce qu’il le soit.</p>
-        <div class="step-out"><span><svg><use href="#i-check"/></svg>Rapport avant et après</span></div>
-      </li>
-    </ol>
-  </div>
-</section>
-
-<!-- ============================================================ CARTE DES TÂCHES -->
-<section class="sec band map-sec" id="diagnostic" aria-labelledby="map-title">
-  <div class="wrap">
-    <div class="sec-head">
-      <h2 class="t-h2" id="map-title">Le diagnostic, en une image</h2>
-      <p class="t-lead">Un exemple tiré d’une menuiserie de 42 salariés : le trajet d’une demande de devis, chronométré. Sélectionnez une étape, puis comparez avec la situation au 90<sup>e</sup> jour.</p>
-    </div>
-    <div class="tmap rv" id="tmap">
-      <div class="tmap-top">
-        <span><b>Demande de devis</b> <span class="muted">· 60 par mois</span></span>
-        <div class="seg" role="group" aria-label="Période affichée">
-          <button type="button" aria-pressed="true" data-view="before">Avant</button>
-          <button type="button" aria-pressed="false" data-view="after">Au 90<sup>e</sup> jour</button>
-        </div>
-      </div>
-      <div class="tmap-body">
-        <div class="flow">
-          <svg viewBox="0 0 700 300" role="group" aria-label="Étapes du traitement d’un devis">
-            <g class="edges" aria-hidden="true">
-              <path class="edge" d="M150 70 H200"/>
-              <path class="edge" d="M350 70 H400"/>
-              <path class="edge" d="M475 100 V140 C475 160 460 170 440 170 H260 C240 170 225 180 225 200 V210"/>
-              <path class="edge" d="M300 240 H350"/>
-              <path class="edge" d="M500 240 H550"/>
-            </g>
-            <g class="node" tabindex="0" role="button" data-k="0" transform="translate(0,40)"><rect width="150" height="60" rx="8"/><text x="14" y="26">Réception</text><text class="t" x="14" y="45" data-b="10 min" data-a="5 min">10 min</text></g>
-            <g class="node" tabindex="0" role="button" data-k="1" transform="translate(200,40)"><rect width="150" height="60" rx="8"/><text x="14" y="26">Lecture des cotes</text><text class="t" x="14" y="45" data-b="20 min" data-a="2 min">20 min</text><g class="badge" aria-hidden="true"><circle cx="134" cy="16" r="8" fill="#0B6B4E"/><path d="M130.5 16.3l2.2 2.2 4-4.5" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></g>
-            <g class="node" tabindex="0" role="button" data-k="2" transform="translate(400,40)"><rect width="150" height="60" rx="8"/><text x="14" y="26">Recherche des prix</text><text class="t" x="14" y="45" data-b="30 min" data-a="1 min">30 min</text><g class="badge" aria-hidden="true"><circle cx="134" cy="16" r="8" fill="#0B6B4E"/><path d="M130.5 16.3l2.2 2.2 4-4.5" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></g>
-            <g class="node" tabindex="0" role="button" data-k="3" transform="translate(150,210)"><rect width="150" height="60" rx="8"/><text x="14" y="26">Saisie dans l’ERP</text><text class="t" x="14" y="45" data-b="30 min" data-a="6 min">30 min</text><g class="badge" aria-hidden="true"><circle cx="134" cy="16" r="8" fill="#0B6B4E"/><path d="M130.5 16.3l2.2 2.2 4-4.5" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></g>
-            <g class="node" tabindex="0" role="button" data-k="4" transform="translate(350,210)"><rect width="150" height="60" rx="8"/><text x="14" y="26">Relecture</text><text class="t" x="14" y="45" data-b="15 min" data-a="7 min">15 min</text></g>
-            <g class="node" tabindex="0" role="button" data-k="5" transform="translate(550,210)"><rect width="150" height="60" rx="8"/><text x="14" y="26">Envoi et relance</text><text class="t" x="14" y="45" data-b="25 min" data-a="3 min">25 min</text><g class="badge" aria-hidden="true"><circle cx="134" cy="16" r="8" fill="#0B6B4E"/><path d="M130.5 16.3l2.2 2.2 4-4.5" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></g>
-            <path class="hand" aria-hidden="true" d="M196 30 C 260 12, 540 10, 560 34 C 574 52, 566 108, 540 116 C 420 128, 230 122, 205 110 C 186 98, 184 44, 196 30 Z"/>
-          </svg>
-        </div>
-        <ol class="flow-list" aria-label="Étapes du traitement d’un devis"></ol>
-        <aside class="tmap-side" aria-live="polite">
-          <div>
-            <p class="t-mono muted" id="tm-step">Étape 3 sur 6</p>
-            <h3 id="tm-name">Recherche des prix</h3>
-          </div>
-          <p id="tm-desc">Le chargé d’affaires ouvre trois fichiers Excel et un ancien devis pour retrouver les tarifs. Il recopie à la main.</p>
-          <div class="meter">
-            <div class="meter-row"><span>Avant</span><b id="tm-b">30 min</b></div>
-            <div class="bar"><i id="tm-bb" style="transform:scaleX(1)"></i></div>
-            <div class="meter-row"><span>Au 90<sup>e</sup> jour</span><b id="tm-a">1 min</b></div>
-            <div class="bar a"><i id="tm-ab" style="transform:scaleX(.033)"></i></div>
-          </div>
-          <div class="tmap-total">
-            <strong class="num" id="tm-total">2 h 10</strong>
-            <span id="tm-total-l">par devis, en moyenne, avant l’accompagnement</span>
-          </div>
-        </aside>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================ CALCUL -->
-<section class="sec" id="calcul" aria-labelledby="calc-title">
-  <div class="wrap">
-    <div class="sec-head">
-      <h2 class="t-h2" id="calc-title">Combien de temps pouvez-vous récupérer ?</h2>
-      <p class="t-lead">Un calcul volontairement prudent. Réglez les curseurs sur votre entreprise, le résultat se met à jour.</p>
-    </div>
-    <form class="calc rv" id="calc" onsubmit="return false">
-      <div class="calc-in">
-        <div class="field-range">
-          <label for="c-people">Personnes concernées <output for="c-people" id="o-people">12</output></label>
-          <input type="range" id="c-people" min="1" max="60" step="1" value="12">
-          <p class="hint">Celles qui écrivent, chiffrent, répondent ou saisissent une bonne partie de la journée.</p>
-        </div>
-        <div class="field-range">
-          <label for="c-hours">Heures par semaine sur ces tâches <output for="c-hours" id="o-hours">10 h</output></label>
-          <input type="range" id="c-hours" min="2" max="25" step="1" value="10">
-          <p class="hint">Mails, devis, comptes rendus, relances, saisie, recherche d’informations.</p>
-        </div>
-        <div class="field-range">
-          <label for="c-cost">Coût horaire chargé moyen <output for="c-cost" id="o-cost">42 €</output></label>
-          <input type="range" id="c-cost" min="25" max="90" step="1" value="42">
-          <p class="hint">Salaire brut chargé divisé par les heures travaillées. 42&nbsp;€ correspond à environ 3 000&nbsp;€ brut mensuels.</p>
-        </div>
-      </div>
-      <div class="calc-out" aria-live="polite">
-        <p class="t-mono" style="color:var(--a-night)">Temps récupérable par an</p>
-        <p class="calc-big num"><span id="r-hours">1 320</span><small>heures</small></p>
-        <dl class="calc-rows">
-          <div><dt>En jours de travail</dt><dd id="r-days">189 jours</dd></div>
-          <div><dt>Valeur de ce temps</dt><dd id="r-value">55 440 €</dd></div>
-          <div><dt>La formation d’un groupe est rentabilisée en</dt><dd id="r-payback">2,3 semaines</dd></div>
-        </dl>
-        <p class="calc-note">Hypothèse : 25&nbsp;% du temps passé sur ces tâches, sur 44 semaines travaillées. Chez mes clients, le gain médian mesuré au 90<sup>e</sup> jour est de 4 heures par personne et par semaine. Ce calcul reste en dessous exprès.</p>
-        <div class="calc-cta"><a class="btn" href="#rdv"><span class="btn-label">Vérifier ce chiffre avec moi</span><svg class="arr" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
-      </div>
-    </form>
-  </div>
-</section>
-
 <!-- ============================================================ RÉSULTATS -->
-<section class="sec band" id="resultats" aria-labelledby="res-title">
+<section class="sec" id="resultats" aria-labelledby="res-title">
   <div class="wrap">
     <div class="sec-head">
       <h2 class="t-h2" id="res-title">Ce que ça a donné chez eux</h2>
@@ -639,37 +426,98 @@
       </div>
     </div>
 
-    <div class="indic" id="indicateurs">
-      <div class="indic-head">
-        <h3>Indicateurs des formations 2025</h3>
-        <p class="t-small muted">214 stagiaires, questionnaires de fin de formation et enquête à 3 mois. Mis à jour chaque trimestre.</p>
+    <div class="res-quotes">
+      <h3 class="res-sub">Ce qu’en disent les stagiaires</h3>
+      <div class="quotes quotes--3">
+      <figure class="q rv" style="--i:0"><blockquote><p>« J’avais peur d’une formation où on nous montre des gadgets. On a passé deux jours sur nos vrais dossiers, et le lundi suivant j’utilisais déjà trois des modèles. »</p></blockquote><figcaption><footer><span class="avatar" aria-hidden="true">MR</span><span><b>Mathieu R.</b><small>Conducteur de travaux, Ouest Climatique</small></span></footer></figcaption><p class="src"><svg><use href="#i-check"/></svg>Questionnaire de fin de formation, mars 2026</p></figure><figure class="q rv" style="--i:1"><blockquote><p>« Enfin quelqu’un qui dit quand l’IA ne sert à rien. »</p></blockquote><figcaption><footer><span class="avatar" aria-hidden="true">SL</span><span><b>Sandrine L.</b><small>Responsable administrative, Biscuiterie Kerlann</small></span></footer></figcaption><p class="src"><svg><use href="#i-check"/></svg>Questionnaire de fin de formation, janvier 2026</p></figure><figure class="q rv" style="--i:2"><blockquote><p>« Mon équipe de six a gagné une matinée par semaine sur les comptes rendus de chantier. Je l’ai mesuré parce que je n’y croyais pas. »</p></blockquote><figcaption><footer><span class="avatar" aria-hidden="true">AM</span><span><b>Anne-Sophie M.</b><small>Directrice d’agence, Ouest Climatique</small></span></footer></figcaption><p class="src"><svg><use href="#i-check"/></svg>Enquête à 3 mois, juin 2026</p></figure>
       </div>
-      <div class="indic-grid">
-        <div class="rv"><strong class="num" data-count="4.8" data-dec="1" data-unit="/5">4,8/5</strong><span>satisfaction en fin de formation, 96&nbsp;% de répondants</span></div>
-        <div class="rv" style="--i:1"><strong class="num" data-count="97" data-unit=" %">97&nbsp;%</strong><span>recommanderaient la formation à un collègue</span></div>
-        <div class="rv" style="--i:2"><strong class="num" data-count="89" data-unit=" %">89&nbsp;%</strong><span>utilisent encore l’IA au travail trois mois plus tard</span></div>
-        <div class="rv" style="--i:3"><strong class="num" data-count="98" data-unit=" %">98&nbsp;%</strong><span>de présence sur les deux journées</span></div>
-      </div>
+      <p class="quotes-note">Extraits des questionnaires de fin de formation, publiés avec l’accord de leurs auteurs. Tous les avis, y compris les moins bons, figurent dans les <a href="formation-ia.html#indicateurs">indicateurs de résultats</a> : 4,8/5 de satisfaction et 97 % de recommandation en 2025.</p>
     </div>
   </div>
 </section>
 
-<!-- ============================================================ AVIS -->
-<section class="sec" id="avis" aria-labelledby="avis-title">
+<!-- ============================================================ OFFRES -->
+<section class="sec night" id="offres" aria-labelledby="offres-title">
   <div class="wrap">
     <div class="sec-head">
-      <h2 class="t-h2" id="avis-title">Ce qu’en disent les stagiaires</h2>
-      <p class="t-lead">Extraits des questionnaires de fin de formation, publiés avec l’accord de leurs auteurs.</p>
+      <h2 class="t-h2" id="offres-title">Choisissez par où commencer</h2>
+      <p class="t-lead">Trois formules, un même déroulé. Le diagnostic suffit pour savoir quoi faire ; l’accompagnement le fait avec vous.</p>
     </div>
-    <div class="quotes">
-      <figure class="q rv"><blockquote><p class="big">« J’avais peur d’une formation où on nous montre des gadgets. On a passé deux jours sur nos vrais dossiers, et le lundi suivant j’utilisais déjà trois des modèles. »</p></blockquote><figcaption><footer><span class="avatar" aria-hidden="true">MR</span><span><b>Mathieu R.</b><small>Conducteur de travaux, Ouest Climatique</small></span></footer></figcaption><p class="src"><svg><use href="#i-check"/></svg>Questionnaire de fin de formation, mars 2026</p></figure>
-      <figure class="q rv" style="--i:1"><blockquote><p>« Enfin quelqu’un qui dit quand l’IA ne sert à rien. »</p></blockquote><figcaption><footer><span class="avatar" aria-hidden="true">SL</span><span><b>Sandrine L.</b><small>Responsable administrative, Biscuiterie Kerlann</small></span></footer></figcaption><p class="src"><svg><use href="#i-check"/></svg>Questionnaire de fin de formation, janvier 2026</p></figure>
-      <figure class="q rv" style="--i:2"><blockquote><p>« La partie sur ce qu’on a le droit de coller dans un outil m’a plus servi que tout le reste. On l’a imprimée et affichée au-dessus de l’imprimante. »</p></blockquote><figcaption><footer><span class="avatar" aria-hidden="true">JP</span><span><b>Julien P.</b><small>Assistant commercial, Socomat</small></span></footer></figcaption><p class="src"><svg><use href="#i-check"/></svg>Questionnaire de fin de formation, novembre 2025</p></figure>
-      <figure class="q rv"><blockquote><p>« Elle a dirigé une usine avant de faire ça, et ça se sent dans chaque exemple. Pas de jargon, des cas qu’on reconnaît. »</p></blockquote><figcaption><footer><span class="avatar" aria-hidden="true">PH</span><span><b>Patrick H.</b><small>Dirigeant, Atelier Poulain, 32 salariés</small></span></footer></figcaption><p class="src"><svg><use href="#i-check"/></svg>Questionnaire de fin de formation, février 2026</p></figure>
-      <figure class="q rv" style="--i:1"><blockquote><p>« Rythme soutenu, on ne décroche pas. J’aurais aimé une demi-journée de plus sur Excel. »</p></blockquote><figcaption><footer><span class="avatar" aria-hidden="true">FB</span><span><b>Fatima B.</b><small>Comptable, Hélios Santé</small></span></footer></figcaption><p class="src"><svg><use href="#i-check"/></svg>Questionnaire de fin de formation, avril 2026</p></figure>
-      <figure class="q rv" style="--i:2"><blockquote><p class="big">« Mon équipe de six a gagné une matinée par semaine sur les comptes rendus de chantier. Je l’ai mesuré parce que je n’y croyais pas. »</p></blockquote><figcaption><footer><span class="avatar" aria-hidden="true">AM</span><span><b>Anne-Sophie M.</b><small>Directrice d’agence, Ouest Climatique</small></span></footer></figcaption><p class="src"><svg><use href="#i-check"/></svg>Enquête à 3 mois, juin 2026</p></figure>
+    <div class="offers">
+      <a class="offer rv" href="methode.html#diagnostic">
+        <div><h3>Diagnostic IA <span class="reco">Point de départ conseillé</span></h3><p class="offer-sub">Deux jours chez vous pour repérer où l’IA fait gagner du temps, et où elle ne sert à rien.</p></div>
+        <ul><li>Entretiens avec 6 à 10 personnes de vos équipes</li><li>Carte des tâches chiffrée, poste par poste</li><li>Choix des outils et feuille de route à 90 jours</li></ul>
+        <div class="offer-meta"><strong class="num">2 400 € HT</strong><span>2 jours sur place, restitution sous 10 jours</span></div>
+        <span class="offer-arr" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
+      </a>
+      <a class="offer rv" href="formation-ia.html" style="--i:1">
+        <div><h3>Formation « L’IA au travail »</h3><p class="offer-sub">Deux jours en intra, sur vos documents, pour un groupe de 4 à 10 personnes.</p></div>
+        <ul><li>Exercices sur vos devis, mails et comptes rendus</li><li>Charte d’usage IA rédigée pendant la formation</li><li>Fiches méthode par poste</li><li>Attestation individuelle, évaluation à 3 mois</li></ul>
+        <div class="offer-meta"><strong class="num">2 900 € HT</strong><span>par groupe, présentiel ou distanciel</span><span class="tag">Finançable OPCO</span></div>
+        <span class="offer-arr" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
+      </a>
+      <a class="offer rv" href="methode.html#deroule" style="--i:2">
+        <div><h3>Accompagnement 90 jours</h3><p class="offer-sub">Diagnostic, formation, puis je construis les automatisations avec vos équipes et on mesure.</p></div>
+        <ul><li>Diagnostic et formation inclus</li><li>3 à 5 automatisations en place et documentées</li><li>Point toutes les deux semaines, bilan chiffré au 90<sup>e</sup> jour</li></ul>
+        <div class="offer-meta"><strong class="num">dès 9 800 € HT</strong><span>12 semaines</span><span class="tag">Gain garanti ou prolongé</span></div>
+        <span class="offer-arr" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
+      </a>
     </div>
-    <p class="quotes-note">Chaque stagiaire reçoit le même questionnaire. Tous les avis, y compris les moins bons, figurent dans le rapport annuel des indicateurs, envoyé sur simple demande.</p>
+    <div class="miles" id="parcours">
+      <h3 class="miles-title">Le déroulé complet, en 12 semaines</h3>
+      <ol class="miles-list">
+        <li><b>Jour 0</b><span>Appel de 30 min</span></li>
+        <li><b>Semaines 1 et 2</b><span>Diagnostic sur place</span></li>
+        <li><b>Semaine 3</b><span>Formation sur vos documents</span></li>
+        <li><b>Semaines 4 à 11</b><span>Mise en place avec vos équipes</span></li>
+        <li><b>Jour 90</b><span>Bilan chiffré, gain garanti</span></li>
+      </ol>
+      <p class="miles-foot">Votre temps de dirigeant : environ 6 heures sur trois mois. <a href="methode.html#deroule">Le détail semaine par semaine</a></p>
+    </div>
+    <div class="offers-foot">
+      <p>Vous hésitez entre deux formules ? C’est l’objet du premier appel.</p>
+      <a class="btn" href="#rdv"><span class="btn-label">Réserver un appel de 30 min</span><svg class="arr" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ CALCUL -->
+<section class="sec" id="calcul" aria-labelledby="calc-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="t-h2" id="calc-title">Combien de temps pouvez-vous récupérer ?</h2>
+      <p class="t-lead">Un calcul volontairement prudent. Réglez les curseurs sur votre entreprise, le résultat se met à jour.</p>
+    </div>
+    <form class="calc rv" id="calc" onsubmit="return false">
+      <div class="calc-in">
+        <div class="field-range">
+          <label for="c-people">Personnes concernées <output for="c-people" id="o-people">12</output></label>
+          <input type="range" id="c-people" min="1" max="60" step="1" value="12">
+          <p class="hint">Celles qui écrivent, chiffrent, répondent ou saisissent une bonne partie de la journée.</p>
+        </div>
+        <div class="field-range">
+          <label for="c-hours">Heures par semaine sur ces tâches <output for="c-hours" id="o-hours">16 h</output></label>
+          <input type="range" id="c-hours" min="2" max="25" step="1" value="16">
+          <p class="hint">Mails, devis, comptes rendus, relances, saisie, recherche d’informations.</p>
+        </div>
+        <div class="field-range">
+          <label for="c-cost">Coût horaire chargé moyen <output for="c-cost" id="o-cost">42 €</output></label>
+          <input type="range" id="c-cost" min="25" max="90" step="1" value="42">
+          <p class="hint">Salaire brut chargé divisé par les heures travaillées. 42&nbsp;€ correspond à environ 3 000&nbsp;€ brut mensuels.</p>
+        </div>
+      </div>
+      <div class="calc-out" aria-live="polite">
+        <p class="t-mono" style="color:var(--a-night)">Temps récupérable par an</p>
+        <p class="calc-big num"><span id="r-hours">2 112</span><small>heures</small></p>
+        <dl class="calc-rows">
+          <div><dt>En jours de travail</dt><dd id="r-days">302 jours</dd></div>
+          <div><dt>Valeur de ce temps</dt><dd id="r-value">88 700 €</dd></div>
+          <div><dt id="r-payback-l">Formation de 2 groupes (5 800 € HT) rentabilisée en</dt><dd id="r-payback">2,9 semaines</dd></div>
+        </dl>
+        <p class="calc-note">Hypothèse prudente : 25 % du temps passé sur ces tâches est récupéré, sur 44 semaines. Avec 16 heures par semaine, cela donne 4 heures par personne, le gain médian mesuré chez mes clients au 90<sup>e</sup> jour.</p>
+        <div class="calc-cta"><a class="btn" href="#rdv"><span class="btn-label">Vérifier ce chiffre avec moi</span><svg class="arr" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+      </div>
+    </form>
   </div>
 </section>
 
@@ -678,45 +526,10 @@
   <div class="wrap">
     <div class="sec-head">
       <h2 class="t-h2" id="cadre-title">Vos données restent sous votre contrôle</h2>
-      <p class="t-lead">Je ne revends aucune licence et ne touche aucune commission. Je vous aide à choisir l’outil adapté à vos données, puis on encadre son usage par écrit.</p>
+      <p class="t-lead">61 % des utilisateurs de l’IA en entreprise passent au moins une fois par semaine par un compte personnel, hors de tout contrat<a class="fn" href="https://news.microsoft.com/source/emea/2026/02/etude-microsoft-france-lusage-de-lia-progresse-dans-les-entreprises-francaises-mais-se-heurte-a-un-manque-daccompagnement/?lang=fr" rel="noopener" aria-label="Source : étude Microsoft France et YouGov, janvier 2026">(1)</a>. Je ne revends aucune licence : on choisit l’outil adapté à vos données, puis on encadre son usage par écrit.</p>
     </div>
-    <div class="frame-grid">
-      <div class="tool-pick rv" id="toolpick">
-        <form onsubmit="return false">
-          <div class="tool-q">
-            <fieldset>
-              <legend>Votre messagerie et vos documents sont sur</legend>
-              <div class="opts">
-                <label class="opt"><input type="radio" name="suite" value="ms" checked><span>Microsoft 365</span></label>
-                <label class="opt"><input type="radio" name="suite" value="google"><span>Google Workspace</span></label>
-                <label class="opt"><input type="radio" name="suite" value="other"><span>Autre, ou serveur interne</span></label>
-              </div>
-            </fieldset>
-          </div>
-          <div class="tool-q">
-            <fieldset>
-              <legend>Vos équipes manipulent des données sensibles</legend>
-              <div class="opts">
-                <label class="opt"><input type="radio" name="sens" value="high"><span>Souvent</span></label>
-                <label class="opt"><input type="radio" name="sens" value="mid" checked><span>Parfois</span></label>
-                <label class="opt"><input type="radio" name="sens" value="low"><span>Rarement</span></label>
-              </div>
-            </fieldset>
-          </div>
-          <div class="tool-q">
-            <fieldset>
-              <legend>Vous voulez des assistants branchés sur vos logiciels</legend>
-              <div class="opts">
-                <label class="opt"><input type="radio" name="agents" value="yes"><span>Oui</span></label>
-                <label class="opt"><input type="radio" name="agents" value="no" checked><span>Pas pour l’instant</span></label>
-              </div>
-            </fieldset>
-          </div>
-        </form>
-        <div class="tool-res" id="tool-res" aria-live="polite"></div>
-      </div>
-
-      <div>
+    <div class="frame-grid frame-grid--rules">
+            <div>
         <ul class="rules">
           <li class="rv"><svg><use href="#i-pen"/></svg><div><b>Une charte d’usage d’une page</b><p>Ce qu’on peut coller dans un outil, ce qu’on n’y colle jamais, qui valide un nouvel outil. Rédigée avec vos équipes pendant la formation.</p></div></li>
           <li class="rv" style="--i:1"><svg><use href="#i-lock"/></svg><div><b>Pas de données personnelles sans contrat</b><p>Avant tout déploiement, on vérifie le contrat de sous-traitance, l’exclusion de vos données de l’entraînement et le lieu d’hébergement, comme le demande la CNIL.</p></div></li>
@@ -736,14 +549,7 @@
       </div>
     </div>
 
-    <div class="law">
-      <h3>Et l’AI Act, concrètement ?</h3>
-      <div class="prose">
-        <p>Depuis le 2 février 2025, l’article 4 du règlement européen sur l’IA s’applique à toute entreprise qui utilise un système d’IA, y compris un simple assistant de rédaction. Réécrit en juillet 2026, il demande de <strong>prendre des mesures pour favoriser le développement de la maîtrise de l’IA</strong> de vos équipes. Le texte précise qu’il ne s’agit pas de garantir un niveau donné pour chaque personne, et il n’impose aucune formation certifiante.</p>
-        <p>Méfiez-vous des offres qui brandissent une « formation obligatoire » et des amendes. Ce qui compte, c’est de pouvoir montrer ce que vous avez mis en place : qui a été formé, sur quoi, avec quelles règles. Chaque formation vous laisse cette trace écrite.</p>
-        <p class="t-small">Source : <a href="https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=OJ:L_202601744" rel="noopener">règlement (UE) 2026/1744 modifiant le règlement (UE) 2024/1689</a>.</p>
-      </div>
-    </div>
+    <p class="frame-foot">Microsoft 365 Copilot, Mistral Vibe, Dust, ChatGPT : <a href="methode.html#outils">quel outil pour quelle entreprise</a>. Et <a href="methode.html#ai-act">ce que l’AI Act demande vraiment</a>.</p>
   </div>
 </section>
 
@@ -751,31 +557,10 @@
 <section class="sec" id="apropos" aria-labelledby="apropos-title">
   <div class="wrap about">
     <div>
-      <!-- Remplacer ce tableau par un portrait réel : <img src="assets/img/portrait.webp" width="960" height="1200" alt="Élise Garnier en atelier" loading="lazy"> -->
-      <div class="portrait">
-        <div class="board" id="board">
-          <svg viewBox="0 0 400 500" role="img" aria-label="Tableau blanc d’un atelier : le trajet d’un devis dessiné à la main, avec les étapes confiées à l’IA entourées">
-            <path class="ink draw" d="M40 70 q2 -18 22 -18 h96 q20 0 20 18 v34 q0 18 -20 18 h-96 q-22 0 -22 -18 z"/>
-            <text x="56" y="94">demande</text>
-            <path class="ink draw" d="M178 88 q30 -4 56 2 m-10 -9 l12 8 -12 8"/>
-            <path class="ink draw" d="M246 66 q0 -16 20 -16 h94 q18 0 18 16 v38 q0 16 -18 16 h-94 q-20 0 -20 -16 z"/>
-            <text x="262" y="94">cotes + prix</text>
-            <path class="ink draw" d="M310 126 q6 46 -30 70 q-40 24 -120 26 m10 -10 l-12 10 12 10"/>
-            <path class="ink draw" d="M40 206 q0 -18 20 -18 h100 q20 0 20 18 v36 q0 18 -20 18 h-100 q-20 0 -20 -18 z"/>
-            <text x="56" y="230">saisie ERP</text>
-            <path class="ink draw" d="M112 266 q-4 40 6 74 m-10 -10 l10 12 8 -12"/>
-            <path class="ink draw" d="M40 356 q0 -16 20 -16 h118 q20 0 20 16 v38 q0 16 -20 16 h-118 q-20 0 -20 -16 z"/>
-            <text x="56" y="382">relecture humaine</text>
-            <path class="ink-a draw" d="M232 44 C 300 30, 392 38, 390 86 C 388 132, 300 136, 250 128 C 224 124, 218 60, 240 46"/>
-            <path class="ink-a draw" d="M28 190 C 60 172, 180 170, 196 196 C 208 222, 196 268, 150 272 C 90 278, 30 262, 28 226 C 27 208, 30 196, 40 188"/>
-            <text x="318" y="158" style="fill:#0B6B4E">IA : 2 min</text>
-            <text x="210" y="252" style="fill:#0B6B4E">IA : 6 min</text>
-            <path class="ink draw" d="M232 380 h120 m-120 22 h86"/>
-            <text x="232" y="366">total 24 min</text>
-          </svg>
-          <div class="board-cap"><span>Tableau d’atelier, Menuiseries Le Goff</span><span>mars 2026</span></div>
-        </div>
-      </div>
+      <!-- Portrait : remplacer assets/img/portrait.svg par la vraie photo (portrait.webp, 960 × 1200, noir et blanc) en gardant width et height. -->
+      <figure class="portrait">
+        <img src="assets/img/portrait.svg" width="960" height="1200" alt="Portrait d’Élise Garnier" loading="lazy" decoding="async">
+      </figure>
       <div class="creds">
         <span class="cred"><svg><use href="#i-seal"/></svg><span>Qualiopi<small>actions de formation</small></span></span>
         <span class="cred"><svg><use href="#i-access"/></svg><span>Référente handicap<small>formations adaptables</small></span></span>
@@ -785,16 +570,9 @@
       <h2 class="t-h2" id="apropos-title">Élise Garnier</h2>
       <p class="t-lead" style="margin-top:20px">J’ai dirigé les opérations d’une usine de 180 salariés avant de former des équipes à l’IA. Je sais ce que coûte une demi-journée perdue sur un devis ou un inventaire.</p>
       <div class="prose" style="margin-top:24px;color:var(--ink-2)">
-        <p>Pendant quatorze ans, j’ai vécu les outils numériques du côté de ceux qui doivent s’en servir le lundi matin. J’ai piloté le déploiement d’un ERP sur 300 utilisateurs, avec ses formations ratées et ses fichiers Excel qui survivent à tout.</p>
-        <p>En 2021, j’ai commencé à automatiser des tâches pour des PME de l’Ouest. L’IA générative a tout accéléré, et j’ai vu les mêmes erreurs revenir partout : des licences achetées sans usage, des données clients collées dans des outils gratuits, des équipes qui décrochent au bout d’une semaine. Je travaille pour éviter ça.</p>
+        <p>Quatorze ans dans l’industrie agroalimentaire, du contrôle de gestion à la direction d’une usine, dont un déploiement d’ERP sur 300 utilisateurs. J’ai vécu les outils numériques du côté de ceux qui doivent s’en servir le lundi matin.</p>
+        <p>Depuis 2021, j’accompagne des PME de l’Ouest : 612 personnes formées dans 74 entreprises. Je vois partout les mêmes erreurs, des licences achetées sans usage, des données clients collées dans des outils gratuits, des équipes qui décrochent au bout d’une semaine. Mon travail consiste à les éviter.</p>
       </div>
-      <ol class="timeline">
-        <li><time>2006 à 2014</time><div><b>Contrôleuse de gestion, groupe agroalimentaire</b><p>Clôtures mensuelles, tableaux de bord, beaucoup de tableurs.</p></div></li>
-        <li><time>2014 à 2020</time><div><b>Directrice des opérations, usine de 180 salariés</b><p>Planification, qualité, déploiement de l’ERP.</p></div></li>
-        <li><time>2021</time><div><b>Création de mon activité de conseil</b><p>Premières automatisations pour des PME industrielles.</p></div></li>
-        <li><time>2023</time><div><b>Certification Qualiopi</b><p>Au titre des actions de formation.</p></div></li>
-        <li><time>2026</time><div><b>612 personnes formées, 74 entreprises</b><p>En Pays de la Loire, en Bretagne et à distance.</p></div></li>
-      </ol>
     </div>
   </div>
 </section>
@@ -818,10 +596,6 @@
       <details>
         <summary>Vous formez aussi sur ChatGPT, Claude ou Gemini ?<span class="pm" aria-hidden="true"></span></summary>
         <div class="ans"><p>Oui. La méthode est la même d’un outil à l’autre, et je forme sur celui que vos équipes utilisent déjà. Une seule condition : pour des données de l’entreprise, on passe par une offre professionnelle avec contrat (ChatGPT Team ou Enterprise, Claude Team, Gemini dans Google Workspace), jamais par un compte gratuit personnel.</p></div>
-      </details>
-      <details>
-        <summary>Nos données partent-elles aux États-Unis ?<span class="pm" aria-hidden="true"></span></summary>
-        <div class="ans"><p>Pas si on choisit bien. Selon vos contraintes, je vous oriente vers un outil hébergé dans l’Union européenne, comme Vibe de Mistral (ex-Le Chat) ou Dust, ou vers une configuration Microsoft 365 adaptée. Dans tous les cas, on vérifie trois choses avant de commencer : le contrat de sous-traitance RGPD, l’exclusion de vos données de l’entraînement des modèles, et le lieu d’hébergement.</p></div>
       </details>
       <details>
         <summary>L’AI Act m’oblige-t-il à former mes salariés ?<span class="pm" aria-hidden="true"></span></summary>
@@ -851,12 +625,14 @@
 <section class="sec night" id="rdv" aria-labelledby="rdv-title">
   <div class="wrap book">
     <div>
+      <div class="rdv-who"><img src="assets/img/portrait.svg" width="56" height="56" alt="" loading="lazy" decoding="async"><p>Vous parlerez avec moi,<br>Élise Garnier</p></div>
       <h2 class="t-h2" id="rdv-title">Parlons de votre entreprise</h2>
       <p class="t-lead" style="margin-top:20px">30 minutes en visio. Vous repartez avec un premier avis sur ce que l’IA peut changer chez vous, même si on ne travaille pas ensemble.</p>
       <ul class="book-points">
         <li><svg><use href="#i-check"/></svg>Pas de présentation commerciale</li>
         <li><svg><use href="#i-check"/></svg>Compte rendu écrit sous 24 heures</li>
         <li><svg><use href="#i-check"/></svg>Une réponse franche si je ne suis pas la bonne personne</li>
+        <li><svg><use href="#i-check"/></svg>Offres à partir de 2 400 € HT</li>
       </ul>
       <p class="book-alt">Vous préférez écrire ? <a href="mailto:contact@elisegarnier.fr">contact@elisegarnier.fr</a><br>ou appeler le <a href="tel:+33261914217">02 61 91 42 17</a>, du lundi au vendredi.</p>
     </div>
@@ -893,8 +669,9 @@
             <p class="err" id="e-email"><svg><use href="#i-alert"/></svg>Cette adresse semble incomplète. Exemple : prenom@entreprise.fr</p>
           </div>
           <div class="fld">
-            <label for="f-org">Entreprise <span>et nombre de salariés, si vous voulez</span></label>
-            <input id="f-org" name="organization" type="text" autocomplete="organization" required>
+            <label for="f-org">Entreprise</label>
+            <input id="f-org" name="organization" type="text" autocomplete="organization" required aria-describedby="h-org">
+            <p class="hint" id="h-org">Avec le nombre de salariés, si vous le souhaitez.</p>
             <p class="err" id="e-org"><svg><use href="#i-alert"/></svg>Indiquez le nom de votre entreprise.</p>
           </div>
           <p class="legal">Ces informations servent uniquement à préparer l’appel et sont supprimées après 12 mois sans suite. <a href="confidentialite.html">Politique de confidentialité</a>.</p>
@@ -926,18 +703,18 @@
           <svg class="brand-mark" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="7" fill="#F2F1EC"/><path d="M8 8.5h9M8 14h7M8 19.5h9M8 8.5v11" stroke="#14161A" stroke-width="2" stroke-linecap="round"/><circle cx="20.5" cy="14" r="2" fill="#0B6B4E"/></svg>
           <span>Élise Garnier<small>Conseil et formation IA</small></span>
         </a>
-        <p style="margin-top:16px;max-width:34ch">Formation et accompagnement IA pour les PME et ETI, depuis Nantes.</p>
+        <p style="margin-top:16px;max-width:34ch">Formation et accompagnement IA pour les PME, depuis Nantes.</p>
       </div>
       <div>
-        <h4>Offres</h4>
-        <ul><li><a href="#offres">Diagnostic IA</a></li><li><a href="formation-ia.html">Formation « L’IA au travail »</a></li><li><a href="#parcours">Accompagnement 90 jours</a></li></ul>
+        <p class="foot-h">Offres</p>
+        <ul><li><a href="methode.html#diagnostic">Diagnostic IA</a></li><li><a href="formation-ia.html">Formation « L’IA au travail »</a></li><li><a href="#parcours">Accompagnement 90 jours</a></li></ul>
       </div>
       <div>
-        <h4>Informations</h4>
-        <ul><li><a href="formation-ia.html">Programme et modalités</a></li><li><a href="#indicateurs">Indicateurs de résultats</a></li><li><a href="mentions-legales.html">Mentions légales</a></li><li><a href="confidentialite.html">Confidentialité</a></li></ul>
+        <p class="foot-h">Informations</p>
+        <ul><li><a href="methode.html">Méthode</a></li><li><a href="formation-ia.html">Programme et modalités</a></li><li><a href="formation-ia.html#indicateurs">Indicateurs de résultats</a></li><li><a href="mentions-legales.html">Mentions légales</a></li><li><a href="confidentialite.html">Confidentialité</a></li></ul>
       </div>
       <div>
-        <h4>Contact</h4>
+        <p class="foot-h">Contact</p>
         <ul><li><a href="mailto:contact@elisegarnier.fr">contact@elisegarnier.fr</a></li><li><a href="tel:+33261914217">02 61 91 42 17</a></li><li><a href="https://www.linkedin.com/in/elise-garnier-exemple" rel="noopener">LinkedIn</a></li></ul>
       </div>
     </div>

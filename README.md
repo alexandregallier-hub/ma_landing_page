@@ -3,7 +3,8 @@
 Site statique complet pour un personnage fictif, **Élise Garnier**, consultante et formatrice IA à Nantes, qui s'adresse aux dirigeants de PME et d'ETI de 10 à 250 salariés. Aucun framework, aucune dépendance, aucun cookie.
 
 ```
-index.html              page principale
+index.html              page principale (environ 11 écrans sur ordinateur)
+methode.html            méthode détaillée : déroulé, carte des tâches, choix d'outil, AI Act
 formation-ia.html       programme détaillé de la formation (exigence Qualiopi)
 mentions-legales.html   éditeur, hébergeur, déclaration d'activité, accessibilité
 confidentialite.html    politique RGPD
@@ -27,8 +28,8 @@ Mise en ligne : n'importe quel hébergement statique. Pour rester cohérent avec
 |---|---|
 | Qu'est-ce qu'on me promet ? | Titre : « Vos équipes gagnent 4 heures par semaine avec l'IA », présenté comme un gain médian mesuré au 90e jour |
 | Comment ? | Trois offres chiffrées : diagnostic (2 400 € HT), formation finançable OPCO (2 900 € HT le groupe), accompagnement 90 jours (dès 9 800 € HT) |
-| Par quelles étapes ? | Déroulé semaine par semaine, avec le temps demandé au dirigeant à chaque étape |
-| Ça marche vraiment ? | Carte des tâches interactive, calculateur, trois études de cas chiffrées avec la nature de la preuve, indicateurs de formation, avis |
+| Par quelles étapes ? | Cinq jalons sous les offres, avec le temps total demandé au dirigeant ; le détail semaine par semaine est sur la page Méthode |
+| Ça marche vraiment ? | Trois études de cas chiffrées juste après le premier écran, trois avis, calculateur ; carte des tâches interactive sur la page Méthode |
 | Pourquoi elle ? | Parcours de l'opérationnel (direction d'usine), Qualiopi, position claire sur les données et l'AI Act |
 | Que dois-je faire ? | Un seul bouton sur toute la page : « Réserver un appel de 30 min », avec un agenda intégré |
 
@@ -80,9 +81,23 @@ Texte : pas de « boostez », « libérez le potentiel », « dans un monde où 
 - **RGPD** : aucun cookie ni traceur, polices auto-hébergées (aucun appel à Google Fonts), formulaire avec information sur la durée de conservation, politique de confidentialité complète.
 - **Accessibilité** : navigation complète au clavier, focus visible, lien d'évitement, contrastes calculés (texte 16,7:1, accent 6:1, bordures de champ au-dessus de 3:1), erreurs de formulaire en texte avec focus sur la première, annonces pour lecteurs d'écran.
 
+## Audit et coupe (26 septembre 2026)
+
+Audit Impeccable en double évaluation (revue design et marketing, détecteur automatique). Note Nielsen 23/32. Constat principal : la page était trop longue, surtout parce que la même histoire y revenait quatre fois et que les preuves n'arrivaient qu'à 46 % de la hauteur.
+
+Corrections appliquées :
+- Nouvel ordre : hero, logos, résultats avec trois avis, offres et jalons, calcul, données, à propos, FAQ, rendez-vous.
+- Suppression de la section de statistiques générales. La carte des tâches, le déroulé détaillé, le choix d'outil et le texte sur l'AI Act passent sur la page Méthode.
+- Emplacement de portrait prêt dans l'À propos et à côté de l'agenda (`assets/img/portrait.svg`, à remplacer).
+- Textes secondaires portés à 14 px minimum, cibles tactiles à 44 px, bouton du calculateur contrasté.
+- Calculateur cohérent avec la promesse (16 h par semaine × 25 % = 4 h), coût calculé par groupe.
+- Libellés corrigés (« PME de 10 à 250 salariés », champ entreprise, période de l'agenda).
+
+Longueur de la page d'accueil : 14 788 px → 9 900 px sur ordinateur (16,4 → 11 écrans), 22 423 px → 14 600 px sur mobile, 2 576 → 1 618 mots.
+
 ## Résultats mesurés
 
-Lighthouse, profil mobile : performance 95, accessibilité 100, bonnes pratiques 100, SEO 100. LCP 2,3 s, CLS 0, poids total 218 Ko. Aucun débordement horizontal en 1440, 768 et 390 px. Tests automatisés passés sur la prise de rendez-vous (erreurs, succès, fichier agenda), le calculateur, les onglets au clavier, le choix d'outil, la carte des tâches, le menu mobile et le mode animations réduites.
+Lighthouse, profil mobile, après la coupe : performance 99, accessibilité 100, bonnes pratiques 100, SEO 100, sur l'accueil comme sur la page Méthode. LCP 2,1 s, CLS 0. Aucun débordement horizontal en 1440, 768 et 390 px. Tests automatisés passés sur la prise de rendez-vous (erreurs, succès, fichier agenda), le calculateur, les onglets au clavier, le choix d'outil, la carte des tâches, le menu mobile et le mode animations réduites.
 
 ## Tout ce qui est fictif, à remplacer avant la mise en ligne
 
@@ -110,4 +125,4 @@ Le script envoie alors en POST un JSON `{name, email, organization, start}`. Pou
 
 ## Photos
 
-Le site n'utilise volontairement aucune photo de banque d'images : c'est l'un des signes les plus visibles d'un site générique. Les visuels sont construits en code (démo animée, carte des tâches, tableau d'atelier dessiné, charte d'usage). Un portrait réel du consultant et une ou deux photos prises en formation renforceraient la confiance : l'emplacement est prévu dans la section « À propos » (commentaire dans `index.html`), traitement conseillé en noir et blanc légèrement contrasté.
+Le site n'utilise volontairement aucune photo de banque d'images : c'est l'un des signes les plus visibles d'un site générique. Les visuels sont construits en code (démo animée, carte des tâches, tableau d'atelier dessiné, charte d'usage). Un portrait réel est indispensable : remplacer `assets/img/portrait.svg` par une photo (960 × 1200, noir et blanc légèrement contrasté) ; elle apparaît dans l'À propos et en vignette à côté de l'agenda.

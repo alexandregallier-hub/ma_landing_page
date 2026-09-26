@@ -70,8 +70,10 @@
       timerNew.textContent = '24 min';
     };
 
+    let first = true;
     const cycle = () => {
       clear();
+      if (first) { first = false; showFinal(); running = true; later(cycle, 3200); return; }
       running = true;
       askTxt.textContent = '';
       rows.forEach((r) => r.classList.remove('on'));
@@ -269,7 +271,10 @@
       $('#r-days').textContent = fmt(Math.round(year / DAY)) + ' jours';
       $('#r-value').textContent = fmt(Math.round(year * c / 10) * 10) + ' €';
       const groups = Math.ceil(p / GROUP_SIZE);
-      const weeks = (GROUP * groups) / (weekly * c);
+      const cost = GROUP * groups;
+      const weeks = cost / (weekly * c);
+      const pl = $('#r-payback-l');
+      if (pl) pl.textContent = `Formation de ${groups} groupe${groups > 1 ? 's' : ''} (${fmt(cost)}\u00a0€ HT) rentabilisée en`;
       $('#r-payback').textContent = weeks < 1 ? 'moins d’une semaine' : fmt(weeks, weeks < 10 ? 1 : 0) + ' semaine' + (weeks >= 2 ? 's' : '');
       [P, H, C].forEach(paint);
     };
@@ -374,7 +379,6 @@
     let offset = 0, day = null, slot = null;
     const dayName = new Intl.DateTimeFormat('fr-FR', { weekday: 'short' });
     const longDate = new Intl.DateTimeFormat('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' });
-    const monthName = new Intl.DateTimeFormat('fr-FR', { month: 'long', year: 'numeric' });
     const monthOnly = new Intl.DateTimeFormat('fr-FR', { month: 'long' });
 
     // Jours ouvrés à partir de demain (J+1), cinq par page
@@ -394,7 +398,9 @@
     };
     const renderDays = () => {
       const page = workdays.slice(offset * 5, offset * 5 + 5);
-      $('#sched-month').textContent = 'Choisissez un jour, ' + monthName.format(page[0]);
+      const a = page[0], z = page[page.length - 1];
+      const dm = new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long' });
+      $('#sched-month').textContent = 'Choisissez un jour, ' + (a.getMonth() === z.getMonth() ? `du ${a.getDate()} au ${dm.format(z)}` : `du ${dm.format(a)} au ${dm.format(z)}`);
       daysEl.innerHTML = '';
       page.forEach((d) => {
         const b = document.createElement('button');
@@ -439,7 +445,7 @@
     const fields = [
       { el: $('#f-name'), ok: (v) => v.trim().length >= 2 },
       { el: $('#f-email'), ok: (v) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()) },
-      { el: $('#f-org'), ok: (v) => v.trim().length >= 2 },
+      { el: $('#f-org'), ok: (v) => v.trim().length >= 1 },
     ];
     const validate = (f) => {
       const ok = f.ok(f.el.value);
